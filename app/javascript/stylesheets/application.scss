@@ -2,3 +2,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+@layer components {
+.red-card {
+  @apply bg-red-500 my-4 w-3/4 mx-auto p-4;
+}
+
+.red-card p {
+  @apply text-white text-2xl;
+}
+}
