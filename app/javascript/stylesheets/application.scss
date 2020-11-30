@@ -49,4 +49,13 @@ html, body {
     /* or 100px */
     border-bottom: 8px solid #6dd5be;
   }  
+  .footer {
+    @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
+  }
+}
+
+@responsive {
+  .md\:footer {
+    @apply text-base justify-between  h-20
+  }
 }

@@ -18,5 +18,12 @@
   <%= render "layouts/navbar" %>
     <%= yield %>
     
+    <!-- Devise Message -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <!-- End Devise Message -->
+    
+    <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
