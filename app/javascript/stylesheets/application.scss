@@ -5,12 +5,16 @@
 
 
 @layer components {
-}
+
 
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+footer {
+  @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
 }
 
 .nav-links { 
@@ -37,7 +41,7 @@ html, body {
 #nav-toggle:focus,
 #nav-toggle:active {
   outline-color: #afe8db;
-}
+}}
 @media (min-width: 640px) {
   .nav-links:after {
     content: "";
@@ -49,7 +53,4 @@ html, body {
     /* or 100px */
     border-bottom: 8px solid #6dd5be;
   }  
-  .footer {
-    @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
-  }
 }
