@@ -1,4 +1,4 @@
 class Menu < ApplicationRecord
   belongs_to :user
-  belongs_to :day
+  has_may :days
 end

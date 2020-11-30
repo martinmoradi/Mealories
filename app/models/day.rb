@@ -1,4 +1,4 @@
 class Day < ApplicationRecord
   has_many :users
-  has_many :menus
+  belongs_to :menu
 end
