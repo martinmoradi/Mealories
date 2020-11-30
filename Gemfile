@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Debugger
+  gem "pry"
 end
 
 group :development do
@@ -40,6 +42,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Intellisense & much more
+  gem "solargraph"
+  # Better errors replace standard Rails error page
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Ruby static analyzer and code formatter
+  gem "rubocop", require: false
+  # Preview email in browser
+  gem "letter_opener"
+  # Generate Diagram
+  gem "rails-erd"
+  # Table print
+  gem "table_print"
 end
 
 group :test do
@@ -52,3 +67,50 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Login managment
+gem "devise"
+
+# Allow resetting the ID of tables to 0
+gem "activerecord-reset-pk-sequence"
+
+# Hide API keys from bad guys
+gem "dotenv-rails"
+
+# Random data generator
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+
+# Mailjet
+gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
+
+# Admin panel
+gem "rails_admin", "~> 2.0"
+
+# Google Trad
+gem "google-cloud"
+gem "google-cloud-translate"
+
+# Rest Client for REST Api calls
+gem "rest-client", "~> 2.1"
+
+#################################################################################
+
+# List of added gems :
+# gem "devise"
+# gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+# gem "rubocop", require: false
+# gem "better_errors"
+# gem "binding_of_caller"
+# gem "solargraph"
+# gem "pry"
+# gem "dotenv-rails"
+# gem "letter_opener"
+# gem "rails erd"
+# gem "rails_admin"
+# gem "activerecord-reset-pk-sequence"
+# gem "table_print"
+# gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+# gem "google-cloud"
+# gem "google-cloud-translate"
+# gem "rest-client", "~> 2.1"
+#################################################################################
