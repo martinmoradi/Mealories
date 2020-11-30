@@ -1,0 +1,41 @@
+<nav class="flex items-center text-right justify-between flex-wrap bg-grey-darkest  fixed w-full z-10 pin-t mt-2 ">
+	<div class="mb-2 sm:mb-0">
+    <div class="ml-3 mt-2">
+    	<%= image_tag("logo_meal.png", size: "44x44") %>
+    </div>
+  </div>
+    
+
+		<div class="hamburger_block block sm:hidden mr-8 sm:mr-0">
+			<button id="nav-toggle" class="flex items-center px-6 py-3 border rounded text-grey border-grey-dark hover:text-white hover:border-white">
+				<svg class="hamburger fill-primary-500 h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+			</button>
+		</div>
+
+    
+
+		<div class="w-full block sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto hidden sm:block sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent" id="nav-content">
+			<div class="nav-links sm:flex sm:-mr-10">
+				<ul class="list-reset sm:flex justify-end flex-1 items-center sm:mr-5">
+					<li class="sm:mr-8 mt-4 font-semibold hover:text-primary-500">
+						<%= link_to "Menu", root_path, class:"text-lg"%>
+					</li>
+					<li class="sm:mr-8 mt-4 font-semibold hover:text-primary-500">
+					<%= link_to "A propos", root_path, class:"text-lg"%>
+						
+					</li>
+					<li class="sm:mr-8 mt-4 font-semibold hover:text-primary-500">
+					<%= link_to "Profil", root_path, class:"text-lg"%>
+			
+					</li>
+					<li class="sm:mr-8 mt-4 -mr-3">
+					<%= link_to "Déconnexion", root_path, class:"bg-primary-600 hover:bg-primary-800 rounded-full py-2 px-4 text-sm no-underline text-white hover:text-blue-dark ml-2" %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+<!-- hamburger menu toggle-->
+	<%= javascript_pack_tag 'navbar' %> 
+
