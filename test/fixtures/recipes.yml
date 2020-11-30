@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  servings: 1
+  preptime: 1
+  cooktime: 1
+  steps: MyText
+  ingredients: MyText
+  image: MyString
+  author_id: 
+  calories: 
+  total_daily: 
+
+two:
+  title: MyString
+  servings: 1
+  preptime: 1
+  cooktime: 1
+  steps: MyText
+  ingredients: MyText
+  image: MyString
+  author_id: 
+  calories: 
+  total_daily: 
