@@ -93,6 +93,8 @@ gem "google-cloud-translate"
 # Rest Client for REST Api calls
 gem "rest-client", "~> 2.1"
 
+# Web Scrapper for Recipes 
+gem "recipe_scraper"
 #################################################################################
 
 # List of added gems :
@@ -113,4 +115,5 @@ gem "rest-client", "~> 2.1"
 # gem "google-cloud"
 # gem "google-cloud-translate"
 # gem "rest-client", "~> 2.1"
+# gem "recipe_scraper"
 #################################################################################
