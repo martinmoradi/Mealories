@@ -10,20 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_131925) do
+ActiveRecord::Schema.define(version: 2020_11_30_170622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "days", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_day_assigment", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "servings", null: false
-    t.integer "preptime", null: false
-    t.integer "cooktime", null: false
-    t.text "steps", null: false
-    t.text "ingredients", null: false
-    t.string "image", null: false
-    t.bigint "author_id", default: 0
+    t.integer "servings"
+    t.integer "preptime"
+    t.integer "cooktime"
+    t.text "steps"
+    t.text "ingredients"
+    t.string "image"
     t.integer "calories"
     t.integer "total_daily"
     t.datetime "created_at", precision: 6, null: false

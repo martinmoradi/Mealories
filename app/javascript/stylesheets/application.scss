@@ -5,11 +5,13 @@
 
 
 @layer components {
-.red-card {
-  @apply bg-primary-500 my-4 w-3/4 mx-auto p-4;
+  .footer {
+    @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
+  }
 }
 
-.red-card p {
-  @apply text-white text-2xl;
-}
+@responsive {
+  .md\:footer {
+    @apply text-base justify-between  h-20
+  }
 }
