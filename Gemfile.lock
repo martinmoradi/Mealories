@@ -528,6 +528,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbtree (0.4.2)
+    recipe_scraper (2.2.4)
+      nokogiri
     regexp_parser (1.8.2)
     remotipart (1.4.4)
     representable (3.0.4)
@@ -672,6 +674,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rails-erd
   rails_admin (~> 2.0)
+  recipe_scraper
   rest-client (~> 2.1)
   rubocop
   sass-rails (>= 6)
