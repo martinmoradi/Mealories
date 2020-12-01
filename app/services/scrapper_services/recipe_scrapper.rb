@@ -98,6 +98,6 @@ class ScrapToNutrients
     puts "Dans ce plat pour #{recipe_hash[:servings]} personnes, il y a #{recipe_macros[:sum_calories]} calories, #{recipe_macros[:sum_proteins]}g de protéines, #{recipe_macros[:sum_carbs]}g de sucres et #{recipe_macros[:sum_fat]}g de gras."
   end
 
-  perform("https://www.marmiton.org/recettes/recette_liqueur-au-chocolat_38981.aspx")
+  # perform("https://www.marmiton.org/recettes/recette_liqueur-au-chocolat_38981.aspx")
 
 end
