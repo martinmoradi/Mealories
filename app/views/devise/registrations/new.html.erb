@@ -1,39 +1,41 @@
-<h2>Sign up</h2>
+ 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="grid min-h-screen place-items-center  mt-6 ">
+      <div class="w-gul p-12 form_wrapper sm:w-8/12 md:w-1/2 lg:w-3/12  shadow-2xl mb-12 bg-primary-200 rounded-lg ">
+        <h1 class="text-4xl	 font-bold text-center"> <span class="jumbo-header text-lb:text-6xl">Inscription</span></h1>    
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        
+        <div class="field mt-10 ">
+          <%= f.text_field :firstname, autofocus: true, placeholder: 'Prénom', class:"block w-full p-3 mt-2   bg-gray-100  border-2 border-gray-100 focus:border-primary-600 rounded-xl placeholder-gray-500	"%>
+          <br />
+        </div>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true %>
+        <div class="field ">
+          <%= f.text_field :lastname, autofocus: true, placeholder: 'Nom', class:"block w-full p-3 mt-2   bg-gray-100  border-2 border-gray-100 focus:border-primary-600 rounded-xl placeholder-gray-500	" %>
+          <br />
+        </div>
+
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "email", class:"block w-full p-3 mt-2   bg-gray-100  border-2 border-gray-100 focus:border-primary-600 rounded-xl placeholder-gray-500	" %>
+          <br />
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, placeholder: 'Mot de passe', autocomplete: "new-password", class:"block w-full p-3 mt-2   bg-gray-100  border-2 border-gray-100 focus:border-primary-600 rounded-xl placeholder-gray-500	" %>
+          <% if @minimum_password_length %>
+          <span class="text-xs italic text-gray-500 mt-1 ml-2">(<%= @minimum_password_length %> caractères minimum)</span>
+          <% end %><br />
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password_confirmation, placeholder: 'Confirmer le mot de passe', autocomplete: "new-password", class:"block w-full p-3 mt-2   bg-gray-100  border-2 border-gray-100 focus:border-primary-600 rounded-xl placeholder-gray-500	" %>
+        </div>
+
+        <div class="actions flex justify-center   ">
+          <%= f.submit "Valider", class:" block w-full mt-5 bg-primary-500 hover:bg-primary-400 py-4 px-6 block rounded-xl text-white cursor-pointer font-black" %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
