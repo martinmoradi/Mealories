@@ -20,7 +20,6 @@ User.create!(
   lastname: "Admin",
   email: "lateam@yopmail.com",
   password: "azerty",
-  encrypted_password: "azerty",
   admin: true
 )
 
