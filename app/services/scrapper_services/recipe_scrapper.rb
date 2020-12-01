@@ -6,7 +6,6 @@
   require "net/http"
   require "uri"
   require "openssl"
-  require "pry"
 
   # scrap the recipe from marmiton with recipe_scrapper gem 
   def recipe_scrapper(marmiton_url)
