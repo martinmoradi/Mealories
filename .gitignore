@@ -34,3 +34,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+config/application.yml
+config/CREDENTIAL_JSON.json
