@@ -15,6 +15,23 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   Recipe.reset_pk_sequence
 end
 
+12.times do
+  Recipe.create!(
+    title:        Faker::Food.dish,
+    servings:     Faker::Number.within(range: 1..8),
+    preptime:     Faker::Number.within(range: 10..120),
+    cooktime:     Faker::Number.within(range: 20..360),
+    steps:        Faker::Food.description,
+    ingredients:  "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma ",
+    image:        Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
+    user_id:      1,
+    calories:     Faker::Number.within(range: 100..500),
+    total_daily:  Faker::Number.within(range: 10..50)
+  )
+end
+  
+puts '16 recipes create'
+
 User.create!(
   firstname: "Admin",
   lastname: "Admin",
@@ -25,19 +42,3 @@ User.create!(
 
 puts 'Admin create'
 
-12.times do
-  Recipe.create!(
-    title:        Faker::Food.dish,
-    servings:     Faker::Number.within(range: 1..8),
-    preptime:     Faker::Number.within(range: 10..120),
-    cooktime:     Faker::Number.within(range: 20..360),
-    steps:        Faker::Food.description,
-    ingredients:  "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma ",
-    image:        Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
-    user_id:    1,
-    calories:     Faker::Number.within(range: 100..500),
-    total_daily:  Faker::Number.within(range: 10..50)
-  )
-end
-  
-puts '16 recipes create'
