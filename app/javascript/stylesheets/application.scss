@@ -5,13 +5,52 @@
 
 
 @layer components {
-  .footer {
-    @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
-  }
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@responsive {
-  .md\:footer {
-    @apply text-base justify-between  h-20
-  }
+footer {
+  @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
+}
+
+.nav-links { 
+  position: relative;
+  z-index: 1; 
+  top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.hamburger {
+  fill: #6dd5be; 
+}
+
+.hamburger:hover,
+.hamburger:active {
+  fill: #31ab90;
+  outline-color: #31ab90;
+}    
+
+#nav-toggle{ 
+  outline-color: #afe8db;
+}
+
+#nav-toggle:focus,
+#nav-toggle:active {
+  outline-color: #afe8db;
+}}
+@media (min-width: 640px) {
+  .nav-links:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    /* or 100px */
+    border-bottom: 8px solid #6dd5be;
+  }  
 }
