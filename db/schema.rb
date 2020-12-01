@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 2020_11_30_170622) do
     t.text "steps"
     t.text "ingredients"
     t.string "image"
+    t.bigint "user_id", null: false
     t.integer "calories"
     t.integer "total_daily"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_11_30_170622) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "recipes", "users"
 end
