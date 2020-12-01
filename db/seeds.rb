@@ -15,6 +15,16 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   Recipe.reset_pk_sequence
 end
 
+User.create!(
+  firstname: "Admin",
+  lastname: "Admin",
+  email: "lateam@yopmail.com",
+  password: "azerty",
+  admin: true
+)
+
+puts 'Admin create'
+
 12.times do
   Recipe.create!(
     title:        Faker::Food.dish,
@@ -32,13 +42,4 @@ end
   
 puts '16 recipes create'
 
-User.create!(
-  firstname: "Admin",
-  lastname: "Admin",
-  email: "lateam@yopmail.com",
-  password: "azerty",
-  admin: true
-)
-
-puts 'Admin create'
 
