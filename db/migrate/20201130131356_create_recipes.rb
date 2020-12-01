@@ -8,7 +8,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.text :steps
       t.text :ingredients
       t.string :image
-      t.references :user, null: false, foreign_key: true
+      t.references :user, foreign_key: true
       t.integer :calories
       t.integer :total_daily
 

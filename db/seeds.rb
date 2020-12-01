@@ -20,7 +20,6 @@ User.create!(
   lastname: "Admin",
   email: "lateam@yopmail.com",
   password: "azerty",
-  encrypted_password: "azerty",
   admin: true
 )
 
@@ -35,10 +34,12 @@ puts 'Admin create'
     steps:        Faker::Food.description,
     ingredients:  "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma ",
     image:        Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
-    user_id:    1,
+    user_id:      1,
     calories:     Faker::Number.within(range: 100..500),
     total_daily:  Faker::Number.within(range: 10..50)
   )
 end
   
 puts '16 recipes create'
+
+
