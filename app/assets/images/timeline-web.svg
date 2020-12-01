@@ -1,14 +1,11 @@
 <svg width="1089" height="240" viewBox="0 0 1089 240" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
-<path d="M428.67 119.51C428.67 185.23 480.13 238.51 543.61 238.51C607.09 238.51 658.55 185.23 658.55 119.51" fill="white"/>
 <path d="M428.67 119.51C428.67 121.52 428.72 123.52 428.81 125.51" stroke="black" stroke-miterlimit="10"/>
 <path d="M430 137.71C438.46 194.79 486.1 238.51 543.61 238.51C603.14 238.51 652.1 191.66 657.96 131.63" stroke="black" stroke-miterlimit="10" stroke-dasharray="12.26 12.26"/>
 <path d="M658.4 125.51C658.5 123.52 658.54 121.52 658.54 119.51" stroke="black" stroke-miterlimit="10"/>
-<path d="M986.55 119.51C986.55 53.79 935.09 0.51001 871.61 0.51001C808.13 0.51001 756.67 53.79 756.67 119.51" fill="white"/>
 <path d="M986.55 119.51C986.55 117.5 986.5 115.5 986.41 113.51" stroke="black" stroke-miterlimit="10"/>
 <path d="M985.21 101.31C976.75 44.23 929.11 0.51001 871.6 0.51001C812.07 0.51001 763.11 47.36 757.25 107.39" stroke="black" stroke-miterlimit="10" stroke-dasharray="12.26 12.26"/>
 <path d="M756.81 113.51C756.71 115.5 756.67 117.5 756.67 119.51" stroke="black" stroke-miterlimit="10"/>
-<path d="M330.09 119.5C330.09 53.78 278.63 0.5 215.15 0.5C151.67 0.5 100.2 53.78 100.2 119.5" fill="white"/>
 <path d="M330.09 119.5C330.09 117.49 330.04 115.49 329.95 113.5" stroke="black" stroke-miterlimit="10"/>
 <path d="M328.75 101.3C320.29 44.22 272.65 0.5 215.15 0.5C155.62 0.5 106.66 47.35 100.8 107.38" stroke="black" stroke-miterlimit="10" stroke-dasharray="12.26 12.26"/>
 <path d="M100.35 113.5C100.25 115.49 100.21 117.49 100.21 119.5" stroke="black" stroke-miterlimit="10"/>

@@ -5,8 +5,7 @@
 
 
 @layer components {
-
-
+  
 html, body {
   margin: 0;
   padding: 0;
@@ -14,7 +13,7 @@ html, body {
 }
 
 footer {
-  @apply flex text-sm px-5 items-center justify-evenly absolute bottom-0 w-full h-16 bg-primary-500
+  @apply flex text-sm px-5 items-center justify-evenly h-24 w-full bg-primary-500
 }
 
 .nav-links { 

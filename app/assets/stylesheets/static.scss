@@ -3,19 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
   min-height: 100%;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;    /* #body margin-bottom */        
+  background-image: image-url('bg-land.svg');
+  background-position-x: 10%;
+  background-position-y: 5%;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .chief {
