@@ -1,6 +1,5 @@
 # class ScrapToNutrients
 
-  require "figaro"
   require "recipe_scraper"
   require "google/cloud/translate"
   require "json"
