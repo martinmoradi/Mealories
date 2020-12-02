@@ -40,11 +40,11 @@ class User < ApplicationRecord
   def dailyCal
     case activityLevel
       when 1
-        dailyCal = bmr
+        dailyCal = bmr * 1.2
       when 2
         dailyCal = bmr * 1.375 
       when 3 
-        dailyCal = bmr * 1.46 
+        dailyCal = bmr * 1.55
       when 4
         dailyCal = bmr * 1.725
       when 5
@@ -75,15 +75,15 @@ class User < ApplicationRecord
   def activityLevelTitle
   case activityLevel
     when 1
-      "Sédentaire"
+      "Travail sédendaire et ne pratique pas ou peu d'exercice."
     when 2
-      "Activité sportive une à trois fois par semaine."
+      "Pratique une activité sportive  1 à 3 fois par semaine."
     when 3
-      "Activité sportive quatre à cinq fois par semaine."
+      "Pratique une activité sportive à effort modéré 3 à 5 fois par semaine."
     when 4
-      "Activité sportive quotidienne ou séances intenses trois à quatre fois par semaine."
+      "Pratique une activité sportive presque quotidienne."
     when 5
-      "Activité sportive intense six fois par semaine."
+      "Pratique une activité sportive intense 6 à 7 fois par semaine avec un métier exigeant une activité physique."
     end
   end
 
