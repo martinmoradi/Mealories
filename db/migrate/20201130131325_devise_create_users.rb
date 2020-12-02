@@ -4,8 +4,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :firstname,          null: false
-      t.string :lastname,           null: false
+      t.string :firstName,          null: false
+      t.string :lastName,           null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -36,12 +36,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       #  User details
       t.string  :objective
-      t.decimal :weight
+      t.decimal :weightInKg
       t.string  :genre
-      t.integer :height
+      t.integer :heightInCm
       t.integer :age 
-      t.string  :diet
-      t.integer :activity
+      t.integer :activityLevel
       t.boolean :admin, default: false
 
       t.timestamps      null: false
