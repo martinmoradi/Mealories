@@ -116,5 +116,44 @@ class User < ApplicationRecord
     }
   end
 
+  # def generate_lunch
+  #   all_recipes = Recipe.all
+  #   lunch = all_recipes.sample
+  #  while !lunch.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100))
+  #   lunch = all_recipes.sample
+  #  end
+  #  lunchexit
+  # end
 
+  def generate_dinner
+    all_recipes = Recipe.all
+    dinner = all_recipes.sample
+    while !dinner.calPerServing.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100))
+      dinner = all_recipes.sample
+    end
+    dinner
+  end
+
+  # def generate_lunch
+  #   recipe_check = {cal: false, fat: false, carbs: false, prot: false}
+  #   all_recipes = Recipe.all
+  #   lunch = all_recipes.sample
+  #   while !recipe_check.all? { |k,v| v == true }
+  #     if lunch.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100))
+  #       recipe_check[:cal] == true
+  #     end
+  #     if lunch.fatPerServing.between?((lunchNeeds[:fat] * 90 / 100), (lunchNeeds[:fat] * 110 / 100))
+  #       recipe_check[:fat] == true
+  #     end
+  #     if lunch.protPerServing.between?((lunchNeeds[:prot] * 90 / 100), (lunchNeeds[:prot] * 110 / 100))
+  #       recipe_check[:prot] == true
+  #     end
+  #     if lunch.carbsPerServing.between?((lunchNeeds[:carbs] * 90 / 100), (lunchNeeds[:carbs] * 110 / 100))
+  #       recipe_check[:carbs] == true
+  #     end
+  #     lunch = all_recipes.sample
+  #   end
+  #   lunch
+  # end
+  
 end
