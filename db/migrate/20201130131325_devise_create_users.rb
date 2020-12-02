@@ -37,7 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       #  User details
       t.string  :objective
       t.decimal :weightInKg
-      t.string  :genre
+      t.string  :gender
       t.integer :heightInCm
       t.integer :age 
       t.integer :activityLevel

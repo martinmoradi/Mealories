@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_41_20_162634) do
     t.datetime "remember_created_at"
     t.string "objective"
     t.decimal "weightInKg"
-    t.string "genre"
+    t.string "gender"
     t.integer "heightInCm"
     t.integer "age"
     t.integer "activityLevel"
