@@ -1,0 +1,43 @@
+<div class="container mx-auto mb-auto">
+  <%= render 'welcome'%>  
+
+  <div class="middle-page flex items-center justify-between">
+
+      <!-------left-page----->
+    <div class="hidden md:contents">
+    <%= image_tag("personal_data_.svg", size: "325x272", class:"data mt-10") %>
+    </div>
+
+      <!-------right-page----->
+    <div class="text-gray-700 bg-white shadow-lg rounded-md">
+      <div class="lg:w-4/6 mx-auto">
+        <div class="flex flex-col sm:flex-row mt-10">
+              <!----card-left-->
+          <div class="w-1/3 md:w-1/2 text-center sm:pr-8 sm:py-8 ml-24 md:ml-0">
+            <div class="flex flex-col items-center text-center justify-center">
+              <h2 class=" mt-4 text-gray-900 text-lg"><span class="text-primary-500 font-bold uppercase">Nom</span> Prénom</h2>
+              <div class="w-12 h-1 bg-yellow-500 rounded mt-2 mb-4"></div>
+  
+              <ul class="text-base text-gray-600">
+              <li><span class="font-bold">Sexe :</span> Lorem</li>
+              <li><span class="font-bold">Âge :</span> 24</li>
+              <li><span class="font-bold">E-mail :</span> example@example.com</li>
+              </ul>
+            </div>
+          </div>
+          <!----card-right-->
+          <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-300 sm:border-t-0  border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+            <ul class="leading-relaxed text-lg mb-4">
+            <li><span class="font-bold">Taille :</span> 181 cm</li>
+            <li><span class="font-bold">Poids :</span> 72 kg</li>
+            <li><span class="font-bold">Activité :</span> Sportif</li>
+            <li><span class="font-bold">Objectif :</span> Garder la ligne</li>
+            <li><span class="font-bold">Besoin journalier :</span> 2700 kcal
+            </li>
+            </ul>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
