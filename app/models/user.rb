@@ -52,7 +52,7 @@ class User < ApplicationRecord
     end
     if objective == 1 
       dailyCal - ((3500 /2 ) / 7)
-    elsif objctive == 2
+    elsif objective == 2
       dailyCal
     else
       dailyCal + ((3500 / 2) / 7)
