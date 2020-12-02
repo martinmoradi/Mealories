@@ -1,13 +1,14 @@
 # Schema.rb
-# t.string "firstName",          null: false
-# t.string "lastName",           null: false
+# t.string "firstName", null: false
+# t.string "lastName", null: false
 # t.string "email", default: "", null: false
-# t.string "objective"
-# t.decimal "weightInKg"
+# t.integer "objective"
+# t.integer "weightInKg"
 # t.string "gender"
 # t.integer "heightInCm"
 # t.integer "age"
 # t.integer "activityLevel"
+# t.boolean "admin", default: false
 ###############################################
 
 class User < ApplicationRecord
@@ -27,7 +28,7 @@ class User < ApplicationRecord
   has_many :plans
   has_many :days, through: :plans
 
-  # Using Mifflin-St-Jeor formula
+  # Using Mifflin-St-Jeor equation
   def bmr 
     if gender == "Homme" 
       ((10.0 * weightInKg) + (6.25 * heightInCm) - (5 * age) + 5 )

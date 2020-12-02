@@ -36,5 +36,19 @@ ingred = "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma "
     totalFat:           Faker::Number.within(range: 10..50)
   )
 end
-  
 puts '10 recipes created !'
+
+User.create!(
+  firstName:     "Toto",
+  lastName:      "Tootoo",
+  email:         "toto@toto.fr",
+  password:      "123456",
+  admin:         false,
+  objective:     1,
+  weightInKg:    90,
+  gender:        "Homme",
+  heightInCm:    "180",
+  age:           40,
+  activityLevel: 1
+)
+puts "Toto has created his account... Yay !"
