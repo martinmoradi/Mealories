@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: e6604d0930cca531b2998ae306792f70b9bcc14d
+  revision: ec06d217644cf3d66bd0e658c9b168af8f0c38c7
   branch: master
   specs:
     faker (2.15.1)
@@ -396,7 +396,7 @@ GEM
       google-protobuf (~> 3.11)
       googleapis-common-protos (>= 1.3.10, < 2.0)
       grpc (~> 1.27)
-    haml (5.2.0)
+    haml (5.2.1)
       temple (>= 0.8.0)
       tilt
     http-accept (1.7.0)
@@ -469,7 +469,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
-    puma (4.3.6)
+    puma (4.3.7)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-pjax (1.1.0)
@@ -558,7 +558,7 @@ GEM
       rubocop-ast (>= 0.6.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (1.2.0)
+    rubocop-ast (1.3.0)
       parser (>= 2.7.1.5)
     ruby-graphviz (1.2.5)
       rexml

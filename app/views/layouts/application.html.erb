@@ -15,6 +15,16 @@
   </head>
 
   <body>
+    <div class="flex flex-col max-w-screen h-screen justify-between">
+  <%= render "layouts/navbar" %>
+    
+    <!-- Devise Message -->
+    <p class="notice text-center"><%= notice %></p>
+    <p class="alert text-center"><%= alert %></p>
+    <!-- End Devise Message -->
+    
     <%= yield %>
+    <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

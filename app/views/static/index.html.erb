@@ -1,11 +1,31 @@
-<div class="red-card">
-  <p>Test test test 1</p>
-</div>
+<div class="container mx-auto mb-auto">
 
-<div class="red-card">
-  <p>Test test test 2</p>
-</div>
+        <!--Lead+main img-->
+  <div class="top-page flex flex-row items-center justify-around">
+  
+    <div class="left-top w-96 flex-wrap text-center md:text-left">
+      <p class="text-xl md:text-3xl lg:text-5xl text-yellow-600 font-bold mb-5">Crée ton programme nutritionnel personnalisé</p>
+      <p class="text-lg md:text-xl lg:text-3xl font-bold mb-5">Parle-nous de toi et de ton objectif santé , on s’occupe de tout !</p>
+      <%= link_to "Inscription / Connexion", new_user_registration_path, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-sm px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
+        
+     
+    </div>
 
-<div class="red-card ">
-  <p>Test test test 3 bonjour bonjour</p>
+    <div class="right-page">
+      <%= image_tag 'chef.svg', class: "chief"%>
+    </div>
+  </div>
+
+  <!--Timeline-->
+  <div class="flex flex-wrap justify-center">
+    <p>Renseigne tes informations</p>
+  </div>
+  <div class="flex justify-center">
+    <%= image_tag 'timeline-web.svg', class: "tlweb flex"%>
+  </div>
+  <div class="flex justify-around md:justify-between lg:justify-around  mb-5">
+    <p class="md:ml-28 lg:-ml-16 xl:ml-0 2xl:ml-28">Inscris-toi</p>
+    <p class="content md:hidden"></p>
+    <p class="md:mr-20 lg:-mr-24 xl:-mr-10 2xl:mr-20">Plus qu'à déguster !</p>
+  </div>
 </div>
