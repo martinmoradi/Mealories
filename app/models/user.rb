@@ -98,5 +98,23 @@ class User < ApplicationRecord
       end
   end
 
+  def lunchNeeds
+    lunchNeeds = {
+      cal: ((dailyCal * 40) / 100 ), 
+      fat: ((dailyFat * 40) / 100),
+      carbs: ((dailyCarbs * 40 ) / 100),
+      prot: ((dailyProt * 40 ) / 100)
+    }
+  end
+
+  def dinnerNeeds
+    dinnerNeeds = {
+      cal: ((dailyCal * 35) / 100),
+      fat: ((dailyFat * 35) / 100),
+      carbs: ((dailyCarbs * 35) / 100),
+      prot: ((dailyProt * 35) / 100),
+    }
+  end
+
 
 end
