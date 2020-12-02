@@ -53,3 +53,17 @@ footer {
     border-bottom: 8px solid #6dd5be;
   }  
 }
+
+.highlight {
+  font-size: 30px;
+  background-image: linear-gradient(to right, transparent 50%,#6DD5BE 50%);
+  background-origin: 0;
+  background-size: 200% 35%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.5s;
+}
+
+.highlight:hover {
+  background-position: -100% 100%;
+}
