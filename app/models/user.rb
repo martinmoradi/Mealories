@@ -19,7 +19,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable 
-         # :confirmable disabled devise confirmation
+         # :confirmable (disabled devise confirmation)
 
   validates_presence_of :firstName, :lastName
   validates             :email, uniqueness: true
