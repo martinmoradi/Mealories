@@ -17,6 +17,9 @@ class PlansController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def update
     respond_to do |format|
       if @plan.update(plan_params)
