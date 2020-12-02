@@ -35,9 +35,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.datetime :locked_at
 
       #  User details
-      t.string  :objective
-      t.decimal :weightInKg
-      t.string  :genre
+      t.integer :objective
+      t.integer :weightInKg
+      t.string  :gender
       t.integer :heightInCm
       t.integer :age 
       t.integer :activityLevel
