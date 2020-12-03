@@ -1,13 +1,13 @@
 # Schema.rb
-# t.string "firstName", null: false
-# t.string "lastName", null: false
+# t.string "first_name", null: false
+# t.string "last_name", null: false
 # t.string "email", default: "", null: false
 # t.integer "objective"
-# t.integer "weightInKg"
+# t.integer "weight_in_kgs"
 # t.string "gender"
-# t.integer "heightInCm"
+# t.integer "height_in_cms"
 # t.integer "age"
-# t.integer "activityLevel"
+# t.integer "activity_level"
 # t.boolean "admin", default: false
 ###############################################
 
@@ -15,145 +15,114 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable 
-         # :confirmable (disabled devise confirmation)
+         :recoverable, :rememberable, :validatable
+  # :confirmable (disabled devise confirmation)
 
-  validates_presence_of :firstName, :lastName
+  validates_presence_of :first_name, :last_name
   validates :email,
-    presence: true,
-    uniqueness: true,
-    format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'adresse email n'est pas correcte." }
+            presence: true,
+            uniqueness: true,
+            format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'adresse email n'est pas correcte." }
 
-  has_many :recipes, class_name: "Recipe", foreign_key: :author_id, dependent: :nullify
+  has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
   has_many :days, through: :plans
 
   # Using Mifflin-St-Jeor equation
-  def bmr 
-    if gender == "Homme" 
-      ((10.0 * weightInKg) + (6.25 * heightInCm) - (5 * age) + 5 )
-    else 
-      ((10.0 * weightInKg) + (6.25 * heightInCm) + (5 * age) - 161 )
-    end
-  end
-
-  def dailyCal
-    case activityLevel
-      when 1
-        dailyCal = bmr * 1.2
-      when 2
-        dailyCal = bmr * 1.375 
-      when 3 
-        dailyCal = bmr * 1.55
-      when 4
-        dailyCal = bmr * 1.725
-      when 5
-        dailyCal = bmr * 1.9
-    end
-    if objective == 1 
-      dailyCal - ((3500 /2 ) / 7)
-    elsif objective == 2
-      dailyCal
+  def bmr
+    if gender == 'Homme'
+      ((10.0 * weight_in_kgs) + (6.25 * height_in_cms) - (5 * age) + 5)
     else
-      dailyCal + ((3500 / 2) / 7)
+      ((10.0 * weight_in_kgs) + (6.25 * height_in_cms) + (5 * age) - 161)
     end
-    dailyCal
   end
 
-  def dailyProt
+  def daily_cal
+    case activity_level
+    when 1
+      daily_cal = bmr * 1.2
+    when 2
+      daily_cal = bmr * 1.375
+    when 3
+      daily_cal = bmr * 1.55
+    when 4
+      daily_cal = bmr * 1.725
+    when 5
+      daily_cal = bmr * 1.9
+    end
+    if objective == 1
+      daily_cal - ((3500 / 2) / 7)
+    elsif objective == 2
+      daily_cal
+    else
+      daily_cal + ((3500 / 2) / 7)
+    end
+    daily_cal
+  end
+
+  def daily_prot
     (dailyCal * 0.4) / 4
   end
 
-  def dailyCarbs
+  def daily_carbs
     (dailyCal * 0.4) / 4
   end
 
-  def dailyFat 
+  def daily_fat
     (dailyCal * 0.2) / 9
   end
 
-  def activityLevelTitle
-  case activityLevel
+  def activity_level_title
+    case activity_level
     when 1
       "Travail sédendaire et ne pratique pas ou peu d'exercice."
     when 2
-      "Pratique une activité sportive  1 à 3 fois par semaine."
+      'Pratique une activité sportive  1 à 3 fois par semaine.'
     when 3
-      "Pratique une activité sportive à effort modéré 3 à 5 fois par semaine."
+      'Pratique une activité sportive à effort modéré 3 à 5 fois par semaine.'
     when 4
-      "Pratique une activité sportive presque quotidienne."
+      'Pratique une activité sportive presque quotidienne.'
     when 5
-      "Pratique une activité sportive intense 6 à 7 fois par semaine avec un métier exigeant une activité physique."
+      'Pratique une activité sportive intense 6 à 7 fois par semaine avec un métier exigeant une activité physique.'
     end
   end
 
-  def objectiveTitle
+  def objective_title
     case objective
-      when 1
-        "Garder la ligne"
-      when 2
-        "Perdre du poids"
-      when 3
-        "Prendre du poids"
-      end
+    when 1
+      'Garder la ligne'
+    when 2
+      'Perdre du poids'
+    when 3
+      'Prendre du poids'
+    end
   end
 
-  def lunchNeeds
-    lunchNeeds = {
-      cal: ((dailyCal * 40) / 100 ), 
+  def lunch_needs
+    {
+      cal: ((dailyCal * 40) / 100),
       fat: ((dailyFat * 40) / 100),
-      carbs: ((dailyCarbs * 40 ) / 100),
-      prot: ((dailyProt * 40 ) / 100)
+      carbs: ((dailyCarbs * 40) / 100),
+      prot: ((dailyProt * 40) / 100)
     }
   end
 
-  def dinnerNeeds
-    dinnerNeeds = {
+  def dinner_needs
+    {
       cal: ((dailyCal * 35) / 100),
       fat: ((dailyFat * 35) / 100),
       carbs: ((dailyCarbs * 35) / 100),
-      prot: ((dailyProt * 35) / 100),
+      prot: ((dailyProt * 35) / 100)
     }
   end
 
-  # def generate_lunch
-  #   all_recipes = Recipe.all
-  #   lunch = all_recipes.sample
-  #  while !lunch.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100))
-  #   lunch = all_recipes.sample
-  #  end
-  #  lunchexit
-  # end
+  def generate_lunch
+    all_recipes = Recipe.all
+    all_recipes.select { |recipe| recipe.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100)) }.sample
+  end
 
   def generate_dinner
     all_recipes = Recipe.all
-    dinner = all_recipes.sample
-    while !dinner.calPerServing.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100))
-      dinner = all_recipes.sample
-    end
-    dinner
+    all_recipes.select { |recipe| recipe.calPerServing.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100)) }.sample
   end
-
-  # def generate_lunch
-  #   recipe_check = {cal: false, fat: false, carbs: false, prot: false}
-  #   all_recipes = Recipe.all
-  #   lunch = all_recipes.sample
-  #   while !recipe_check.all? { |k,v| v == true }
-  #     if lunch.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100))
-  #       recipe_check[:cal] == true
-  #     end
-  #     if lunch.fatPerServing.between?((lunchNeeds[:fat] * 90 / 100), (lunchNeeds[:fat] * 110 / 100))
-  #       recipe_check[:fat] == true
-  #     end
-  #     if lunch.protPerServing.between?((lunchNeeds[:prot] * 90 / 100), (lunchNeeds[:prot] * 110 / 100))
-  #       recipe_check[:prot] == true
-  #     end
-  #     if lunch.carbsPerServing.between?((lunchNeeds[:carbs] * 90 / 100), (lunchNeeds[:carbs] * 110 / 100))
-  #       recipe_check[:carbs] == true
-  #     end
-  #     lunch = all_recipes.sample
-  #   end
-  #   lunch
-  # end
-  
 end

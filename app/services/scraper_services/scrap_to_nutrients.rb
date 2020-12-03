@@ -37,7 +37,7 @@ module RecipeToNutrients
         translated_ingredients << translation.text.inspect
       end
       # new hash with translated infos
-      translated_recipe[:ingredientsList] = translated_ingredients.join("\n").gsub! /"/, "|"
+      translated_recipe[:ingredients_list] = translated_ingredients.join("\n").gsub! /"/, "|"
       translated_recipe[:servings] = recipe_hash[:servings]
       translated_recipe
     end
@@ -45,7 +45,7 @@ module RecipeToNutrients
     # post request to Spoonacular API 
     def post_spoonacular(translated_recipe)
       # %encode ingredients to url
-      encoded_ingr = URI.escape(translated_recipe[:ingredientsList])
+      encoded_ingr = URI.escape(translated_recipe[:ingredients_list])
       # post call block : 
       url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/parseIngredients?includeNutrition=true")
       http = Net::HTTP.new(url.host, url.port)
