@@ -1,4 +1,4 @@
-class StaticController < User::ApplicationController
+class StaticController < ApplicationController
   def index
   end
 end
