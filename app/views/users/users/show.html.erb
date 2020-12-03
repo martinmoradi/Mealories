@@ -1,20 +1,20 @@
 <div class="container mx-auto mb-auto">
   <%= render 'welcome'%>  
 
-  <div class="middle-page flex items-center justify-between">
+  <div class="middle-page flex items-center justify-evenly h-full">
 
       <!-------left-page----->
-    <div class="hidden md:contents">
-    <%= image_tag("personal_data_.svg", size: "325x272", class:"data mt-10") %>
+    <div class="hidden md:contents md:mr-10 m-auto">
+    <%= image_tag("personal_data_.svg", size: "325x272", class:"data") %>
     </div>
 
       <!-------right-page----->
     <div class="text-gray-700 bg-white shadow-lg rounded-md">
       <div class="lg:w-4/6 mx-auto">
-        <div class="flex flex-col sm:flex-row mt-10">
+        <div class="flex flex-col sm:flex-row">
               <!----card-left-->
           <div class="w-1/3 md:w-1/2 text-center sm:pr-8 sm:py-8 ml-24 md:ml-0">
-            <div class="flex flex-col items-center text-center justify-center">
+            <div class="flex flex-col items-center justify-center">
               <h2 class=" mt-4 text-gray-900 text-lg"><span class="text-primary-500 font-bold uppercase">Nom</span> Prénom</h2>
               <div class="w-12 h-1 bg-yellow-500 rounded mt-2 mb-4"></div>
   
@@ -35,6 +35,9 @@
             <li><span class="font-bold">Besoin journalier :</span> 2700 kcal
             </li>
             </ul>
+              <button class="text-white  bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-3 py-2 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+               Modifier
+              </button>
            </div>
         </div>
       </div>
