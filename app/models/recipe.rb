@@ -11,7 +11,7 @@
 # t.decimal "total_prot"
 # t.decimal "total_carbs"
 # t.decimal "total_fat"
-# t.string "marmitonUrl"
+# t.string "marmiton_url"
 #############################################
 
 class Recipe < ApplicationRecord

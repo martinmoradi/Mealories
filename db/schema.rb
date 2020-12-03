@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_41_20_162634) do
     t.decimal "total_prot"
     t.decimal "total_carbs"
     t.decimal "total_fat"
-    t.string "marmitonUrl"
+    t.string "marmiton_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_recipes_on_author_id"

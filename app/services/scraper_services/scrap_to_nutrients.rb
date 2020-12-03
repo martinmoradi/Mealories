@@ -15,7 +15,7 @@ module RecipeToNutrients
 
     # scrap the recipe from marmiton with recipe_scrapper gem 
     def scrap_recipe(recipe)
-      recipe = RecipeScraper::Recipe.new recipe.marmitonUrl
+      recipe = RecipeScraper::Recipe.new recipe.marmiton_url
       # convert recipe object to hash
       recipe_hash = recipe.to_hash
       # rename key 

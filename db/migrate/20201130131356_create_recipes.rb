@@ -13,7 +13,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.decimal    :total_prot
       t.decimal    :total_carbs
       t.decimal    :total_fat
-      t.string     :marmitonUrl
+      t.string     :marmiton_url
 
       t.timestamps
     end
