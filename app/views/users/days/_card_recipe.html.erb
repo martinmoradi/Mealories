@@ -1,0 +1,43 @@
+<div class="card">
+  <div class=" bg-gray-200 w-80 mr-5 shadow-2-xl rounded">
+        <%= image_tag recipe.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
+    <div class=" py-4 px-3">
+    <div class="flex flex-row items-center ">
+      <%= image_tag 'clock.svg', class: "clock"%>
+      <div class="text-sm ml-2 ">
+        <p><%= recipe.cook_time%> mins </p>
+      </div>
+      <%= image_tag 'calorie.svg', class: "calorie ml-3 "%>
+      <div class="text-sm  ml-2">
+       <p> <%= recipe.total_cal%> calories</p>
+      </div>
+    </div>
+      <div class="">
+        <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= recipe.title%></h1>   
+        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class=" bg-gray-200 w-80 mr-5 shadow-2-xl rounded">
+        <%= image_tag recipe.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
+    <div class=" py-4 px-3">
+    <div class="flex flex-row items-center ">
+      <%= image_tag 'clock.svg', class: "clock"%>
+      <div class="text-sm ml-2 ">
+        <p><%= recipe.cook_time%> mins </p>
+      </div>
+      <%= image_tag 'calorie.svg', class: "calorie ml-3 "%>
+      <div class="text-sm  ml-2">
+       <p> <%= recipe.total_cal%> calories</p>
+      </div>
+    </div>
+      <div class="">
+        <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= recipe.title%></h1>   
+        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
+      </div>
+    </div>
+  </div>
+</div>
