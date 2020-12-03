@@ -130,7 +130,7 @@ class User < ApplicationRecord
   end
 
   def incomplete_profile?
-    [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any? { |attribute| attribute.nil? }
+    [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any?(&:nil?)
   end
 
 

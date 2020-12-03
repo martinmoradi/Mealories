@@ -69,7 +69,7 @@ class GetNutrients
   # fetch calories from json response 
   def response_to_macros(response)    
     parsed_json = JSON.pretty_generate(JSON.parse(response.body))
-    # THIS IS AN ARRAY OF HASHES (nested to infinite T_T)
+    # this is an array of hashes (nested to infinite T_T)
     recipe_data = JSON.parse(parsed_json)
 
     # Loop through ingredients
