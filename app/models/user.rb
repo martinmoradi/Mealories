@@ -50,10 +50,13 @@ class User < ApplicationRecord
     when 5
       daily_cal = bmr * 1.9
     end
+    # loose weight
     if objective == 1
       daily_cal - ((3500 / 2) / 7)
+    # stay in shape
     elsif objective == 2
       daily_cal
+    # gain weight
     else
       daily_cal + ((3500 / 2) / 7)
     end
