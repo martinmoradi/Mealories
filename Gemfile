@@ -54,7 +54,6 @@ group :development do
   # Generate Diagram
   gem "rails-erd"
   # Table print
-  
 end
 
 group :test do
