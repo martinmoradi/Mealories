@@ -1,6 +1,7 @@
 class Users::PlansController < Users::ApplicationController
   before_action :set_plan, only: [:update, :destroy]
-
+  before_action :user_profile_incomplete
+  
   def new
     @plan = Plan.new
   end

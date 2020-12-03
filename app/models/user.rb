@@ -128,4 +128,10 @@ class User < ApplicationRecord
     all_recipes = Recipe.all
     all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
   end
+
+  def incomplete_profile?
+    [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any? { |attribute| attribute.nil? }
+  end
+
+
 end

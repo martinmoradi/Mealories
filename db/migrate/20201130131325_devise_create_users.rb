@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :weight_in_kgs
       t.string  :gender
       t.integer :height_in_cms
-      t.integer :age 
+      t.integer :age
       t.integer :activity_level
       t.boolean :admin, default: false
 
