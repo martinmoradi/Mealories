@@ -1,8 +1,4 @@
-<<<<<<< HEAD:app/controllers/plans_controller.rb
-class Users::PlansController < ApplicationController
-=======
 class Users::PlansController < Users::ApplicationController
->>>>>>> development:app/controllers/users/plans_controller.rb
   before_action :set_plan, only: [:update, :destroy]
 
   def new
