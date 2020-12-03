@@ -1,4 +1,4 @@
-class Users::DaysController < User::ApplicationController
+class Users::DaysController < Users::ApplicationController
   before_action :set_day, only: [:update, :destroy]
 
   def index

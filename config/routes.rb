@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static#index'
   devise_for :users
   
-  scope 'users', module: 'users' do 
+  scope 'users', module: 'users', shallow: true do 
     resources :plans
     resources :days
     resources :users
