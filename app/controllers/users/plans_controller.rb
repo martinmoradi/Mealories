@@ -1,4 +1,4 @@
-class Users::PlansController < User::ApplicationController
+class Users::PlansController < Users::ApplicationController
   before_action :set_plan, only: [:update, :destroy]
 
   def new

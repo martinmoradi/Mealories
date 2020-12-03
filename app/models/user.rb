@@ -50,10 +50,13 @@ class User < ApplicationRecord
     when 5
       daily_cal = bmr * 1.9
     end
+    # loose weight
     if objective == 1
       daily_cal - ((3500 / 2) / 7)
+    # stay in shape
     elsif objective == 2
       daily_cal
+    # gain weight
     else
       daily_cal + ((3500 / 2) / 7)
     end
@@ -61,15 +64,15 @@ class User < ApplicationRecord
   end
 
   def daily_prot
-    (dailyCal * 0.4) / 4
+    (daily_cal * 0.4) / 4
   end
 
   def daily_carbs
-    (dailyCal * 0.4) / 4
+    (daily_cal * 0.4) / 4
   end
 
   def daily_fat
-    (dailyCal * 0.2) / 9
+    (daily_cal * 0.2) / 9
   end
 
   def activity_level_title
@@ -100,29 +103,29 @@ class User < ApplicationRecord
 
   def lunch_needs
     {
-      cal: ((dailyCal * 40) / 100),
-      fat: ((dailyFat * 40) / 100),
-      carbs: ((dailyCarbs * 40) / 100),
-      prot: ((dailyProt * 40) / 100)
+      cal: ((daily_cal * 40) / 100),
+      fat: ((daily_fal * 40) / 100),
+      carbs: ((daily_carbs * 40) / 100),
+      prot: ((daily_prot * 40) / 100)
     }
   end
 
   def dinner_needs
     {
-      cal: ((dailyCal * 35) / 100),
-      fat: ((dailyFat * 35) / 100),
-      carbs: ((dailyCarbs * 35) / 100),
-      prot: ((dailyProt * 35) / 100)
+      cal: ((daily_cal * 35) / 100),
+      fat: ((daily_fal * 35) / 100),
+      carbs: ((daily_carbs * 35) / 100),
+      prot: ((daily_prot * 35) / 100)
     }
   end
 
   def generate_lunch
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((lunch_needs[:cal] * 90 / 100), (lunch_needs[:cal] * 110 / 100)) }.sample
   end
 
   def generate_dinner
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.calPerServing.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
   end
 end
