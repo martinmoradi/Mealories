@@ -1,46 +1,41 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-
 body {
-  min-height: 100%;
-  background-image: url(asset_path('bg-webbis.svg'));
-  // background-position-x: 10%;
-  // background-position-y: 5%;
-  background-size: cover;
+    min-height: 100%;
+    background-image: url(asset_path('bg-webbis.svg'));
+    // background-position-x: 10%;
+    // background-position-y: 5%;
+    background-size: cover;
 }
 
 .chief {
-  height: 560px;
-  width: 468px;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+    height: 560px;
+    width: 468px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
-  overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 .clock {
-  height:25px;
-  width: 25px;
+    height: 25px;
+    width: 25px;
 }
 
-.calorie {
-  height:25px;
-  width: 25px;
-}
+.calorie {}
 
 .tlweb {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
