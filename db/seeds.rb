@@ -28,7 +28,7 @@ ingred = "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma "
     cook_time:           Faker::Number.within(range: 20..360),
     steps:              Faker::Food.description,
     ingredients_list:    ingred,
-    image_url:           Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
+    image_url:           Faker::LoremPixel.image(size: "900x900", is_gray: false, category: 'food'),
     author_id:          1,
     total_cal:           Faker::Number.within(range: 500..2500),
     total_prot:          Faker::Number.within(range: 15..200),

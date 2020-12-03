@@ -5,8 +5,7 @@ class Users::DaysController < Users::ApplicationController
     @days = Day.all
   end
 
-  def show
-  end
+  def show ; end
 
   def new
     @day = Day.new
@@ -14,7 +13,6 @@ class Users::DaysController < Users::ApplicationController
 
   def create
     @day = Day.new(day_params)
-
     respond_to do |format|
       if @day.save
         format.html 

@@ -34,4 +34,9 @@ class Recipe < ApplicationRecord
   def carbs_per_serving
     ((total_carbs / servings).to_f).round(2)
   end
+
+  def total_time
+    prep_time + cook_time
+  end
+  
 end

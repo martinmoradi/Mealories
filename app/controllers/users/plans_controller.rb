@@ -6,26 +6,21 @@ class Users::PlansController < Users::ApplicationController
   end
 
   def create
-    @plan = Plan.new(plan_params)
-
-    respond_to do |format|
-      if @plan.save
-        format.html 
-      else
-        format.html 
-      end
+    @plan = Plan.new(user_id: current_user.id)
+    @plan.save
+    params[:plan][:nb_of_days].to_i.times do
+      @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
     end
   end
 
-  def show
-  end
+  def show ; end
 
   def update
     respond_to do |format|
       if @plan.update(plan_params)
-        format.html 
+        format.html
       else
-        format.html 
+        format.html
       end
     end
   end
@@ -33,7 +28,7 @@ class Users::PlansController < Users::ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html 
+      format.html
     end
   end
 
@@ -46,4 +41,5 @@ class Users::PlansController < Users::ApplicationController
   def plan_params
     params.fetch(:plan, {})
   end
+  
 end
