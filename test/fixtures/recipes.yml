@@ -3,8 +3,8 @@
 one:
   title: MyString
   servings: 1
-  preptime: 1
-  cooktime: 1
+  prep_time: 1
+  cook_time: 1
   steps: MyText
   ingredients: MyText
   image: MyString
@@ -15,8 +15,8 @@ one:
 two:
   title: MyString
   servings: 1
-  preptime: 1
-  cooktime: 1
+  prep_time: 1
+  cook_time: 1
   steps: MyText
   ingredients: MyText
   image: MyString

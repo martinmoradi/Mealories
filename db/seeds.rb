@@ -11,8 +11,8 @@ ActiveRecord::Base.connection.disable_referential_integrity do
 end
 
 User.create!(
-  firstName:    "La Team",
-  lastName:     "Mealories",
+  first_name:    "La Team",
+  last_name:     "Mealories",
   email:        "mealories@gmail.com",
   password:     "123456",
   admin:        true
@@ -20,21 +20,35 @@ User.create!(
 puts 'Mealories account created !'
 
 ingred = "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma "
-10.times do
+600.times do
   Recipe.create!(
     title:              Faker::Food.dish,
-    servings:           Faker::Number.within(range: 1..8),
-    prepTime:           Faker::Number.within(range: 10..120),
-    cookTime:           Faker::Number.within(range: 20..360),
+    servings:           Faker::Number.within(range: 1..4),
+    prep_time:           Faker::Number.within(range: 10..120),
+    cook_time:           Faker::Number.within(range: 20..360),
     steps:              Faker::Food.description,
-    ingredientsList:    ingred,
-    imageUrl:           Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
+    ingredients_list:    ingred,
+    image_url:           Faker::LoremPixel.image(size: "50x60", is_gray: false, category: 'food'),
     author_id:          1,
-    totalCal:           Faker::Number.within(range: 100..500),
-    totalProt:          Faker::Number.within(range: 10..50),
-    totalCarbs:         Faker::Number.within(range: 10..50),
-    totalFat:           Faker::Number.within(range: 10..50)
+    total_cal:           Faker::Number.within(range: 500..2500),
+    total_prot:          Faker::Number.within(range: 15..200),
+    total_carbs:         Faker::Number.within(range: 15..200),
+    total_fat:           Faker::Number.within(range: 15..200)
   )
 end
-  
-puts '10 recipes created !'
+puts '600 recipes created !'
+
+User.create!(
+  first_name:     "Toto",
+  last_name:      "Tootoo",
+  email:         "toto@toto.fr",
+  password:      "123456",
+  admin:         false,
+  objective:     1,
+  weight_in_kgs:    90,
+  gender:        "Homme",
+  height_in_cms:    "180",
+  age:           40,
+  activity_level: 1
+)
+puts "Toto has created his account... Yay !"

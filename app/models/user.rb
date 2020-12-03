@@ -1,101 +1,128 @@
 # Schema.rb
-# t.string "firstName",          null: false
-# t.string "lastName",           null: false
+# t.string "first_name", null: false
+# t.string "last_name", null: false
 # t.string "email", default: "", null: false
-# t.string "objective"
-# t.decimal "weightInKg"
+# t.integer "objective"
+# t.integer "weight_in_kgs"
 # t.string "gender"
-# t.integer "heightInCm"
+# t.integer "height_in_cms"
 # t.integer "age"
-# t.integer "activityLevel"
+# t.integer "activity_level"
+# t.boolean "admin", default: false
 ###############################################
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable 
-         # :confirmable (disabled devise confirmation)
+         :recoverable, :rememberable, :validatable
+  # :confirmable (disabled devise confirmation)
 
-  validates_presence_of :firstName, :lastName
+  validates_presence_of :first_name, :last_name
   validates :email,
-    presence: true,
-    uniqueness: true,
-    format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'adresse email n'est pas correcte." }
+            presence: true,
+            uniqueness: true,
+            format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'adresse email n'est pas correcte." }
 
-  has_many :recipes, class_name: "Recipe", foreign_key: :author_id, dependent: :nullify
+  has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
   has_many :days, through: :plans
 
-  # Using Mifflin-St-Jeor formula
-  def bmr 
-    if gender == "Homme" 
-      ((10.0 * weightInKg) + (6.25 * heightInCm) - (5 * age) + 5 )
-    else 
-      ((10.0 * weightInKg) + (6.25 * heightInCm) + (5 * age) - 161 )
-    end
-  end
-
-  def dailyCal
-    case activityLevel
-      when 1
-        dailyCal = bmr
-      when 2
-        dailyCal = bmr * 1.375 
-      when 3 
-        dailyCal = bmr * 1.46 
-      when 4
-        dailyCal = bmr * 1.725
-      when 5
-        dailyCal = bmr * 1.9
-    end
-    if objective == 1 
-      dailyCal - ((3500 /2 ) / 7)
-    elsif objctive == 2
-      dailyCal
+  # Using Mifflin-St-Jeor equation
+  def bmr
+    if gender == 'Homme'
+      ((10.0 * weight_in_kgs) + (6.25 * height_in_cms) - (5 * age) + 5)
     else
-      dailyCal + ((3500 / 2) / 7)
+      ((10.0 * weight_in_kgs) + (6.25 * height_in_cms) + (5 * age) - 161)
     end
-    dailyCal
   end
 
-  def dailyProt
+  def daily_cal
+    case activity_level
+    when 1
+      daily_cal = bmr * 1.2
+    when 2
+      daily_cal = bmr * 1.375
+    when 3
+      daily_cal = bmr * 1.55
+    when 4
+      daily_cal = bmr * 1.725
+    when 5
+      daily_cal = bmr * 1.9
+    end
+    if objective == 1
+      daily_cal - ((3500 / 2) / 7)
+    elsif objective == 2
+      daily_cal
+    else
+      daily_cal + ((3500 / 2) / 7)
+    end
+    daily_cal
+  end
+
+  def daily_prot
     (dailyCal * 0.4) / 4
   end
 
-  def dailyCarbs
+  def daily_carbs
     (dailyCal * 0.4) / 4
   end
 
-  def dailyFat 
+  def daily_fat
     (dailyCal * 0.2) / 9
   end
 
-  def activityLevelTitle
-  case activityLevel
+  def activity_level_title
+    case activity_level
     when 1
-      "Sédentaire"
+      "Travail sédendaire et ne pratique pas ou peu d'exercice."
     when 2
-      "Activité sportive une à trois fois par semaine."
+      'Pratique une activité sportive  1 à 3 fois par semaine.'
     when 3
-      "Activité sportive quatre à cinq fois par semaine."
+      'Pratique une activité sportive à effort modéré 3 à 5 fois par semaine.'
     when 4
-      "Activité sportive quotidienne ou séances intenses trois à quatre fois par semaine."
+      'Pratique une activité sportive presque quotidienne.'
     when 5
-      "Activité sportive intense six fois par semaine."
+      'Pratique une activité sportive intense 6 à 7 fois par semaine avec un métier exigeant une activité physique.'
     end
   end
 
-  def objectiveTitle
+  def objective_title
     case objective
-      when 1
-        "Garder la ligne"
-      when 2
-        "Perdre du poids"
-      when 3
-        "Prendre du poids"
-      end
+    when 1
+      'Garder la ligne'
+    when 2
+      'Perdre du poids'
+    when 3
+      'Prendre du poids'
+    end
   end
 
+  def lunch_needs
+    {
+      cal: ((dailyCal * 40) / 100),
+      fat: ((dailyFat * 40) / 100),
+      carbs: ((dailyCarbs * 40) / 100),
+      prot: ((dailyProt * 40) / 100)
+    }
+  end
 
+  def dinner_needs
+    {
+      cal: ((dailyCal * 35) / 100),
+      fat: ((dailyFat * 35) / 100),
+      carbs: ((dailyCarbs * 35) / 100),
+      prot: ((dailyProt * 35) / 100)
+    }
+  end
+
+  def generate_lunch
+    all_recipes = Recipe.all
+    all_recipes.select { |recipe| recipe.calPerServing.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100)) }.sample
+  end
+
+  def generate_dinner
+    all_recipes = Recipe.all
+    all_recipes.select { |recipe| recipe.calPerServing.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100)) }.sample
+  end
 end
