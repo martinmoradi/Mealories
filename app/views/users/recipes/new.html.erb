@@ -1,0 +1,7 @@
+<%= form_with model: @recipe, remote: true do |f| %>
+  
+
+  <%= text_area_tag(:marmiton_url, "" , size: "24x6") %>
+  <%= f.submit "Générer"%>
+  
+<% end %>

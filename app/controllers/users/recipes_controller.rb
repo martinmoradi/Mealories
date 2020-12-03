@@ -9,8 +9,7 @@ class Users::RecipesController < Users::ApplicationController
 
   # GET /recipes/1
   # GET /recipes/1.json
-  def show
-  end
+  def show ;  end
 
   # GET /recipes/new
   def new
@@ -18,21 +17,20 @@ class Users::RecipesController < Users::ApplicationController
   end
 
   # GET /recipes/1/edit
-  def edit
-  end
+  def edit ;  end
 
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
-
+    # services / get_nutrients.rb
+    fetched_params = GetNutrients.new(params[:marmiton_url]).perform
+    puts fetched_params
+    @recipe = Recipe.new(fetched_params)     
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: "La recette a été crée." }
-        format.json { render :show, status: :created, location: @recipe }
+        format.html { redirect_to root_path, notice: "La recette a été crée." }
       else
-        format.html { render :new }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, notice: "La recette n'a pas pu être ajoutée." }
       end
     end
   end
@@ -43,10 +41,8 @@ class Users::RecipesController < Users::ApplicationController
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to @recipe, notice: "La recette a été mise à jour." }
-        format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,6 @@ class Users::RecipesController < Users::ApplicationController
     @recipe.destroy
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: "La recette a été supprimée." }
-      format.json { head :no_content }
     end
   end
 
@@ -69,7 +64,7 @@ class Users::RecipesController < Users::ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def recipe_params
-    params.fetch(:recipe, {})
-  end
+  # def recipe_params
+  #   params.fetch(:recipe, {})
+  # end
 end
