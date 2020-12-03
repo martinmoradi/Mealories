@@ -2,12 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-    min-height: 100%;
-    background-image: url(asset_path('bg-webbis.svg'));
-    // background-position-x: 10%;
-    // background-position-y: 5%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  min-height: 100%;
+  background-image: url(asset_path('bg-webbis.svg'));
+  // background-position-x: 10%;
+  // background-position-y: 5%;
+  background-size: cover;
 }
 
 .chief {
