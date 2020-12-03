@@ -118,11 +118,11 @@ class User < ApplicationRecord
 
   def generate_lunch
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.cal_per_serving.between?((lunchNeeds[:cal] * 90 / 100), (lunchNeeds[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((lunch_needs[:cal] * 90 / 100), (lunch_needs[:cal] * 110 / 100)) }.sample
   end
 
   def generate_dinner
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinnerNeeds[:cal] * 90 / 100), (dinnerNeeds[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
   end
 end
