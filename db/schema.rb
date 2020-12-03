@@ -36,36 +36,36 @@ ActiveRecord::Schema.define(version: 2020_41_20_162634) do
   create_table "recipes", force: :cascade do |t|
     t.string "title", null: false
     t.integer "servings", default: 1
-    t.integer "prepTime"
-    t.integer "cookTime"
+    t.integer "prep_time"
+    t.integer "cook_time"
     t.text "steps"
-    t.text "ingredientsList"
-    t.string "imageUrl"
+    t.text "ingredients_list"
+    t.string "image_url"
     t.bigint "author_id", default: 1, null: false
-    t.decimal "totalCal"
-    t.decimal "totalProt"
-    t.decimal "totalCarbs"
-    t.decimal "totalFat"
-    t.string "marmitonUrl"
+    t.decimal "total_cal"
+    t.decimal "total_prot"
+    t.decimal "total_carbs"
+    t.decimal "total_fat"
+    t.string "marmiton_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_recipes_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "firstName", null: false
-    t.string "lastName", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "objective"
-    t.integer "weightInKg"
+    t.integer "weight_in_kgs"
     t.string "gender"
-    t.integer "heightInCm"
+    t.integer "height_in_cms"
     t.integer "age"
-    t.integer "activityLevel"
+    t.integer "activity_level"
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

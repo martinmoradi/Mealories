@@ -15,7 +15,7 @@ module RecipeToNutrients
 
     # scrap the recipe from marmiton with recipe_scrapper gem 
     def scrap_recipe(recipe)
-      recipe = RecipeScraper::Recipe.new recipe.marmitonUrl
+      recipe = RecipeScraper::Recipe.new recipe.marmiton_url
       # convert recipe object to hash
       recipe_hash = recipe.to_hash
       # rename key 
@@ -37,7 +37,7 @@ module RecipeToNutrients
         translated_ingredients << translation.text.inspect
       end
       # new hash with translated infos
-      translated_recipe[:ingredientsList] = translated_ingredients.join("\n").gsub! /"/, "|"
+      translated_recipe[:ingredients_list] = translated_ingredients.join("\n").gsub! /"/, "|"
       translated_recipe[:servings] = recipe_hash[:servings]
       translated_recipe
     end
@@ -45,7 +45,7 @@ module RecipeToNutrients
     # post request to Spoonacular API 
     def post_spoonacular(translated_recipe)
       # %encode ingredients to url
-      encoded_ingr = URI.escape(translated_recipe[:ingredientsList])
+      encoded_ingr = URI.escape(translated_recipe[:ingredients_list])
       # post call block : 
       url = URI("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/parseIngredients?includeNutrition=true")
       http = Net::HTTP.new(url.host, url.port)
