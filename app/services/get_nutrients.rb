@@ -16,7 +16,7 @@ class GetNutrients
   # scrap the recipe from marmiton with recipe_scrapper gem
   def scrap_recipe
     recipe = RecipeScraper::Recipe.new @marmiton_url
-    # convert recipe object to hash
+    # convert recipe object to hash and merge 
     @recipe_hash.merge!(recipe.to_hash)    
     # rename keys
     @recipe_hash[:servings] = @recipe_hash.delete :nb_of_persons
@@ -44,8 +44,7 @@ class GetNutrients
       translation.text.inspect
     end
     # new hash with translated infos
-    @translated_recipe[:ingredients_list] = translated_ingredients.join("\n").gsub! /"/, "|"
-    @translated_recipe[:servings] = @recipe_hash[:servings]   
+    @translated_recipe[:ingredients_list] = translated_ingredients.join("\n").gsub! /"/, "|"  
   end
 
   # post request to Spoonacular API 
@@ -59,11 +58,9 @@ class GetNutrients
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     request = Net::HTTP::Post.new(url)
     request["content-type"] = "application/x-www-form-urlencoded"
-    # TO DO = FIND A WAY TO HIDE THIS API KEY ENV NOT WORKING 
-    # request["x-rapidapi-key"] = ENV['x_rapidapi_key']
     request["x-rapidapi-key"] = ENV['X_RAPIDAPI_KEY']
     request["x-rapidapi-host"] = "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-    # content of the call
+    # body of the call with ingredients and servings
     request.body = "ingredientList=#{encoded_ingr}&#{@recipe_hash[:servings]}"
     # response 
     response = http.request(request)
@@ -97,14 +94,16 @@ class GetNutrients
       end
     end  
   end 
-
+  
+  # round to 2 decimals
  def round 
   @recipe_hash[:total_prot] = @recipe_hash[:total_prot].round(2)
   @recipe_hash[:total_cal] = @recipe_hash[:total_cal].round(2)
   @recipe_hash[:total_fat] = @recipe_hash[:total_fat].round(2)
   @recipe_hash[:total_carbs] = @recipe_hash[:total_carbs].round(2)
  end
-  
+   
+  # yay !
   def perform
     scrap_recipe
     translate_recipe
