@@ -1,16 +1,16 @@
 <div class="container mx-auto mb-auto">
   <%= render "users/users/welcome"%>
-  <p class="mt-5 ml-5 md:ml-0">Généré le : 03/12/2020</p>
-        <!---card organization-->
+  <p class="mt-5 ml-5 md:ml-0">Généré le :</p>
+        <!--card organization-->
   <div class="days flex items-center justify-center">
     <div class="mt-10 mr-1 md:mt-12">
       <i class="fas fa-angle-left fa-3x contents lg:hidden "></i>
     </div>
       	<!-- day cards start -->
-	  <div class="flex shadow-md divide-x divide-primary-700 mt-10 md:mt-14 lg:mt-16">
-      <%= @plan.days.lenght.time do %>
-      <%= render "users/days/days"%>
-      <% end %>
+	  <div class="flex mt-10 md:mt-14 lg:mt-16">
+     <% @plan.days.each.with_index do |day, idx| %>
+      <%= render "users/days/days", idx: idx %> 
+    <% end %>
     </div>
     
 	        <!-- day cards end  -->
@@ -18,10 +18,10 @@
       <i class="fas fa-angle-right fa-3x contents lg:hidden "></i>
     </div>
   </div>
-        <!--menu cards start-->
+        <!--menu cards start--->
   <div class="flex flex-row items-center justify-center ml-5 mt-16 mb-5">
-    <%= @recipes.each do |recipe| %>
-    <%= render 'users/days/card_recipe', recipe: recipe%>
+    <% @plan.days[0] do %>
+      <%= render 'users/days/card_recipe', day: @day %>
     <% end %>
-  </div>
+  </div>  
 </div>

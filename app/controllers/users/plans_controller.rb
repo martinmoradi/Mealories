@@ -1,5 +1,5 @@
 class Users::PlansController < Users::ApplicationController
-  before_action :set_plan, only: [:update, :destroy]
+  before_action :set_plan, only: [:update, :destroy, :show]
 
   def new
     @plan = Plan.new
