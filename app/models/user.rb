@@ -93,9 +93,9 @@ class User < ApplicationRecord
   def objective_title
     case objective
     when 1
-      'Garder la ligne'
+      "Perdre du poids"
     when 2
-      'Perdre du poids'
+      "Garder la ligne"
     when 3
       'Prendre du poids'
     end
@@ -104,7 +104,7 @@ class User < ApplicationRecord
   def lunch_needs
     {
       cal: ((daily_cal * 40) / 100),
-      fat: ((daily_fal * 40) / 100),
+      fat: ((daily_fat * 40) / 100),
       carbs: ((daily_carbs * 40) / 100),
       prot: ((daily_prot * 40) / 100)
     }
@@ -113,7 +113,7 @@ class User < ApplicationRecord
   def dinner_needs
     {
       cal: ((daily_cal * 35) / 100),
-      fat: ((daily_fal * 35) / 100),
+      fat: ((daily_fat * 35) / 100),
       carbs: ((daily_carbs * 35) / 100),
       prot: ((daily_prot * 35) / 100)
     }
