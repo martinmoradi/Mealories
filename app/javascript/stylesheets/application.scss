@@ -1,70 +1,64 @@
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
 @layer components {
-  
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    footer {
+        @apply flex text-sm px-5 items-center justify-evenly h-24 w-full bg-primary-500
+    }
+    .nav-links {
+        position: relative;
+        z-index: 1;
+        top: 0;
+        padding-bottom: 1.5rem;
+    }
+    .hamburger {
+        fill: #6dd5be;
+    }
+    .hamburger:hover,
+    .hamburger:active {
+        fill: #31ab90;
+        outline-color: #31ab90;
+    }
+    #nav-toggle {
+        outline-color: #afe8db;
+    }
+    #nav-toggle:focus,
+    #nav-toggle:active {
+        outline-color: #afe8db;
+    }
 }
 
-footer {
-  @apply flex text-sm px-5 items-center justify-evenly h-24 w-full bg-primary-500
-}
-
-.nav-links { 
-  position: relative;
-  z-index: 1; 
-  top: 0;
-  padding-bottom: 1.5rem;
-}
-
-.hamburger {
-  fill: #6dd5be; 
-}
-
-.hamburger:hover,
-.hamburger:active {
-  fill: #31ab90;
-  outline-color: #31ab90;
-}    
-
-#nav-toggle{ 
-  outline-color: #afe8db;
-}
-
-#nav-toggle:focus,
-#nav-toggle:active {
-  outline-color: #afe8db;
-}}
 @media (min-width: 640px) {
-  .nav-links:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    width: 100%;
-    /* or 100px */
-    border-bottom: 8px solid #6dd5be;
-  }  
+    .nav-links:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        /* or 100px */
+        border-bottom: 8px solid #6dd5be;
+    }
 }
 
 .highlight {
-  font-size: 30px;
-  background-image: linear-gradient(to right, transparent 50%,#6DD5BE 50%);
-  background-origin: 0;
-  background-size: 201% 28%;
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  transition: background-position 0.1s;
+    font-size: 30px;
+    background-image: linear-gradient(to right, transparent 50%, #6DD5BE 50%);
+    background-origin: 0;
+    background-size: 201% 28%;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    transition: background-position 0.1s;
 }
 
 .highlight:hover {
-  background-position: -100% 100%;
+    background-position: -100% 100%;
 }
 
 .bg-warning {
@@ -82,9 +76,9 @@ input[type='number']::-webkit-inner-spin-button,
   }
 
   .custom-number-input input:focus {
-    outline: none !important;
+    outline: none;
   }
 
   .custom-number-input button:focus {
-    outline: none !important;
+    outline: none;
   }
