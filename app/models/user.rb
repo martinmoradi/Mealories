@@ -93,9 +93,9 @@ class User < ApplicationRecord
   def objective_title
     case objective
     when 1
-      "Perdre du poids"
+      'Perdre du poids'
     when 2
-      "Garder la ligne"
+      'Garder la ligne'
     when 3
       'Prendre du poids'
     end
@@ -132,6 +132,4 @@ class User < ApplicationRecord
   def incomplete_profile?
     [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any?(&:nil?)
   end
-
-
 end

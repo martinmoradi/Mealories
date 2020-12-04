@@ -24,13 +24,17 @@
     <div class="flex flex-col max-w-full h-screen justify-between">
   <%= render "layouts/navbar" %>
     
-    <!-- Devise Message -->
-    <p class="notice text-center"><%= notice %></p>
-    <p class="alert text-center"><%= alert %></p>
+    <!-- Notices / Alerts  -->    
+    <p><%= notice %></p>
+    <p><%= alert %></p>
     <!-- End Devise Message -->
     
     <%= yield %>
     <%= render "layouts/footer" %>
     </div>
+
+    <!-- Stimulus.js -->
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js"></script>
   </body>
 </html>
