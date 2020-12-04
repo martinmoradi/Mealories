@@ -19,6 +19,21 @@ class Recipe < ApplicationRecord
   has_many   :lunchs,   class_name: 'Day',    foreign_key: 'lunch_id'
   has_many   :dinners,  class_name: 'Day',    foreign_key: 'dinner_id'
 
+  validates :title,             presence: true
+  validates :servings,          presence: true, numericality: true
+  validates :prep_time,         presence: true, numericality: true
+  validates :cook_time,         presence: true, numericality: true
+  validates :steps,             presence: true
+  validates :ingredients_list,  presence: true
+  validates :image_url,         presence: true
+  validates :author_id,         presence: true
+  validates :total_cal,         presence: true, numericality: true
+  validates :total_prot,        presence: true, numericality: true
+  validates :total_carbs,       presence: true, numericality: true
+  validates :total_fat,         presence: true, numericality: true
+  validates :marmiton_url,      presence: true, uniqueness: true
+
+
   def cal_per_serving
     ((total_cal / servings).to_f).round(2)
   end

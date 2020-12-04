@@ -23,6 +23,13 @@ class User < ApplicationRecord
             presence: true,
             uniqueness: true,
             format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "L'adresse email n'est pas correcte." }
+  validates :objective,       presence: true, numericality: true, on: :update
+  validates :weight_in_kgs,   presence: true, numericality: true, on: :update
+  validates :height_in_cms,   presence: true, numericality: true, on: :update
+  validates :age,             presence: true, numericality: true, on: :update
+  validates :activity_level,  presence: true, numericality: true, on: :update
+  validates :gender,          presence: true, on: :update
+  
 
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
