@@ -1,10 +1,12 @@
 <nav class="flex absolute top-0 items-center text-right justify-between flex-wrap bg-grey-darkest w-full z-10 pin-t mt-2 ">
 	<div class="md:mb-2 mb-0">
-    <div class="ml-3 mt-2">
+    <div class="flex items-center ml-3 mt-2">
       <%=link_to root_path do%>
     	<%= image_tag("logo_meal.png", size: "48x48") %>
       <% end %>
+      <%=link_to root_path do%>
       <h1 class="font-semibold select-none"><span class="text-primary-500">M</span>ealories</h1>
+      <%end%>
     </div>
   </div>
     
@@ -32,7 +34,7 @@
 			
 					</li>
 					<li class="sm:mr-8 mt-4 -mr-3">
-					<%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"bg-primary-600 font-bold hover:bg-primary-800 rounded-full py-2 px-4 text-sm no-underline text-white hover:text-blue-dark ml-2" %>
+					<%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"bg-primary-600 font-bold hover:bg-primary-800 rounded-full py-2 px-4 text-base no-underline text-white hover:text-blue-dark ml-2" %>
 					</li>
 				</ul>
 			</div>
@@ -50,7 +52,7 @@
 					</li>
 
 					<li class="sm:mr-8 mt-4 -mr-3">
-					<%= link_to "Inscription", new_user_registration_path, class:"font-bold bg-primary-600 hover:bg-primary-800 rounded-full py-2 px-4 text-sm no-underline text-white hover:text-blue-dark ml-2" %>
+					<%= link_to "Inscription", new_user_registration_path, class:"font-bold bg-primary-600 hover:bg-primary-800 rounded-full py-2 px-4 text-base no-underline text-white hover:text-blue-dark ml-2" %>
 					</li>
 				</ul>
 			</div>
