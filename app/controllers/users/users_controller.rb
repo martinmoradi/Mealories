@@ -1,5 +1,5 @@
 class Users::UsersController < Users::ApplicationController
-  before_action :user_profile_incomplete, except: :edit
+  before_action :user_profile_incomplete, only: [:show]
  
   def show
     @user = User.find(params[:id])
