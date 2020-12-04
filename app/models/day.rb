@@ -8,4 +8,6 @@ class Day < ApplicationRecord
   belongs_to :lunch , class_name: "Recipe"
   belongs_to :dinner, class_name: "Recipe"
   belongs_to :plan
+
+  validates :lunch_id, :plan_id, :dinner_id, presence: true
 end
