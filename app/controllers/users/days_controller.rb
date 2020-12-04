@@ -1,11 +1,11 @@
 class Users::DaysController < Users::ApplicationController
-  before_action :set_day, only: [:update, :destroy]
+  before_action :set_day, only: %i[update destroy]
 
   def index
     @days = Day.all
   end
 
-  def show ; end
+  def show; end
 
   def new
     @day = Day.new
@@ -15,9 +15,9 @@ class Users::DaysController < Users::ApplicationController
     @day = Day.new(day_params)
     respond_to do |format|
       if @day.save
-        format.html 
+        format.html
       else
-        format.html 
+        format.html
       end
     end
   end
@@ -25,9 +25,9 @@ class Users::DaysController < Users::ApplicationController
   def update
     respond_to do |format|
       if @day.update(day_params)
-        format.html 
+        format.html
       else
-        format.html 
+        format.html
       end
     end
   end
@@ -35,7 +35,7 @@ class Users::DaysController < Users::ApplicationController
   def destroy
     @day.destroy
     respond_to do |format|
-      format.html 
+      format.html
     end
   end
 
@@ -48,5 +48,4 @@ class Users::DaysController < Users::ApplicationController
   def day_params
     params.fetch(:day, {})
   end
-
 end

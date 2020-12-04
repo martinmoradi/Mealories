@@ -1,16 +1,40 @@
-<div class="flex shadow md:flex-row md:items-center justify-around mt-24 md:mt-32">
+<div
+  class="flex md:flex-row md:items-center justify-around mt-24 md:mt-32 container border-primary-200 border-b-4 pb-20 relative py-20">
 
-  <div class="text-left flex flex-col md:text-left mt-5">
-  <h1 class="text-3xl md:text-4xl lg-text-5xl font-serif font-bold ">Bonjour <span class="text-primary-500"><%= current_user.first_name %>,</span></h1>
-  <p class="text-xl md:text-2xl lg:text-3xl font-semibold">Bienvenue sur ton profil</p>
+  <div class="text-left flex flex-col md:text-left mt-5 absolute bottom-0 left-0">
+    <h1 class="text-3xl md:text-4xl lg-text-4xl font-serif font-semibold ">Bonjour <span
+        class="text-primary-500 text-4xl md:text-5xl font-bold ml-3 "><%= current_user.first_name %></span></h1>
+    <p class="text-xl md:text-2xl lg:text-2xl font-semibold mt-5 ml-10">Ton espace utilisateur</p>
   </div>
   
-  <div class="mt-7 md:mt-0">
-  <button class="text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
-  Menu
-  </button>
-  <button class="text-white bg-primary-600 border border-solid border-primary-500 hover:bg-white hover:text-primary-500 active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
-  Mes infos
-  </button>
+  <div class="mt-7 md:mt-0 flex flex-row absolute bottom-0 right-0 ">
+  <%= button_to "Mes informations", current_user, method: :get, class:"text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+  <%= button_to "Nouveau programme", new_plan_path, method: :get, class:"text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+  <!-- Dropdown menu -->
+  <% if current_user.plans.length > 0 %>
+    <div class="inline-block relative text-sm px-4 py-2 leading-none rounded no-underline lg:mt-0 hover:text-primary-500">
+      <div class="relative -ml-3 -mt-2" data-controller="dropdown" data-dropdown-active-class='bg-teal-700'
+        data-dropdown-active-target='#activeTarget'>
+        <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button"
+          class="inline-block select-none">
+          <span class="appearance-none flex items-center text-white z-10 bg-primary-600 border border-solid  border-primary-500 hover:text-primary-500  hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 p-2 rounded outline-none focus:outline-none mr-1 mb-1""> Mes programmes 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4 fill-current	">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+            </svg>
+          </span>
+        </div>
+        <div id='activeTarget' data-target="dropdown.menu" class="absolute right-0 mt-2 hidden z-1">
+          <div class="bg-gray-100 shadow rounded border z-1 overflow-hidden">
+            <% current_user.plans.each.with_index do |plan, idx| %>
+              <%= link_to plan_path(plan.id), class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-primary-800 hover:text-white whitespace-no-wrap z-10 relative text-center' do %>
+                <p class="pr-8 border-b border-primary-200 z-10"> Programme n°<%= idx + 1 %> </p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <!-- Dropdown end -->
   </div>
 </div>

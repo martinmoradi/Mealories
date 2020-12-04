@@ -1,6 +1,8 @@
 class Users::PlansController < Users::ApplicationController
-  before_action :set_plan, only: [:update, :destroy, :show]
+  before_action :set_plan, only: %i[update destroy show]
   before_action :user_profile_incomplete
+  # before_action :authorize_user, only: %i[update destroy show]
+
   def new
     @plan = Plan.new
   end
@@ -13,7 +15,7 @@ class Users::PlansController < Users::ApplicationController
     end
   end
 
-  def show ; end
+  def show; end
 
   def update
     respond_to do |format|
@@ -41,5 +43,11 @@ class Users::PlansController < Users::ApplicationController
   def plan_params
     params.fetch(:plan, {})
   end
-  
+
+  def authorize_user
+    if current_user != @plan.user || !current_user.admin 
+      redirect_to root_path, alert: "Accès refusé!"
+    end
+  end
+
 end

@@ -20,23 +20,24 @@ User.create!(
 puts 'Mealories account created !'
 
 ingred = "Poulet, Pomme de terre, Riz, Oignon, Ail, Curcuma "
-600.times do
+2500.times do
   Recipe.create!(
-    title:              Faker::Food.dish,
-    servings:           Faker::Number.within(range: 1..4),
+    title:               Faker::Food.dish,
+    servings:            Faker::Number.within(range: 1..4),
     prep_time:           Faker::Number.within(range: 10..120),
     cook_time:           Faker::Number.within(range: 20..360),
-    steps:              Faker::Food.description,
+    steps:               Faker::Food.description,
     ingredients_list:    ingred,
     image_url:           Faker::LoremPixel.image(size: "900x900", is_gray: false, category: 'food'),
-    author_id:          1,
+    author_id:           1,
     total_cal:           Faker::Number.within(range: 500..2500),
-    total_prot:          Faker::Number.within(range: 15..200),
-    total_carbs:         Faker::Number.within(range: 15..200),
-    total_fat:           Faker::Number.within(range: 15..200)
+    total_prot:          Faker::Number.within(range: 15..300),
+    total_carbs:         Faker::Number.within(range: 15..300),
+    marmiton_url:        Faker::Internet.url,
+    total_fat:           Faker::Number.within(range: 15..300)
   )
 end
-puts '600 recipes created !'
+puts '2500 recipes created !'
 
 User.create!(
   first_name:     "Toto",

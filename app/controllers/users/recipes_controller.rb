@@ -1,5 +1,5 @@
 class Users::RecipesController < Users::ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: %i[show edit update destroy]
 
   # GET /recipes
   # GET /recipes.json
@@ -9,7 +9,7 @@ class Users::RecipesController < Users::ApplicationController
 
   # GET /recipes/1
   # GET /recipes/1.json
-  def show ;  end
+  def show; end
 
   # GET /recipes/new
   def new
@@ -17,7 +17,7 @@ class Users::RecipesController < Users::ApplicationController
   end
 
   # GET /recipes/1/edit
-  def edit ;  end
+  def edit; end
 
   # POST /recipes
   # POST /recipes.json
@@ -25,10 +25,10 @@ class Users::RecipesController < Users::ApplicationController
     # services / get_nutrients.rb
     fetched_params = GetNutrients.new(params[:marmiton_url]).perform
     puts fetched_params
-    @recipe = Recipe.new(fetched_params)     
+    @recipe = Recipe.new(fetched_params)
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to root_path, notice: "La recette a été crée." }
+        format.html { redirect_to root_path, notice: 'La recette a été crée.' }
       else
         format.html { redirect_to root_path, notice: "La recette n'a pas pu être ajoutée." }
       end
@@ -40,7 +40,7 @@ class Users::RecipesController < Users::ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to @recipe, notice: "La recette a été mise à jour." }
+        format.html { redirect_to @recipe, notice: 'La recette a été mise à jour.' }
       else
         format.html { render :edit }
       end
@@ -52,7 +52,7 @@ class Users::RecipesController < Users::ApplicationController
   def destroy
     @recipe.destroy
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: "La recette a été supprimée." }
+      format.html { redirect_to recipes_url, notice: 'La recette a été supprimée.' }
     end
   end
 

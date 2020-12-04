@@ -1,10 +1,10 @@
 class Users::ApplicationController < ApplicationController
   before_action :authenticate_user!
+  # before_action :authorize_user
+  before_action :user_profile_incomplete
 
   def user_profile_incomplete
-    if current_user.incomplete_profile?
-      redirect_to edit_user_path(current_user.id)
-    end
+    redirect_to edit_user_path(current_user.id) if current_user.incomplete_profile?
   end
 
 end
