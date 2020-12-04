@@ -8,6 +8,10 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   User.reset_pk_sequence
   Recipe.delete_all
   Recipe.reset_pk_sequence
+  Day.delete_all
+  Day.reset_pk_sequence
+  Plan.delete_all
+  Plan.reset_pk_sequence
 end
 
 User.create!(
