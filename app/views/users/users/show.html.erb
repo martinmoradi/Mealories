@@ -32,9 +32,9 @@
             <ul class="leading-relaxed text-lg mb-4">
             <li><span class="font-bold">Taille :</span><%= @user.height_in_cms%> cm</li>
             <li><span class="font-bold">Poids :</span><%= @user.weight_in_kgs%> kg</li>
-            <li><span class="font-bold">Activité :</span><%= @user.activity_level%></li>
-            <li><span class="font-bold">Objectif :</span><%= @user.objective%></li>
-            <li><span class="font-bold">Besoin journalier :</span> 2700 kcal
+            <li><span class="font-bold">Activité :</span><%= @user.activity_level_title %></li>
+            <li><span class="font-bold">Objectif :</span><%= @user.objective_title%></li>
+            <li><span class="font-bold">Besoin journalier :</span> <%= @user.daily_cal %> kcal
             </li>
             </ul>
            </div>
