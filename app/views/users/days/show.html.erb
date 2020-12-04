@@ -1,44 +1,27 @@
-<div class="card">
-  <div class=" bg-gray-200 w-80 mr-5 shadow-2-xl rounded">
-        <%= image_tag @day.lunch.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
-    <div class=" py-4 px-3">
-    <div class="flex flex-row items-center ">
-      <%= image_tag 'clock.svg', class: "clock"%>
-      <div class="text-sm ml-2 ">
-        <p><%= @day.lunch.cook_time%> mins </p>
-      </div>
-      <%= image_tag 'calorie.svg', class: "calorie ml-3 "%>
-      <div class="text-sm  ml-2">
-       <p> <%= @day.lunch.total_cal%> calories</p>
-      </div>
+<div class="container mx-auto mb-auto">
+  <%= render "users/users/welcome"%>
+  <p class="mt-5 ml-5 md:ml-0">Généré le :</p>
+        <!--card organization-->
+  <div class="days flex items-center justify-center">
+    <div class="mt-10 mr-1 md:mt-12">
+      <i class="fas fa-angle-left fa-3x contents lg:hidden "></i>
     </div>
-      <div class="">
-        <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= @day.lunch.title%></h1>   
-        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
-      </div>
+      	<!-- day cards start -->
+	  <div class="flex mt-10 md:mt-14 lg:mt-16">
+     <% @plan.days.each.with_index do |day, idx| %>
+       <%= link_to plan_day_path(@plan.id, day.id) do %>
+         <%= render "users/days/days", idx: idx %> 
+       <% end %>
+    <% end %>
     </div>
-  </div>
-</div>
-
-
-<div class="card">
-  <div class=" bg-gray-200 w-80 mr-5 shadow-2-xl rounded">
-        <%= image_tag @day.dinner.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
-    <div class=" py-4 px-3">
-    <div class="flex flex-row items-center ">
-      <%= image_tag 'clock.svg', class: "clock"%>
-      <div class="text-sm ml-2 ">
-        <p><%= @day.dinner.cook_time%> mins </p>
-      </div>
-      <%= image_tag 'calorie.svg', class: "calorie ml-3 "%>
-      <div class="text-sm  ml-2">
-       <p> <%= @day.dinner.total_cal%> calories</p>
-      </div>
-    </div>
-      <div class="">
-        <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= @day.dinner.title%></h1>   
-        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
-      </div>
+    
+	        <!-- day cards end  -->
+    <div class="mt-10 ml-1 md:mt-12">
+      <i class="fas fa-angle-right fa-3x contents lg:hidden"></i>
     </div>
   </div>
+        <!--menu cards start--->
+  <div class="flex flex-row items-center justify-center ml-5 mt-16 mb-5">  
+      <%= render 'users/days/card_recipe', day: @day %>   
+  </div>  
 </div>

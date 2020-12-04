@@ -35,7 +35,6 @@ class User < ApplicationRecord
   has_many :plans
   has_many :days, through: :plans
   after_create :welcome_mail
-
   
   # Using Mifflin-St-Jeor equation
   def bmr
@@ -139,7 +138,7 @@ class User < ApplicationRecord
   end
 
   def incomplete_profile?
-    [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any?(&:nil?)
+    [weight_in_kgs, height_in_cms, age].any?(&:zero?)
   end
 
   private 

@@ -8,8 +8,8 @@
     </div>
       	<!-- day cards start -->
 	  <div class="flex mt-10 md:mt-14 lg:mt-16">
-     <% @plan.days.each.with_index do |day, idx| %>
-       <%= link_to plan_day_path(@plan.id) do %>
+     <% @days.each.with_index do |day, idx| %>
+       <%= link_to plan_day_path(@plan.id, day.id) do %>
          <%= render "users/days/days", idx: idx %> 
        <% end %>
     <% end %>
@@ -17,13 +17,8 @@
     
 	        <!-- day cards end  -->
     <div class="mt-10 ml-1 md:mt-12">
-      <i class="fas fa-angle-right fa-3x contents lg:hidden "></i>
+      <i class="fas fa-angle-right fa-3x contents lg:hidden"></i>
     </div>
   </div>
-        <!--menu cards start--->
-  <div class="flex flex-row items-center justify-center ml-5 mt-16 mb-5">
-    <% @plan.days[0] do %>
-      <%= render 'users/days/card_recipe', day: @day %>
-    <% end %>
-  </div>  
+
 </div>

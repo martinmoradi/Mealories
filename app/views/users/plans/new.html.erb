@@ -1,7 +1,9 @@
+<div class="container">
 <%= form_with model: @plan, remote: true do |f| %>
   
-
+  <%= f.label :nb_of_days, "Nombre de jours :" %>
   <%= f.number_field(:nb_of_days, in: 1..14, step: 1) %>
   <%= f.submit "Générer"%>
   
 <% end %>
+</div>

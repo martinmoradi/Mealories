@@ -1,12 +1,12 @@
 class Users::DaysController < Users::ApplicationController
   before_action :set_day, only: %i[show update destroy]
+  before_action :find_plan, only: %i[show update destroy]
 
   def index
     @days = Day.all
   end
 
   def show     
-    # @day = @days.find(params[:id])
     # puts @day.inspect
   end
 
@@ -50,5 +50,9 @@ class Users::DaysController < Users::ApplicationController
 
   def day_params
     params.fetch(:day, {})
+  end
+
+  def find_plan
+    @plan = Plan.find(params[:plan_id])
   end
 end

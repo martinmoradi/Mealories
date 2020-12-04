@@ -60,12 +60,12 @@ ActiveRecord::Schema.define(version: 2020_41_20_162634) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "objective"
-    t.integer "weight_in_kgs"
-    t.string "gender"
-    t.integer "height_in_cms"
-    t.integer "age"
-    t.integer "activity_level"
+    t.integer "objective", default: 1
+    t.integer "weight_in_kgs", default: 0
+    t.string "gender", default: "Homme"
+    t.integer "height_in_cms", default: 0
+    t.integer "age", default: 0
+    t.integer "activity_level", default: 1
     t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

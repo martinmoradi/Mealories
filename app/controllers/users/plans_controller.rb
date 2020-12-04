@@ -20,7 +20,9 @@ class Users::PlansController < Users::ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @days = @plan.days
+  end
 
   def update
     respond_to do |format|
