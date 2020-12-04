@@ -14,7 +14,7 @@
     </div>
       <div class="">
         <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= day.lunch.title%></h1>   
-        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
+         <%= link_to 'Voir la recette', recipe_path(day.lunch), class:"py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded" %>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
     </div>
       <div class="">
         <h1 class="text-xl font-bold  text-gray-900 mt-2"><%= day.dinner.title%></h1>   
-        <a href="" class="py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded">Voir la recette</a>
+        <%= link_to 'Voir la recette', recipe_path(day.dinner), class:"py-2 px-3 font-bold mt-2 text-white  bg-primary-600 inline-block rounded" %>
       </div>
     </div>
   </div>

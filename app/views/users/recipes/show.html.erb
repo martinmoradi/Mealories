@@ -30,13 +30,13 @@
       </div>
       <div class="mt-14">
         <%= link_to 'Voir la recette', @recipe.marmiton_url, class:"mt-14 ml-14 px-4 inline py-2 text-sm text-lg text-white rounded-lg  bg-primary-600"%>
+         <%= link_to "Retour", request.referer.present? ? request.referer : default_path, class:"text-white bg-warning border border-solid hover:border-warning hover:text-warning hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"  %>
         </div>
         
       </div>
     
     <div class=" max-w-lg ">
       <%= image_tag @recipe.image_url%>
-    </div>
+    </div>        
   </div>
 </div>
-
