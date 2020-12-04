@@ -1,3 +1,10 @@
+https://mealories.herokuapp.com/
+
+admin :
+toto@toto.fr
+123456
+
+
 🍴 Mealories 🍴
 
 🍣 Présentation 🍣
