@@ -9,7 +9,9 @@
       	<!-- day cards start -->
 	  <div class="flex mt-10 md:mt-14 lg:mt-16">
      <% @plan.days.each.with_index do |day, idx| %>
-      <%= render "users/days/days", idx: idx %> 
+       <%= link_to plan_day_path(@plan.id) do %>
+         <%= render "users/days/days", idx: idx %> 
+       <% end %>
     <% end %>
     </div>
     

@@ -1,11 +1,14 @@
 class Users::DaysController < Users::ApplicationController
-  before_action :set_day, only: %i[update destroy]
+  before_action :set_day, only: %i[show update destroy]
 
   def index
     @days = Day.all
   end
 
-  def show; end
+  def show     
+    # @day = @days.find(params[:id])
+    # puts @day.inspect
+  end
 
   def new
     @day = Day.new
