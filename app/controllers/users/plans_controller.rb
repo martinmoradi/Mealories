@@ -9,14 +9,11 @@ class Users::PlansController < Users::ApplicationController
 
   def create
     @plan = Plan.new(user_id: current_user.id)
-    respond_to do |format|
       if @plan.save
         params[:plan][:nb_of_days].to_i.times do
           @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
-        end      
-        format.html { redirect_to plan_path(@plan.id) }
-        format.js {}
-      end    
+        end    
+        redirect_to plan_path(@plan)       
     end
   end
 

@@ -10,7 +10,7 @@ class Users::UsersController < Users::ApplicationController
   end
 
   def update
-    current_user.update(user_params)       
+    current_user.update(user_params)
     redirect_to user_path
   end
 
