@@ -34,7 +34,9 @@ class User < ApplicationRecord
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
   has_many :days, through: :plans
+  after_create :welcome_mail
 
+  
   # Using Mifflin-St-Jeor equation
   def bmr
     if gender == 'Homme'
@@ -139,4 +141,12 @@ class User < ApplicationRecord
   def incomplete_profile?
     [objective, weight_in_kgs, gender, height_in_cms, age, activity_level].any?(&:nil?)
   end
+
+  private 
+
+  def welcome_mail
+    UserMailer.welcome_email(self).deliver_now
+  end
+
+  
 end

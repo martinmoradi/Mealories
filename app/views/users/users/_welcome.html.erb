@@ -17,17 +17,17 @@
         data-dropdown-active-target='#activeTarget'>
         <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button"
           class="inline-block select-none">
-          <span class="appearance-none flex items-center text-white bg-primary-600 border border-solid  border-primary-500 hover:text-primary-500  hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 p-2 rounded outline-none focus:outline-none mr-1 mb-1""> Mes programmes 
+          <span class="appearance-none flex items-center text-white z-10 bg-primary-600 border border-solid  border-primary-500 hover:text-primary-500  hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 p-2 rounded outline-none focus:outline-none mr-1 mb-1""> Mes programmes 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4 fill-current	">
               <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
             </svg>
           </span>
         </div>
-        <div id='activeTarget' data-target="dropdown.menu" class="absolute right-0 mt-2 hidden">
-          <div class="bg-gray-100 shadow rounded border overflow-hidden">
+        <div id='activeTarget' data-target="dropdown.menu" class="absolute right-0 mt-2 hidden z-1">
+          <div class="bg-gray-100 shadow rounded border z-1 overflow-hidden">
             <% current_user.plans.each.with_index do |plan, idx| %>
-              <%= link_to plan_path(plan.id), class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-primary-800 hover:text-white whitespace-no-wrap z-10 text-center' do %>
-                <p class="pr-8 border-b border-primary-200 "> Programme n°<%= idx + 1 %> </p>
+              <%= link_to plan_path(plan.id), class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-primary-800 hover:text-white whitespace-no-wrap z-10 relative text-center' do %>
+                <p class="pr-8 border-b border-primary-200 z-10"> Programme n°<%= idx + 1 %> </p>
               <% end %>
             <% end %>
           </div>
