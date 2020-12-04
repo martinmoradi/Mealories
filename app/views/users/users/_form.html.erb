@@ -1,5 +1,5 @@
 <div class="container mx-auto mb-auto">
-  <%= render 'welcomeedit'%>  
+  <%= render 'welcome'%>  
 
   <div class="middle-page flex items-center justify-evenly h-full">
 
@@ -9,8 +9,8 @@
     </div>
 
       <!-------right-page----->
-    <div class="text-gray-700 bg-white shadow-lg rounded-md relative -mt-20 md:mt-0">
-      <%= form_with(model: current_user, method: "put", local: true) do |form| %>
+    <div class="text-gray-700 bg-gray-100 shadow-lg rounded-md relative -mt-20 md:mt-0">
+      <%= form_with(model: @user, method: "put") do |form| %>
       <div class="lg:w-full mx-5 md:mx-auto">
         <div class="flex flex-col sm:flex-row">
               <!----card-left-->
@@ -28,7 +28,7 @@
                 <li>
               <div class="field font-bold">
                 <%= form.label :age, "Âge :" %>
-                <%= form.number_field :user, value:current_user.age, required: true, class:"outline-none w-10 md:w-20" %>
+                <%= form.number_field :age, value:current_user.age, required: true, class:"outline-none w-10 md:w-20" %>
               </div></li>
               <li>
               <div class="field font-bold">
@@ -36,15 +36,15 @@
                 <%= form.text_field :email, required: true, class:"w-32 outline-none focus:ring-1 focus:ring-primary-500 rounded-md" %>
               </div></li>
               </ul>
-              <%= submit_tag 'Mettre à jour', class:"cursor-pointer text-white  bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-1 py-1 md:mt-3 rounded outline-none focus:outline-none mr-1 mb-1" ,type:"button", style:"transition: all .15s ease" %>
-
+             
+              
             </div>
           </div>
           <!----card-right-->
           <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-300 sm:border-t-0  border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
             <ul class="leading-relaxed text-lg mb-4">
-            <li><span class="font-bold">Taille :</span><%= form.number_field :user, value:current_user.height_in_cms, required: true, class:"outline-none ml-1 w-16 md:w-20" %> cm</li>
-            <li><span class="font-bold">Poids :</span><%= form.number_field :user, value:current_user.weight_in_kgs, required: true, class:"outline-none w-16 ml-1 md:w-20"%> kg</li>
+            <li><span class="font-bold">Taille :</span><%= form.number_field :height_in_cms, value:current_user.height_in_cms, required: true, class:"outline-none ml-1 w-16 md:w-20" %> cm</li>
+            <li><span class="font-bold">Poids :</span><%= form.number_field :weight_in_kgs, value:current_user.weight_in_kgs, required: true, class:"outline-none w-16 ml-1 md:w-20"%> kg</li>
             <li><span class="font-bold text-base">Activité :</span><%= form.select :activity_level, [["Travail sédendaire + pas de sport", "1"],['Sport léger 1 à 3 fois par semaine', "2"], ['Sport modéré 3 à 5 fois par semaine', "3"], ['Activité sportive presque quotidienne', "4"], ['Métier exigeant + sport intense', "5"]], required: true %></li>
             <li><span class="font-bold">Objectif :</span><%= form.select :objective, [["Perdre du poids", "1"], ["Garder la ligne", "2"], ["Prendre du poids", "3"]]%></li>
             <li><span class="font-bold">Besoin journalier :</span> <%= @user.daily_cal %> kcal
@@ -53,6 +53,7 @@
            </div>
         </div>
       </div>
+       <%= form.submit 'Mettre à jour', class:"cursor-pointer text-white  bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-1 py-1 md:mt-3 rounded outline-none focus:outline-none mr-1 mb-1"%>
       <%end%>
     </div>
   </div>

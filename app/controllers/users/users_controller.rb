@@ -8,9 +8,12 @@ class Users::UsersController < Users::ApplicationController
   end
 
   def update
-    @user =  current_user
-    user_params =  params.require(:user).permit(:first_name, :last_name, :email, :objective, :weight_in_kgs, :gender, :age, :height_in_cms, :activity_level)
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    current_user.update(user_params)       
+    redirect_to user_path
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :objective, :weight_in_kgs, :gender, :age, :height_in_cms, :activity_level)
   end
 end
