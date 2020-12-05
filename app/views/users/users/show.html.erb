@@ -34,7 +34,7 @@
               <li><span class="font-semibold tracking-wide">Poids : </span><%= @user.weight_in_kgs %> kg</li>
               <li><span class="font-semibold tracking-wide">Activité : </span><%= @user.activity_level_title %></li>
               <li><span class="font-semibold tracking-wide">Objectif : </span><%= @user.objective_title %></li>
-              <li><span class="font-semibold tracking-wide">Besoin journalier : </span><%= @user.daily_cal %> kcal</li>           
+              <li><span class="font-semibold tracking-wide">Besoin journalier : </span><%= @user.daily_cal.to_d %> kcal</li>           
             </ul>
            </div>
         </div>
