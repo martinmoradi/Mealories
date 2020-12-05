@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+// Tailwind components
 @layer components {
     html,
     body {
@@ -33,7 +34,9 @@
         outline-color: #afe8db;
     }
 }
+// Tailwind components end
 
+// Media queries 
 @media (min-width: 640px) {
     .nav-links:after {
         content: "";
@@ -46,7 +49,10 @@
         border-bottom: 8px solid #6dd5be;
     }
 }
+// Media queries end 
 
+
+// Miscellaneous
 .highlight {
     font-size: 30px;
     background-image: linear-gradient(to right, transparent 50%, #6DD5BE 50%);
@@ -64,21 +70,25 @@
 .bg-warning {
   background-color: #DE734E;
 }
+// // Miscellaneous end
 
-// .highlightstatic {
-//   background-color:#6DD5BE;
-// }
 
+// Modal days generation 
 input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    -webkit-appearance: none !important;
+    margin: 0 !important;
   }
 
   .custom-number-input input:focus {
-    outline: none;
+    outline: none !important;
   }
 
   .custom-number-input button:focus {
-    outline: none;
+    outline: none !important;
   }
+
+  #btn-modal {
+      outline: none !important;
+  }
+// Modal days generation end 
