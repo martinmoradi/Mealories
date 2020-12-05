@@ -1,0 +1,78 @@
+  <div class="mt-7 md:mt-0 flex flex-row">
+    <%= button_to "Mes infos", current_user, method: :get, class:"cursor-pointer text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+    <%= button_to "Créer plan", new_plan_path, method: :get, class:"cursor-pointer text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+
+    <!-- new plan modal -->
+    <% unless current_user.incomplete_profile? %>
+      <div data-controller="modal" data-modal-allow-background-close="false">
+        <a href="#" data-action="click->modal#open"
+          class="text-white bg-primary-600 border border-solid border-primary-500 self-start hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none -mb-4">
+          <span>Nouveau programme AJAX</span></a>
+
+        <!-- Modal Container -->
+        <div data-target="modal.container"
+          data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+          class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center"
+          style="z-index: 9999;">
+          <!-- Modal Inner Container -->
+          <div class="max-h-screen w-full max-w-lg relative">
+            <!-- Modal Card -->
+            <div class="m-1 bg-white rounded shadow">
+              <div class="p-8">
+                <h2 class="text-xl mb-4 text-center">Combien de jours veux-tu générer ?</h2>
+                <div class="flex flex-wrap justify-center">
+                  <%= form_with(model: @post, url: plan_path(current_user.id)) do |f| %>
+                  <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 -mr-25">
+                    <button data-action="decrement"
+                      class=" bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
+                      <span class="m-auto text-2xl font-thin">−</span>
+                    </button>
+                    <%= f.number_field(:nb_of_days, in: 1..7, step: 1, value: 1, class: "bg-white text-sm text-gray-900 text-center focus:outline-none border w-full text-gray-700 text-sm font-semibold border-primary-800 focus:border-primary-600 rounded-l-md w-full p-1 text-xl") %>
+                    <button data-action="increment"
+                      class="bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-r cursor-pointer">
+                      <span class="m-auto text-2xl font-thin">+</span>
+                    </button>
+                  </div>
+                </div>              
+                <div class="flex justify-end items-center flex-wrap mt-6">
+                  <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+                <% end %>
+                  <button
+                    class="text-white bg-warning border border-solid hover:border-warning hover:text-warning hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
+                    data-action="click->modal#close">Retour</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <!-- Dropdown menu -->
+    <% if current_user.plans.length > 0 %>
+    <div
+      class="inline-block relative text-sm px-4 py-2 leading-none rounded no-underline lg:mt-0 hover:text-primary-500">
+      <div class="relative -ml-3 -mt-2" data-controller="dropdown" data-dropdown-active-class='bg-teal-700'
+        data-dropdown-active-target='#activeTarget'>
+        <div data-action="click->dropdown#toggle click@window->dropdown#hide" role="button"
+          class="inline-block select-none">
+          <span
+            class="appearance-none flex items-center text-white z-10 bg-primary-600 border border-solid  border-primary-500 hover:text-primary-500  hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 p-2 rounded outline-none focus:outline-none mr-1 mb-1""> Mes programmes 
+            <svg xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 w-4 fill-current	">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+            </svg>
+          </span>
+        </div>
+        <div id='activeTarget' data-target="dropdown.menu" class="absolute right-0 mt-2 hidden z-1">
+          <div class="bg-gray-100 shadow rounded border z-1 overflow-hidden">
+            <% current_user.plans.each.with_index do |plan, idx| %>
+            <%= link_to plan_path(plan.id), class: 'no-underline block pl-8 py-3 text-gray-900 bg-white hover:bg-primary-800 hover:text-white whitespace-no-wrap z-10 relative text-center' do %>
+            <p class="pr-8 border-b border-primary-200 z-10"> Programme n°<%= idx + 1 %> </p>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <!-- Dropdown end -->
+  </div>
