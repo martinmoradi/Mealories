@@ -45,30 +45,34 @@ class User < ApplicationRecord
     end
   end
 
-  def daily_cal
+  def bmr_activity
     case activity_level
     when 1
-      daily_cal = bmr * 1.2
+      bmr * 1.2
     when 2
-      daily_cal = bmr * 1.375
+      bmr * 1.375
     when 3
-      daily_cal = bmr * 1.55
+      bmr * 1.55
     when 4
-      daily_cal = bmr * 1.725
+      bmr * 1.725
     when 5
-      daily_cal = bmr * 1.9
+       bmr * 1.9
+    else
+      daily_cal
     end
+  end
+    
+  def daily_cal
     # loose weight
     if objective == 1
-      daily_cal - ((3500 / 2) / 7)
+      bmr_activity - ((3500 / 2) / 7)
     # stay in shape
     elsif objective == 2
-      daily_cal
+      bmr_activity
     # gain weight
     else
-      daily_cal + ((3500 / 2) / 7)
-    end
-    daily_cal
+      bmr_activity + ((3500 / 2) / 7)
+    end    
   end
 
   def daily_prot
