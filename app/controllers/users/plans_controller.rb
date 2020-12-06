@@ -19,6 +19,15 @@ class Users::PlansController < Users::ApplicationController
 
   def show
     @days = @plan.days
+    respond_to do |format|
+      format.html do
+        #code html
+      end
+
+      format.js do
+        #code js
+      end
+    end
   end
 
   def update

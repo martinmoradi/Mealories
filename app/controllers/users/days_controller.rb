@@ -7,7 +7,15 @@ class Users::DaysController < Users::ApplicationController
   end
 
   def show     
-    # puts @day.inspect
+    respond_to do |format|
+      format.html do
+        #code html
+      end
+
+      format.js do
+        #code js
+      end
+    end
   end
 
   def new
