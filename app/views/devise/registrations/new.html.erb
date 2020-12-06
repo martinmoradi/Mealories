@@ -1,48 +1,107 @@
-    <!-------left-page----->
-    <div class="container  h-full p-2 flex flex-row justify-center lg:justify-between items-center ">
-      <div class="left-page hidden md:hidden lg:block lg:ml-20">
-          <%= image_tag 'ramen.svg', class: "ramen"%>
+<div class="min-h-80 my-auto flex flex-col justify-center py-12 sm:px-6 lg:px-8 max-h-90">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+
+    <%= image_tag 'logogo', class:"mx-auto h-12 w-auto" %>
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+      Inscription
+    </h2>
+    <p class="mt-2 text-center text-sm text-gray-600 max-w">
+      L'équipe Mealories est heureuse de vous accueillir !
+      </a>
+    </p>
+  </div>
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-wizard js-form-wizard form-y-6") do |f| %>
+
+      <div class="input-container ic2">
+        <%= f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+            class="h-7 w-7 text-gray-300">
+            <g data-name="Layer 16">
+              <path
+                d="M58,11.42H6a3.5,3.5,0,0,0-3.5,3.5V49.08A3.5,3.5,0,0,0,6,52.58H58a3.5,3.5,0,0,0,3.5-3.5V14.92A3.5,3.5,0,0,0,58,11.42Zm.5,37.66a.5.5,0,0,1-.5.5H6a.5.5,0,0,1-.5-.5V14.92a.5.5,0,0,1,.5-.5H58a.5.5,0,0,1,.5.5Z" />
+              <path
+                d="M53.57,17.93a1.5,1.5,0,0,0-2.12-.14L35.73,31.48,32,34.73l-3.73-3.25L12.55,17.79a1.5,1.5,0,0,0-2,2.26L25,32.6,11,43.86a1.5,1.5,0,0,0,1.88,2.34L27.28,34.6c5.71,4.83,3.74,4.81,9.44,0L51.17,46.2a1.5,1.5,0,0,0,1.88-2.34L39,32.6,53.42,20.05A1.5,1.5,0,0,0,53.57,17.93Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="email" class="placeholder">Email</>
       </div>
 
-    <!-------right-page----->
-      <div class="right-page ">
-      <div class=" p-12 form_wrapper max-w-sm mx-auto shadow-2xl  bg-primary-200 rounded-lg ">
-        <h1 class="text-4xl	 font-bold text-center"> <span class="jumbo-header text-lb:text-6xl m-auto ">Inscription</span></h1>    
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        
-            <div class="field mt-10 ">
-              <%= f.text_field :first_name, autofocus: true, placeholder: 'Prénom',  required: true, class:"block w-full p-3 mt-2   bg-gray-100 border-gray-100 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"%>
-              <br />
-            </div>
+      <div class="input-container mt-6">
+        <%= f.text_field :first_name, autofocus: true, placeholder: 'Prénom',  required: true, class:"input form-control js-form-control"%>
+        <div class="cut bg-gray-100"></div>
+        <div class="absolute inset-y-0 right-0 -mr-1 pt-5 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+            class="h-11 w-11 text-gray-300">
+            <g data-name="Layer 16">
+              <path d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z"/>
+            </g>
+          </svg>
+        </div>
+        <label for="Prénom" class="placeholder">Prénom</label>
+      </div>
 
-            <div class="field ">
-              <%= f.text_field :last_name, autofocus: true, placeholder: 'Nom', required: true, class:"block w-full p-3 mt-2   bg-gray-100 border-gray-100 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500" %>
-              <br />
-            </div>
-
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "email", required: true, class:"block w-full p-3 mt-2   bg-gray-100 border-gray-100 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500" %>
-              <br />
-            </div>
-
-            <div class="field">
-              <%= f.password_field :password, placeholder: 'Mot de passe', autocomplete: "new-password", required: true, class:"block w-full p-3 mt-2   bg-gray-100 border-gray-100 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500" %>
-              <% if @minimum_password_length %>
-              <span class="text-xs italic text-gray-500 mt-1 ml-2">(<%= @minimum_password_length %> caractères minimum)</span>
-              <% end %><br />
-            </div>
-
-            <div class="field">
-              <%= f.password_field :password_confirmation, placeholder: 'Confirmer le mot de passe', autocomplete: "new-password", required: true, class:"block w-full p-3 mt-2   bg-gray-100 border-gray-100 rounded-xl placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500" %>
-            </div>
-
-            <div class="actions flex justify-center">
-              <%= f.submit "Valider", class:"focus:outline-none block w-full mt-5 bg-primary-500 hover:bg-primary-400 py-4 px-6 block rounded-xl text-white cursor-pointer font-black" %>
-            </div>
-
-            <% end %>
+      <div class="input-container ic2">
+        <%= f.text_field :last_name, autofocus: true, placeholder: 'Nom',  required: true, class:"input form-control js-form-control"%>
+        <div class="absolute inset-y-0 right-0 -mr-1 pt-5 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+            class="h-11 w-11 text-gray-300">
+            <g data-name="Layer 16">
+              <path d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z"/>
+            </g>
+          </svg>
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Nom" class="placeholder">Nom </label>
+      </div>
+      <div class="input-group js-input-group">
+        <div class="input-container ic2">
+          <%= f.password_field :password, placeholder: 'Mot de passe', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>
+          <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+            class="h-11 w-11 text-gray-300">
+            <g data-name="Layer 16">
+              <path d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z"/>
+            </g>
+          </svg>
+        </div>
+          <% if @minimum_password_length %>
+          <span class="text-xs italic text-gray-500 mt-1 ml-2">(<%= @minimum_password_length %> caractères
+            minimum)</span>
+          <% end %>
+          <div class="cut cut-large bg-gray-100"></div>
+          <label for="password" class="placeholder">Mot de passe</>
+        </div>
+        <div class="input-group js-input-group">
+          <div class="input-container ic1">
+            <%= f.password_field :password_confirmation, placeholder: 'Confirmer le mot de passe', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>
+             <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+            class="h-11 w-11 text-gray-300">
+            <g data-name="Layer 16">
+              <path d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z"/>
+            </g>
+          </svg>
+        </div>
+            <div class="cut cut-large bg-gray-100"></div>
+            <label for="password_confirmation" class="placeholder">Confirmation</>
           </div>
         </div>
+
+        <div class="text-center text-gray-500 mt-4">
+         <%= render "devise/shared/links" %>
+        </div>
+
+        <div>
+          <%= f.submit "Valider", class:"focus:outline-none block w-full mt-5 bg-primary-500 hover:bg-primary-400 py-4 px-6 block rounded-xl text-white cursor-pointer font-black" %>
+        </div>
+
+        <% end %>
       </div>
     </div>
   </div>
+</div>
