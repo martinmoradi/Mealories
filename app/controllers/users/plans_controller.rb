@@ -7,6 +7,10 @@ class Users::PlansController < Users::ApplicationController
     @plan = Plan.new
   end
 
+  def index
+    @plans = Plan.where(user_id: current_user.id)
+  end
+
   def create
     @plan = Plan.new(user_id: current_user.id)
       if @plan.save
