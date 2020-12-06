@@ -1,0 +1,16 @@
+ <%= form_with(model: @post, url: plan_path(current_user.id)) do |f| %>
+                <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 -mr-25">
+                  <button data-action="decrement"
+                    class=" bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
+                    <span class="m-auto text-2xl font-thin">−</span>
+                  </button>
+                  <%= f.number_field(:nb_of_days, in: 1..7, step: 1, value: 1, class: "bg-white text-sm text-gray-900 text-center focus:outline-none border w-full text-gray-700 text-sm font-semibold border-primary-800 focus:border-primary-600 rounded-l-md w-full p-1 text-xl") %>
+                  <button data-action="increment"
+                    class="bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-r cursor-pointer">
+                    <span class="m-auto text-2xl font-thin">+</span>
+                  </button>
+                </div>
+              </div>              
+              <div class="flex justify-end items-center flex-wrap mt-6">
+                <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+                <% end %>
