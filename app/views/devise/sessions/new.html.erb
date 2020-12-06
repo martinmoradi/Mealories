@@ -33,7 +33,7 @@
 
       <div class="input-group js-input-group">
         <div class="input-container ic2">
-          <%= f.password_field :password, placeholder: '', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>
+          <%= f.password_field :password, placeholder: '', autocomplete: "new-password", required: true, class:"input js-form-control" %>
           <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
               class="h-11 w-11 text-gray-300">
@@ -53,7 +53,7 @@
         </div>
 
         <div>
-          <%= f.submit "Valider", class:"focus:outline-none block w-full mt-5 bg-primary-500 hover:bg-primary-400 py-4 px-6 block rounded-xl text-white cursor-pointer font-black" %>
+          <%= f.submit "Valider", class:"submit" %>
         </div>
 
         <% end %>

@@ -14,7 +14,7 @@
     <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), class:"form-wizard js-form-wizard form-y-6", html: { method: :post }) do |f| %>
       <div class="input-container ic2">
-        <%= f.email_field :email, autofocus: true, placeholder: 'Email', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <%= f.email_field :email, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
         <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
             class="h-7 w-7 text-gray-300">
@@ -35,7 +35,7 @@
       </div>
 
       <div>
-        <%= f.submit "Envoyer", class:"focus:outline-none block w-full mt-5 bg-primary-500 hover:bg-primary-400 py-4 px-6 block rounded-xl text-white cursor-pointer font-black" %>
+        <%= f.submit "Envoyer", class:"submit" %>
       </div>
 
       <% end %>
