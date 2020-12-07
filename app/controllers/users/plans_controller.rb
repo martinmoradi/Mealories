@@ -47,7 +47,8 @@ class Users::PlansController < Users::ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html
+      format.html {redirect_to plans_path}
+      format.js {}
     end
   end
 
