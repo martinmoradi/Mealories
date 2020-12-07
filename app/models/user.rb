@@ -145,6 +145,29 @@ class User < ApplicationRecord
     [weight_in_kgs, height_in_cms, age].any?(&:zero?)
   end
 
+  #body mass index
+  def bmi
+    weight_in_kgs / ((height_in_cms / 100) * (height_in_cms / 100)) 
+  end
+
+  def bmi_text
+   if bmi.between?(1, 16.5)
+    "Famine"
+   elsif bmi.between?(16.6, 18.5)
+    "Maigreur" 
+   elsif bmi.between?(18.6, 25)
+    "Corpulence normale" 
+   elsif bmi.between?(25.1, 30)
+    "Surpoids"
+   elsif bmi.between?(30.1, 35)
+    "Obésité modérée" 
+   elsif bmi.between?(35.1, 40)
+    "Obésité sévère" 
+   else 
+    "Obésité morbide"
+   end
+  end
+
   private 
 
   def welcome_mail
