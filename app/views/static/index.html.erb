@@ -1,18 +1,18 @@
-<div class="container mx-auto mb-auto">
-  
-      <!--Lead+main img-->
+<div class="container mx-auto mb-auto relative min-h-full">
+
+  <!--Lead+main img-->
   <div class="top-page flex flex-row items-center justify-around">
-  
+
     <div class="left-top w-96 flex-wrap text-center md:text-left">
       <p class="text-xl md:text-3xl lg:text-5xl text-yellow-600 font-bold mb-5">Crée ton menu personnalisé</p>
       <p class="text-lg md:text-xl lg:text-3xl font-bold mb-5">Parle-nous de toi, on s’occupe de tout !</p>
       <% if current_user%>
-        <%= link_to "Mon espace", current_user, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
+      <%= link_to "Mon espace", current_user, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
       <% else%>
       <%= link_to "Inscription / Connexion", new_user_registration_path, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
       <% end %>
-        
-     
+
+
     </div>
 
     <div class="right-page">
