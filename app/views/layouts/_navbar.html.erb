@@ -5,7 +5,7 @@
     	<%= image_tag("logogo.svg", size: "48x48") %>
       <% end %>
       <%=link_to root_path do%>
-      <h1 class="font-semibold select-none"><span class="text-primary-500 ml-1 text-lg">Meal</span>ories</h1>
+      <h1 class="font-semibold select-none text-2xl mt-3 ml-2 text-gray-700"><span class="text-primary-500 ml-2 text-3xl">Meal</span><span class="ml-0.5">ories</span></h1>
       <%end%>
     </div>
   </div>
@@ -22,15 +22,15 @@
     <div class="w-full hidden sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent" id="nav-content">
 			<div class="nav-links sm:flex sm:-mr-10">
 				<ul class="list-reset sm:flex justify-end flex-1 items-center sm:mr-5">
-					<li class="sm:mr-8 mt-4 font-semibold highlight">
+					<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
 						<%= link_to "Menu", new_plan_path, class:"text-lg"%>
 					</li>
 					<% if current_user.admin %>
-						<li class="sm:mr-8 mt-4 font-semibold highlight">
+						<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
 						<%= link_to "A propos", new_recipe_path, class:"text-lg"%>
 					<% end %>
 					</li>
-					<li class="sm:mr-8 mt-4 font-semibold highlight">
+					<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900 ">
 					<%= link_to "Profil", user_path(current_user.id), class:"text-lg"%>
 			
 					</li>
