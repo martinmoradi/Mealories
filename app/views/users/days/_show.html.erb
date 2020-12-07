@@ -1,7 +1,7 @@
 <% if @day != nil %>
   
   <div class="card">
-    <div class=" bg-gray-100 w-80 mr-5 hover:shadow-lg shadow-2-xl rounded">
+    <div class=" bg-gray-50 w-80 mr-5 hover:shadow-lg shadow-2-xl rounded">
           <%= image_tag @day.lunch.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
       <div class=" py-4 px-3">
       <div class="flex flex-row items-center ">
@@ -28,7 +28,7 @@
           <!-- Modal Inner Container -->
             <div class="w-8/12 relative static">
             <!-- Modal Card -->
-              <div class="m-1 bg-gray-100  rounded-lg shadow">
+              <div class="m-1 bg-gray-50  rounded-lg shadow">
                 <div class="m-auto max-w-6xl p-12">
                   <div class="absolute top-5 right-5">
                   <button data-action="click->modal#close">
@@ -82,7 +82,7 @@
 </div>
 
   <div class="card ">
-    <div class=" bg-gray-100 w-80 mr-5 shadow-2-xl rounded hover:shadow-lg">
+    <div class=" bg-gray-50 w-80 mr-5 shadow-2-xl rounded hover:shadow-lg">
           <%= image_tag @day.dinner.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
       <div class=" py-4 px-3">
       <div class="flex flex-row items-center ">
