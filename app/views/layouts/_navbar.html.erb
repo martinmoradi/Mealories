@@ -1,64 +1,75 @@
-<nav class="flex absolute top-0 items-center text-right justify-between flex-wrap bg-grey-darkest w-full z-10 pin-t mt-2 ">
-	<div class="md:mb-2 mb-0">
+<nav
+  class="flex absolute top-0 items-center text-right justify-between flex-wrap bg-grey-darkest w-full z-10 pin-t mt-2 ">
+  <div class="md:mb-2 mb-0">
     <div class="flex items-center ml-3 mt-2">
       <%=link_to root_path do%>
-    	<%= image_tag("logogo.svg", size: "48x48") %>
+      <%= image_tag("logogo.svg", size: "48x48") %>
       <% end %>
       <%=link_to root_path do%>
-      <h1 class="font-semibold select-none text-xl mt-3 ml-2 text-gray-700"><span class="text-primary-500 ml-2 text-3xl">Meal</span><span class="mb-5">ories</span></h1>
+      <h1 class="font-semibold select-none text-xl mt-3 ml-2 text-gray-700"><span
+          class="text-primary-500 ml-2 text-3xl">Meal</span><span class="mb-5">ories</span></h1>
       <%end%>
     </div>
   </div>
-    
 
-		<div class="hamburger_block block sm:hidden mr-8 sm:mr-0">
-			<button id="nav-toggle" class="flex items-center px-6 py-3 border rounded text-grey border-grey-dark hover:text-white hover:border-white">
-				<svg class="hamburger fill-primary-500 h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-			</button>
-		</div>
 
-        <!-- When user is connected -->
-    <% if current_user %>
-    <div class="w-full hidden sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent" id="nav-content">
-			<div class="nav-links sm:flex sm:-mr-10">
-				<ul class="list-reset sm:flex justify-end flex-1 items-center sm:mr-5">
-					<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
-						<%= link_to "Menu", new_plan_path, class:"text-lg"%>
-					</li>
-					<% if current_user.admin %>
-						<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
-						<%= link_to "A propos", new_recipe_path, class:"text-lg"%>
-					<% end %>
-					</li>
-					<li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900 ">
-					<%= link_to "Profil", user_path(current_user.id), class:"text-lg"%>
-			
-					</li>
-					<li class="sm:mr-8 mt-4 -mr-3">
-					<%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"submit font-semibold py-2 px-4 ml-2 mt-2" %>
-					</li>
-				</ul>
-			</div>
-      
-		</div>
-		
-      <!-- When user is not connected -->
-      <% else %>
-    <div class="w-full block sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent" id="nav-content">
-			<div class="nav-links sm:flex sm:-mr-10">
-				<ul class="list-reset sm:flex justify-end flex-1 items-center sm:mr-5">
+  <div class="hamburger_block block sm:hidden mr-8 sm:mr-0">
+    <button id="nav-toggle"
+      class="flex items-center px-6 py-3 border rounded text-grey border-grey-dark hover:text-white hover:border-white">
+      <svg class="hamburger fill-primary-500 h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      </svg>
+    </button>
+  </div>
 
-					<li class="mr-5 mt-4 font-semibold highlight">
-					<%= link_to "Se connecter", new_user_session_path, class:"text-lg"%>
-					</li>
+  <!-- When user is connected -->
+  <% if current_user %>
+  <div
+    class="w-full hidden sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"
+    id="nav-content">
+    <div class="nav-links sm:flex">
+      <ul class="list-reset sm:flex justify-end flex-1 items-center">
+        <li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
+          <%= link_to "Menu", new_plan_path, class:"text-lg"%>
+        </li>
+        <% if current_user.admin %>
+        <li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900">
+          <%= link_to "A propos", new_recipe_path, class:"text-lg"%>
+          <% end %>
+        </li>
+        <li class="sm:mr-8 mt-4 font-semibold highlight text-gray-900 ">
+          <%= link_to "Profil", user_path(current_user.id), class:"text-lg"%>
 
-					<li class="sm:mr-8 mt-4 -mr-3">
-					<%= link_to "Inscription", new_user_registration_path, class:"submit font-semibold py-2 px-4 ml-2 mt-2" %>
-					</li>
-				</ul>
-			</div>
-    <% end %>
-	</nav>
-	
+        </li>
+        <li class="sm:mr-8 mt-4 -mr-3">
+          <%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"submit font-semibold py-2 px-4 ml-2 mt-2" %>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- When user is not connected -->
+  <% else %>
+  <div
+    class="w-full block sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"
+    id="nav-content">
+    <div class="nav-links sm:flex sm:-mr-10">
+      <ul class="list-reset sm:flex justify-end flex-1 items-center sm:mr-5">
+
+        <li class="mr-5 mt-4 font-semibold highlight">
+          <%= link_to "Se connecter", new_user_session_path, class:"text-lg"%>
+        </li>
+
+        <li class="sm:mr-8 mt-4 -mr-3">
+          <%= link_to "Inscription", new_user_registration_path, class:"submit font-semibold py-2 px-4 ml-2 mt-2" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+  
+</nav>
 <!-- hamburger menu toggle-->
 	<%= javascript_pack_tag 'navbar' %> 

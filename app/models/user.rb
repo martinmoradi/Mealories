@@ -147,10 +147,10 @@ class User < ApplicationRecord
 
   #body mass index
   def bmi
-    if weight_in_kgs.zero? || height_in_cms.zero?
-      1
-    else
-      weight_in_kgs / ((height_in_cms / 100) * (height_in_cms / 100)) 
+    begin
+       weight_in_kgs / ((height_in_cms / 100) * (height_in_cms / 100)) 
+    rescue ZeroDivisionError
+      0
     end
   end
 

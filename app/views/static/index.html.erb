@@ -1,35 +1,85 @@
-<div class="container mx-auto mb-auto">
-  
-      <!--Lead+main img-->
+<div class="container mx-auto relative min-h-full">
+
+  <!--Lead+main img-->
   <div class="top-page flex flex-row items-center justify-around">
-  
+
     <div class="left-top w-96 flex-wrap text-center md:text-left">
       <p class="text-xl md:text-3xl lg:text-5xl text-yellow-600 font-bold mb-5">Crée ton menu personnalisé</p>
       <p class="text-lg md:text-xl lg:text-3xl font-bold mb-5">Parle-nous de toi, on s’occupe de tout !</p>
       <% if current_user%>
-        <%= link_to "Mon espace", current_user, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
+      <%= link_to "Mon espace", current_user, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
       <% else%>
       <%= link_to "Inscription / Connexion", new_user_registration_path, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
       <% end %>
-        
-     
+
+
     </div>
 
     <div class="right-page">
-      <%= image_tag 'chef.svg', class: "chief lg:mt-10"%>
+      <%= image_tag 'chef.svg', class: "chief lg:mt-24"%>
     </div>
   </div>
 
   <!--Timeline-->
-  <div class="flex flex-wrap justify-center">
-    <p>Renseigne tes informations</p>
+  <div class="mt-14">
+    <div class="flex flex-wrap justify-center">
+      <p>Renseigne tes informations</p>
+    </div>
+    <div class="flex justify-center">
+      <%= image_tag 'timeline-web.svg', class: "tlweb flex"%>
+    </div>
+    <div class="flex justify-around md:justify-between lg:justify-around  mb-5">
+      <p class="md:ml-28 lg:-ml-16 xl:ml-0 2xl:ml-28">Inscris-toi</p>
+      <p class="content md:hidden"></p>
+      <p class="md:mr-20 lg:-mr-24 xl:-mr-10 2xl:mr-20">On prépare ton menu !</p>
+    </div>
   </div>
-  <div class="flex justify-center">
-    <%= image_tag 'timeline-web.svg', class: "tlweb flex"%>
+  <!--faq start-->
+  <h1 class="text-2xl font-bold text-center my-14">Manger intelligemment n'a jamais aussi facile</h1>
+    <div class="faq px-2 py-12 text-gray-700 body-font">
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+      <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-teal-500 flex-shrink-0">
+        <i class="fas fa-heartbeat fa-3x" style="color:red;"></i>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Prenez-soin de votre santé</h2>
+        <p class="leading-relaxed text-base">Choisissez vos menus en fonction de ce qui s'adapte à votre train de vie.</p>
+        <a class="mt-3 text-teal-500 inline-flex items-center">Learn More
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Plus simple</h2>
+        <p class="leading-relaxed text-base">Gagnez du temps en plannifiant vos menus.</p>
+        <a class="mt-3 text-teal-500 inline-flex items-center">Learn More
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-teal-500 flex-shrink-0">
+        <i class="fas fa-user-clock fa-3x" style="color:green;"></i>                   
+      </div>
+    </div>
+    <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+      <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-teal-500 flex-shrink-0">
+        <i class="fas fa-carrot fa-3x" style="color:orange;"></i>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Différents régimes</h2>
+        <p class="leading-relaxed text-base">Différents régimes alimentaires sont disponibles en fonction de vos préférences.</p>
+        <a class="mt-3 text-teal-500 inline-flex items-center">Learn More
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
   </div>
-  <div class="flex justify-around md:justify-between lg:justify-around  mb-5">
-    <p class="md:ml-28 lg:-ml-16 xl:ml-0 2xl:ml-28">Inscris-toi</p>
-    <p class="content md:hidden"></p>
-    <p class="md:mr-20 lg:-mr-24 xl:-mr-10 2xl:mr-20">On prépare ton menu !</p>
-  </div>
+
 </div>
