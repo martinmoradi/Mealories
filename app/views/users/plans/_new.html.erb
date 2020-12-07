@@ -1,0 +1,65 @@
+  <div data-controller="modal" data-modal-allow-background-close="false">
+        <a href="#" data-action="click->modal#open"
+      class="text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+      <!-- Heroicon name: chart-bar -->
+      <svg fill="none" class="text-gray-400 fill-current group-hover:text-white mr-3 h-6 w-6"
+        xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+        xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"
+        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+        <switch>
+          <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1"
+            height="1" />
+          <g i:extraneous="self">
+            <g>
+              <path
+                d="M70.8,44.7H55.3V29.2c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3v15.5H29.2c-2.9,0-5.3,2.4-5.3,5.3     c0,1.5,0.6,2.8,1.5,3.7c1,1,2.3,1.5,3.7,1.5h15.5v15.5c0,1.5,0.6,2.8,1.5,3.7c1,1,2.3,1.5,3.7,1.5c2.9,0,5.3-2.4,5.3-5.3V55.3     h15.5c2.9,0,5.3-2.4,5.3-5.3C76,47.1,73.7,44.7,70.8,44.7z" />
+              <path
+                d="M50,2.5C23.8,2.5,2.5,23.8,2.5,50S23.8,97.5,50,97.5c26.2,0,47.5-21.3,47.5-47.5S76.2,2.5,50,2.5z M50,86.9     c-20.4,0-36.9-16.5-36.9-36.9S29.6,13.1,50,13.1S86.9,29.6,86.9,50S70.4,86.9,50,86.9z" />
+            </g>
+          </g>
+        </switch>
+      </svg>
+      Nouveau plan
+    </a>
+
+    <!-- Modal Container -->
+    <div data-target="modal.container" data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+      class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center"
+      style="z-index: 9999;">
+      <!-- Modal Inner Container -->
+      <div class="max-h-screen w-full max-w-lg relative">
+        <!-- Modal Card -->
+        <div class="m-1 bg-white rounded shadow">
+
+          <div class="p-8">
+
+            <h2 class="text-xl mb-4 text-center">Combien de jours veux-tu générer ?</h2>
+            <div class="form-modal">
+              <%= form_with(model: @plan, url: plans_path, method: "post") do |f| %>
+              <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 -mr-25">
+                <button data-action="decrement" id="decrement"
+                  class=" bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
+                  <span class="m-auto text-2xl font-thin">−</span>
+                </button>
+                <%= f.number_field(:nb_of_days, in: 1..7, value: 1, class: "bg-white text-sm text-gray-900 text-center focus:outline-none border w-full text-gray-700 text-sm font-semibold border-primary-800 focus:border-primary-600 rounded-l-md w-full p-1 text-xl") %>
+                <button data-action="increment" id="increment"
+                  class="bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-r cursor-pointer">
+                  <span class="m-auto text-2xl font-thin">+</span>
+                </button>
+              </div>
+              <div class="flex justify-end items-center flex-wrap mt-6">
+                <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+                <% end %>
+                <button
+                  class="text-white bg-warning border border-solid hover:border-warning hover:text-warning hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
+                  data-action="click->modal#close">Retour</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= javascript_pack_tag 'new_plan' %>
