@@ -10,11 +10,12 @@
         </p>
         <%= image_tag 'personal_data_' %>
       </div>
-      <div class="mt-5 md:mt-0 md:col-span-2">
+
+      <div class="mt-5 md:mt-0 md:col-span-2 mx-8 mb-15">
         <%= form_with(model: @user, method: "put") do |f| %>
         <div class="grid grid-cols-3 gap-6">
           <div class="col-span-3 sm:col-span-2">
-           <div class="radio-buttons">
+            <div class="radio-buttons">
               <ul class="flex flex-row justify-center">
                 <li class="mx-4">
                   <%= radio_button_tag(:gender, "Homme") %>
@@ -51,29 +52,16 @@
             <label for="height_in_cms" class="placeholder">Taille en cm</>
           </div>
         </div>
-
-        <div class="radio-buttons">
-          <ul class="flex flex-row justify-center">
-            <li class="mx-5">
-              <%= radio_button_tag(:objective, "1") %>
-              <%= label_tag(:gender, "Je veux perdre du poids") %>
-            </li>
-            <li class="mx-5">
-              <%= radio_button_tag(:objective, "2") %>
-              <%= label_tag(:gender, "Je veux garder la ligne") %>
-            </li>
-            <li class="mx-5">
-              <%= radio_button_tag(:objective, "3") %>
-              <%= label_tag(:gender, "Je veux prendre du poids") %>
-            </li>
-          </ul>
+        <div class="my-5">
+          <%= f.select :objective, [["Je veux perdre du poids", "1"],["Je veux garder la ligne", "2"], ["Je veux prendre du poids", "3"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" } %>
         </div>
-
-        <%= f.select :activity_level, [["Travail sédendaire + pas de sport", "1"],['Sport léger 1 à 3 fois par semaine', "2"], ['Sport modéré 3 à 5 fois par semaine', "3"], ['Activité sportive presque quotidienne', "4"], ['Métier exigeant + sport intense', "5"]], required: true %>
-
+        <div class="my-5">
+        <%= f.select :activity_level, [["Travail sédendaire + pas de sport", "1"],['Sport léger 1 à 3 fois par semaine', "2"], ['Sport modéré 3 à 5 fois par semaine', "3"], ['Activité sportive presque quotidienne', "4"], ['Métier exigeant + sport intense', "5"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" } %>
+        </div>
         <%= f.submit "Valider", class:"submit" %>
 
         <% end %>
+
       </div>
     </div>
 
