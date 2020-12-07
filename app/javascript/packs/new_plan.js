@@ -20,4 +20,6 @@ const increment = (e) => {
 btnDecrement.addEventListener("click", decrement);
 btnIncrement.addEventListener("click", increment);
 
-console.log(eventListener("click"));
+btnDecrement.addEventListener("click", e => {
+    console.log(e);
+});
