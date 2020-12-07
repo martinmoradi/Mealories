@@ -1,35 +1,19 @@
-  function decrement(e) {
-    const btn = e.target.parentNode.parentElement.querySelector(
-      'button[data-action="decrement"]'
-    );
-    const target = btn.nextElementSibling;
-    let value = Number(target.value);
-    value--;
-    target.value = value;
-  }
+const btnDecrement = document.querySelector('#decrement');
+const btnIncrement = document.querySelector('#increment');
+const input = document.querySelector('#plan_nb_of_days');
 
-  function increment(e) {
-    const btn = e.target.parentNode.parentElement.querySelector(
-      'button[data-action="decrement"]'
-    );
-    const target = btn.nextElementSibling;
-    let value = Number(target.value);
-    value++;
-    target.value = value;
-  }
+const decrement = (e) => { 
+  e.preventDefault()
+  let inputNumber = parseInt(input.value); 
+  inputNumber -= 1;
+  input.value = inputNumber; 
+};
+const increment = (e) => { 
+  e.preventDefault()
+  let inputNumber = parseInt(input.value); 
+  inputNumber += 1; 
+  input.value = inputNumber;
+};
 
-  const decrementButtons = document.querySelectorAll(
-    `button[data-action="decrement"]`
-  );
-
-  const incrementButtons = document.querySelectorAll(
-    `button[data-action="increment"]`
-  );
-
-  decrementButtons.forEach(btn => {
-    btn.addEventListener("click", decrement);
-  });
-
-  incrementButtons.forEach(btn => {
-    btn.addEventListener("click", increment);
-  });
+btnDecrement.addEventListener('click', decrement);
+btnIncrement.addEventListener('click', increment);  

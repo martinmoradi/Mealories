@@ -2,7 +2,7 @@
 
   <div class="h-screen flex overflow-hidden">
 
-  <%= render 'sidebar' %>
+    <%= render 'sidebar' %>
 
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
 
@@ -11,90 +11,96 @@
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <h1 class="text-2xl font-semibold text-gray-900">Bonjour <span
                 class="text-primary-800"><%= current_user.first_name %></h1>
-                 
+
           </div>
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
             <!-- Content -->
 
-<ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-   <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200 ">
-    <div class="w-full flex items-center justify-between p-6 space-x-6">
-      <div class="flex-1 truncate">
-        <div class="flex items-center space-x-3">
-          <h3 class="text-gray-900 text-sm font-medium truncate">Calories par jour</h3>
-         
-        </div>
-        <p class="mt-1 text-gray-500 text-sm truncate">A consommer pour atteindre tes objectifs.</p>
-      </div>
-      
-    </div>
-    <div>
-      <div class="-mt-px flex divide-x divide-gray-200">
-        <div class="w-0 flex-1 flex">
-          <div class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-            <!-- Heroicon name: mail -->
-            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <span class="ml-3"><%= current_user.daily_cal %> kcal</span>
-          </div>
-        </div>
+            <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+              <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200 ">
+                <div class="w-full flex items-center justify-between p-6 space-x-6">
+                  <div class="flex-1 truncate">
+                    <div class="flex items-center space-x-3">
+                      <h3 class="text-gray-900 text-sm font-medium truncate">Calories par jour</h3>
 
- <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200">
-    <div class="w-full flex items-center justify-between p-6 space-x-6">
-      <div class="flex-1 truncate">
-        <div class="flex items-center space-x-3">
-          <h3 class="text-gray-900 text-sm font-medium truncate">Ton indice de masse corporelle</h3>
-         
-        </div>
-        <p class="mt-1 text-gray-500 text-sm truncate"><%=current_user.bmi_text%></p>
-      </div>
-      
-    </div>
-    <div>
-      <div class="-mt-px flex divide-x divide-gray-200">
-        <div class="w-0 flex-1 flex">
-          <div class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-            <!-- Heroicon name: mail -->
-            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <span class="ml-3"><%= current_user.bmi %></span>
-          </div>
-        </div>
+                    </div>
+                    <p class="mt-1 text-gray-500 text-sm truncate">A consommer pour atteindre tes objectifs.</p>
+                  </div>
 
-  <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200">
-    <div class="w-full flex items-center justify-between p-6 space-x-6">
-      <div class="flex-1 truncate">
-        <div class="flex items-center space-x-3">
-          <h3 class="text-gray-900 text-sm font-medium truncate"><%= current_user.objective_title %></h3>
-         
-        </div>
-        <p class="mt-1 text-gray-500 text-sm truncate">L'objectif que tu t'es fixé !</p>
-      </div>
-      
-    </div>
-    <div>
-      <div class="-mt-px flex divide-x divide-gray-200">
-        <div class="w-0 flex-1 flex">
-          <div class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-            <!-- Heroicon name: mail -->
-            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <span class="ml-3"><%= current_user.daily_cal %> kcal</span>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </li>
-  
-</ul>
+                </div>
+                <div>
+                  <div class="-mt-px flex divide-x divide-gray-200">
+                    <div class="w-0 flex-1 flex">
+                      <div
+                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                        <!-- Heroicon name: mail -->
+                        <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <span class="ml-3"><%= current_user.daily_cal %> kcal</span>
+                      </div>
+                    </div>
+
+              <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200">
+                <div class="w-full flex items-center justify-between p-6 space-x-6">
+                  <div class="flex-1 truncate">
+                    <div class="flex items-center space-x-3">
+                      <h3 class="text-gray-900 text-sm font-medium truncate">Ton indice de masse corporelle</h3>
+
+                    </div>
+                    <p class="mt-1 text-gray-500 text-sm truncate"><%=current_user.bmi_text%></p>
+                  </div>
+
+                </div>
+                <div>
+                  <div class="-mt-px flex divide-x divide-gray-200">
+                    <div class="w-0 flex-1 flex">
+                      <div
+                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                        <!-- Heroicon name: mail -->
+                        <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <span class="ml-3"><%= current_user.bmi %></span>
+                      </div>
+                    </div>
+
+              <li class="col-span-1 bg-white rounded-lg shadow-lg divide-y divide-gray-200">
+                <div class="w-full flex items-center justify-between p-6 space-x-6">
+                  <div class="flex-1 truncate">
+                    <div class="flex items-center space-x-3">
+                      <h3 class="text-gray-900 text-sm font-medium truncate"><%= current_user.objective_title %></h3>
+
+                    </div>
+                    <p class="mt-1 text-gray-500 text-sm truncate">L'objectif que tu t'es fixé !</p>
+                  </div>
+
+                </div>
+                <div>
+                  <div class="-mt-px flex divide-x divide-gray-200">
+                    <div class="w-0 flex-1 flex">
+                      <div
+                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                        <!-- Heroicon name: mail -->
+                        <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                          fill="currentColor" aria-hidden="true">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <span class="ml-3"><%= current_user.daily_cal %> kcal</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+
+            </ul>
 
 
 
@@ -106,7 +112,18 @@
 
 
             <div class="py-4">
-              <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+              <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                  <% unless @plans.nil? %>
+                    <h1 class="text-2xl font-semibold text-gray-900">Ton dernier <span class="text-primary-800">programme
+                    </h1>
+                  <%= render 'users/plans/show'%>                 
+                  <% end %>
+                </div>
+
+
+
+              </div>
             </div>
             <!-- End Content -->
           </div>

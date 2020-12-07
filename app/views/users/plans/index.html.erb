@@ -1,0 +1,14 @@
+ 
+
+
+   <%= render 'users/users/welcome'%>
+
+ <div class="h-screen flex overflow-hidden">
+   <%= render 'users/users/sidebar' %>
+   <p> bite </p>
+   <% current_user.plans.each.with_index do |plan, idx| %>
+  <%= link_to plan_path(plan.id), class: '' do %>
+    <p class="pr-8 border-b border-primary-200 z-10"> Programme n°<%= idx + 1 %> </p>
+  <% end %>
+ <% end %>
+ </div>
