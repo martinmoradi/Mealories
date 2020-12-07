@@ -147,6 +147,7 @@ class User < ApplicationRecord
 
   #body mass index
   def bmi
+    1 if weight_in_kgs.zero? || height_in_cms.zero?
     weight_in_kgs / ((height_in_cms / 100) * (height_in_cms / 100)) 
   end
 
