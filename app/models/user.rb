@@ -102,6 +102,24 @@ class User < ApplicationRecord
     end
   end
 
+    def activity_level_card
+    case activity_level
+    when 1
+      "Sédentaire"
+    when 2
+      'Sportif occasionnel'
+    when 3
+      'Sportif régulier'
+    when 4
+      'Sportif confirmé'
+    when 5
+      'Fou de sport'
+    end
+  end
+
+
+
+
   def objective_title
     case objective
     when 1

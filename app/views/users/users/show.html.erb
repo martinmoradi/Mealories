@@ -1,121 +1,170 @@
-  <%= render 'welcome'%>
+<%= render 'welcome'%>
 
-  <div class="h-screen flex overflow-hidden">
+<div class="h-screen flex overflow-hidden">
 
-    <%= render 'sidebar' %>
+  <%= render 'sidebar' %>
 
-    <div class="flex flex-col w-0 flex-1 overflow-hidden">
+  <div class="flex flex-col w-0 flex-1 overflow-hidden">
 
-      <main class="flex-1 relative overflow-y-auto focus:outline-none" tabindex="0">
-        <div class="py-2">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl font-semibold text-gray-900 -mb-6">Bonjour <span
-                class="text-primary-800"><%= current_user.first_name.capitalize %></h1>
+    <main class="flex-1 relative overflow-y-auto focus:outline-none" tabindex="0">
+      <div class="py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-8">
+          <h1 class="text-3xl font-semibold text-gray-900 -mb-6">Bonjour <span
+              class="text-primary-800"><%= current_user.first_name.capitalize %></span> !</h1>
+        </div>
 
-          </div>
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
-            <!-- Content -->
-
-            <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
-              <li class="col-span-1 bg-white rounded-lg shadow-xl divide-y divide-gray-200 ">
-                <div class="w-full flex items-center justify-between p-8 space-x-6">
-                  <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                      <h3 class="text-gray-900 text-sm font-medium truncate">Calories par jour</h3>
-
-                    </div>
-                    <p class="mt-1 text-gray-500 text-sm truncate">A consommer pour atteindre tes objectifs</p>
-                  </div>
-
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div class="mt-12">
+            <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <li class="col-span-1 flex shadow-sm rounded-md">
+                <div
+                  class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                  <svg class="w-12 h-12 fill-current mt-3 ml-2" fill="none" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+                    xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;"
+                    xml:space="preserve">
+                    <switch>
+                      <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0"
+                        width="1" height="1" />
+                      <g i:extraneous="self">
+                        <g>
+                          <path
+                            d="M46.7,67.2l3.1-3.1c-0.1-5.8,1.8-12,4.6-17.4V7.5c0-2.8-2.3-5-5-5h-39c-2.8,0-5,2.3-5,5v57.9c0,2.8,2.3,5,5,5H33     C36.7,67,42,65.8,46.7,67.2z M41.3,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C45,38,43.3,39.6,41.3,39.6z M45,47.2c0,2-1.6,3.6-3.6,3.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6C43.3,43.6,45,45.2,45,47.2z      M13.1,23.8V12.9c0-1.4,1.2-2.6,2.6-2.6h28.3c1.4,0,2.6,1.2,2.6,2.6v10.9c0,1.4-1.2,2.6-2.6,2.6H15.7     C14.2,26.4,13.1,25.2,13.1,23.8z M18.3,62c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,60.4,20.3,62,18.3,62z M18.3,50.8c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,49.2,20.3,50.8,18.3,50.8z M18.3,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,38,20.3,39.6,18.3,39.6z M29.8,62c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,60.4,31.8,62,29.8,62z M29.8,50.8c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,49.2,31.8,50.8,29.8,50.8z M29.8,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,38,31.8,39.6,29.8,39.6z M37.7,58.4c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6c0,2-1.6,3.6-3.6,3.6     C39.3,62,37.7,60.4,37.7,58.4z" />
+                          <path
+                            d="M86.6,44.7c-7.6-7.6-16.2-10.3-20.1-6.4c-5.7,5.7-12.7,18.4-11.3,27.8l-7.3,7.3c-3.5-2.4-8.3-2-11.5,1.1     c-3.5,3.5-3.5,9.2,0,12.8c1.4,1.4,3.2,2.3,5.1,2.5c0.3,1.9,1.1,3.7,2.5,5.1c3.5,3.5,9.2,3.5,12.8,0c3.1-3.1,3.5-8,1.1-11.5     l7.3-7.3c9.4,1.3,22.1-5.6,27.8-11.3C96.9,60.9,94.1,52.2,86.6,44.7z M53.1,81.7c-0.5,0.5-0.7,1.1-0.7,1.7c0,0.6,0.3,1.2,0.8,1.7     c0,0,0.3,0.2,0.3,0.2c1.7,1.7,1.7,4.6,0,6.3c-1.7,1.7-4.6,1.7-6.3,0c-1-1-1.4-2.4-1.2-3.8c0.2-1.4-1.2-2.8-2.6-2.6     C42,85.4,40.6,85,39.6,84c-1.7-1.7-1.7-4.6,0-6.3c1.7-1.7,4.5-1.7,6.3,0c0,0,0,0,0,0c0,0,0.2,0.2,0.2,0.3c0.4,0.5,1,0.8,1.7,0.8     c0.6,0,1.3-0.2,1.7-0.7l7.3-7.3c0.4,0.7,0.9,1.4,1.6,2c0.6,0.6,1.3,1.1,2,1.6L53.1,81.7z M89.7,61.5c-1.4,1.4-7.6-0.4-13.6-6.4     c-6-6-7.9-12.2-6.4-13.6c1.4-1.4,7.6,0.4,13.6,6.4C89.4,53.9,91.2,60.1,89.7,61.5z" />
+                          <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0773 71.4453)" cx="79.7"
+                            cy="51.5" rx="1.9" ry="7" />
+                        </g>
+                      </g>
+                    </switch>
+                  </svg>
                 </div>
-                <div>
-                  <div class="-mt-px flex divide-x divide-gray-200">
-                    <div class="w-0 flex-1 flex">
-                      <div
-                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                        <!-- Heroicon name: mail -->
-                        <svg class="w-12 h-12 fill-current" fill="none" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/><g i:extraneous="self"><g><path d="M46.7,67.2l3.1-3.1c-0.1-5.8,1.8-12,4.6-17.4V7.5c0-2.8-2.3-5-5-5h-39c-2.8,0-5,2.3-5,5v57.9c0,2.8,2.3,5,5,5H33     C36.7,67,42,65.8,46.7,67.2z M41.3,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C45,38,43.3,39.6,41.3,39.6z M45,47.2c0,2-1.6,3.6-3.6,3.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6C43.3,43.6,45,45.2,45,47.2z      M13.1,23.8V12.9c0-1.4,1.2-2.6,2.6-2.6h28.3c1.4,0,2.6,1.2,2.6,2.6v10.9c0,1.4-1.2,2.6-2.6,2.6H15.7     C14.2,26.4,13.1,25.2,13.1,23.8z M18.3,62c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,60.4,20.3,62,18.3,62z M18.3,50.8c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,49.2,20.3,50.8,18.3,50.8z M18.3,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C21.9,38,20.3,39.6,18.3,39.6z M29.8,62c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,60.4,31.8,62,29.8,62z M29.8,50.8c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,49.2,31.8,50.8,29.8,50.8z M29.8,39.6c-2,0-3.6-1.6-3.6-3.6c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6     C33.4,38,31.8,39.6,29.8,39.6z M37.7,58.4c0-2,1.6-3.6,3.6-3.6c2,0,3.6,1.6,3.6,3.6c0,2-1.6,3.6-3.6,3.6     C39.3,62,37.7,60.4,37.7,58.4z"/><path d="M86.6,44.7c-7.6-7.6-16.2-10.3-20.1-6.4c-5.7,5.7-12.7,18.4-11.3,27.8l-7.3,7.3c-3.5-2.4-8.3-2-11.5,1.1     c-3.5,3.5-3.5,9.2,0,12.8c1.4,1.4,3.2,2.3,5.1,2.5c0.3,1.9,1.1,3.7,2.5,5.1c3.5,3.5,9.2,3.5,12.8,0c3.1-3.1,3.5-8,1.1-11.5     l7.3-7.3c9.4,1.3,22.1-5.6,27.8-11.3C96.9,60.9,94.1,52.2,86.6,44.7z M53.1,81.7c-0.5,0.5-0.7,1.1-0.7,1.7c0,0.6,0.3,1.2,0.8,1.7     c0,0,0.3,0.2,0.3,0.2c1.7,1.7,1.7,4.6,0,6.3c-1.7,1.7-4.6,1.7-6.3,0c-1-1-1.4-2.4-1.2-3.8c0.2-1.4-1.2-2.8-2.6-2.6     C42,85.4,40.6,85,39.6,84c-1.7-1.7-1.7-4.6,0-6.3c1.7-1.7,4.5-1.7,6.3,0c0,0,0,0,0,0c0,0,0.2,0.2,0.2,0.3c0.4,0.5,1,0.8,1.7,0.8     c0.6,0,1.3-0.2,1.7-0.7l7.3-7.3c0.4,0.7,0.9,1.4,1.6,2c0.6,0.6,1.3,1.1,2,1.6L53.1,81.7z M89.7,61.5c-1.4,1.4-7.6-0.4-13.6-6.4     c-6-6-7.9-12.2-6.4-13.6c1.4-1.4,7.6,0.4,13.6,6.4C89.4,53.9,91.2,60.1,89.7,61.5z"/><ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.0773 71.4453)" cx="79.7" cy="51.5" rx="1.9" ry="7"/></g></g></switch></svg>
-                        <span class="ml-3 text-lg font-semibold"><%= current_user.daily_cal %> kcal</span>
-                      </div>
-                    </div>
-
-               <li class="col-span-1 bg-white rounded-lg shadow-xl divide-y divide-gray-200 ">
-                <div class="w-full flex items-center justify-between p-8 space-x-6">
-                  <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                      <h3 class="text-gray-900 text-sm font-medium truncate">Ton indice de masse corporelle</h3>
-
-                    </div>
-                    <p class="mt-1 text-gray-500 text-sm truncate"><%=current_user.bmi_text%></p>
-                  </div>
-
-                </div>
-                <div>
-                  <div class="-mt-px flex divide-x divide-gray-200">
-                    <div class="w-0 flex-1 flex">
-                      <div
-                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                        <!-- Heroicon name: mail -->
-                       <svg class="w-12 h-12 fill-current" fill="none"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path d="M90,2.5H10c-4.136,0-7.5,3.364-7.5,7.5v80c0,4.136,3.364,7.5,7.5,7.5h80c4.136,0,7.5-3.364,7.5-7.5V10   C97.5,5.864,94.136,2.5,90,2.5z M92.5,90c0,1.378-1.122,2.5-2.5,2.5H10c-1.378,0-2.5-1.122-2.5-2.5V10c0-1.378,1.122-2.5,2.5-2.5   h80c1.378,0,2.5,1.122,2.5,2.5V90z"/><path d="M82.788,23.578C72.53,18.725,61.498,16.264,50,16.264l0,0l0,0c0,0,0,0-0.001,0c-11.498,0-22.529,2.46-32.788,7.313   c-1.15,0.544-1.708,1.866-1.296,3.07l5.888,17.192c0.236,0.688,0.76,1.24,1.435,1.51c0.675,0.271,1.434,0.234,2.081-0.101   c7.664-3.971,15.967-5.985,24.681-5.985s17.018,2.014,24.681,5.985c0.36,0.187,0.754,0.28,1.15,0.28c0.315,0,0.631-0.06,0.931-0.18   c0.675-0.271,1.199-0.822,1.435-1.51l5.888-17.192C84.496,25.443,83.938,24.122,82.788,23.578z M74.382,39.545   c-6.844-3.119-14.314-4.891-21.882-5.214V31.25c0-1.381-1.119-2.5-2.5-2.5s-2.5,1.119-2.5,2.5v3.082   c-7.567,0.323-15.039,2.095-21.882,5.213l-4.236-12.371c0.781-0.34,1.573-0.647,2.363-0.958l0.52,1.428   c0.369,1.015,1.328,1.646,2.349,1.646c0.284,0,0.573-0.048,0.855-0.151c1.297-0.472,1.966-1.906,1.494-3.204l-0.509-1.398   c2.289-0.719,4.61-1.323,6.963-1.806l0.249,1.409c0.214,1.213,1.269,2.066,2.459,2.066c0.144,0,0.291-0.013,0.437-0.039   c1.36-0.24,2.268-1.537,2.028-2.896l-0.238-1.352c2.358-0.313,4.742-0.512,7.15-0.592v1.34c0,1.381,1.119,2.5,2.5,2.5   s2.5-1.119,2.5-2.5v-1.34c2.408,0.081,4.792,0.279,7.15,0.592l-0.239,1.353c-0.24,1.359,0.668,2.656,2.028,2.896   c0.146,0.026,0.293,0.039,0.437,0.039c1.19,0,2.245-0.854,2.459-2.066l0.249-1.41c2.353,0.482,4.674,1.086,6.963,1.806l-0.509,1.4   c-0.472,1.298,0.197,2.732,1.494,3.204c0.282,0.103,0.571,0.151,0.855,0.151c1.021,0,1.98-0.63,2.349-1.646l0.52-1.43   c0.79,0.311,1.581,0.617,2.362,0.958L74.382,39.545z"/></g></svg>
-                        <span class="ml-3 text-lg font-semibold">IMC <%= current_user.bmi %></span>
-                      </div>
-                    </div>
-
-              <li class="col-span-1 bg-white rounded-lg shadow-xl divide-y divide-gray-200">
-                <div class="w-full flex items-center justify-between p-8 space-x-6">
-                  <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                      <h3 class="text-gray-900 text-sm font-medium truncate">L'objectif que tu t'es fixé</h3>
-
-                    </div>
-                    <p class="mt-1 text-gray-500 text-sm truncate">On est là pour t'aider !</p>
-                  </div>
-
-                </div>
-                <div>
-                  <div class="-mt-px flex divide-x divide-gray-200">
-                    <div class="w-0 flex-1 flex">
-                      <div
-                        class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                        <!-- Heroicon name: mail -->
-                       <svg class="w-14 h-14 fill-current" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 91 113.75" enable-background="new 0 0 91 91" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M21.657,82.683c0.936,1.426,2.918,1.848,4.342,0.935   c1.449-0.979,1.872-2.917,0.916-4.365c-0.024-0.044-7.105-10.268-2.25-24.499c7.593,3.742,13.406,10.602,19.109,16.771v9.286   c0,1.027,0.824,1.872,1.872,1.872c1.022,0,1.915-0.845,1.915-1.872V71.59c5.678-6.144,11.447-13.051,19.107-16.837   c4.856,14.254-2.295,24.455-2.295,24.499c-0.934,1.448-0.533,3.386,0.958,4.365c1.426,0.913,3.365,0.491,4.299-0.935   c0.022-0.045,11.068-15.991,0.134-36.392c-9.177-17.148-0.111-30.758-0.09-30.803c0.914-1.491,0.469-3.405-1.047-4.297   c-1.469-0.89-3.384-0.425-4.3,1.047c-0.044,0.022-9.82,14.854-1.645,33.717c-2.473,1.225-5.059,2.34-7.73,3.143   c-3.117,0.935-6.234,1.468-9.241,1.38h-0.09c-2.961,0.088-6.081-0.445-9.198-1.38c-2.672-0.803-5.298-1.918-7.817-3.165   c8.218-18.84-1.603-33.672-1.647-33.694c-0.87-1.472-2.829-1.938-4.299-1.047c-1.471,0.892-1.916,2.806-1.046,4.297   c0.021,0.045,9.085,13.654-0.089,30.803C10.59,66.691,21.634,82.638,21.657,82.683z M27.003,49.319   c2.628,1.335,5.5,2.516,8.351,3.385c3.386,1.024,6.905,1.648,10.313,1.559c3.45,0.09,6.948-0.534,10.356-1.559   c2.849-0.869,5.655-2.028,8.284-3.385c0.357,0.667,0.646,1.291,0.979,1.938c-7.817,3.764-13.831,10.601-19.62,16.813   c-5.793-6.213-11.807-13.094-19.623-16.836C26.333,50.61,26.668,49.986,27.003,49.319z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M47.516,38.717c0-1.023-0.848-1.824-1.848-1.824   c-0.982,0-1.804,0.801-1.804,1.824c0,0.981,0.822,1.806,1.804,1.806C46.668,40.523,47.516,39.698,47.516,38.717z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13.71,26.591c-0.88-0.88-2.306-0.88-3.186,0c-0.88,0.88-0.88,2.305,0,3.185   l4.779,4.781l-4.779,4.781c-0.88,0.879-0.88,2.304,0,3.184c0.44,0.44,1.017,0.661,1.593,0.661s1.152-0.221,1.592-0.661l6.372-6.373   c0.88-0.88,0.88-2.305,0-3.185L13.71,26.591z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1.059,42.521c0.44,0.44,1.018,0.661,1.593,0.661   c0.579,0,1.155-0.221,1.593-0.661l6.373-6.373c0.88-0.88,0.88-2.305,0-3.185l-6.373-6.373c-0.88-0.88-2.306-0.88-3.186,0   c-0.879,0.88-0.879,2.305,0,3.185l4.78,4.781l-4.78,4.781C0.179,40.216,0.179,41.641,1.059,42.521z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M75.982,34.556l4.779-4.781c0.88-0.88,0.88-2.305,0-3.185   c-0.88-0.88-2.306-0.88-3.186,0l-6.373,6.373c-0.879,0.88-0.879,2.305,0,3.185l6.373,6.373c0.44,0.44,1.018,0.661,1.593,0.661   c0.577,0,1.152-0.221,1.593-0.661c0.88-0.88,0.88-2.305,0-3.184L75.982,34.556z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M80.671,36.148l6.371,6.373c0.439,0.44,1.017,0.661,1.594,0.661   c0.575,0,1.152-0.221,1.592-0.661c0.88-0.88,0.88-2.305,0-3.184l-4.779-4.781l4.779-4.781c0.88-0.88,0.88-2.305,0-3.185   c-0.88-0.88-2.308-0.88-3.186,0l-6.371,6.373C79.79,33.844,79.79,35.268,80.671,36.148z"/></g></svg>
-                        <span class="ml-3 text-lg font-semibold"><%= current_user.objective_title %></span>
-                      </div>
-                    </div>
-
+                <div
+                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                  <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.daily_cal %>
+                      kcal</a>
+                    <p class="text-gray-500">Calories par jour</p>
                   </div>
                 </div>
               </li>
 
-            </ul>
-
-
-
-
-
-
-
-
-
-
-            <div class="py-4">
-              <div class="rounded-lg h-96">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                  <% unless current_user.plans.nil? %>
-                    <h1 class="text-xl -ml-5 font-semibold text-gray-800">Ton dernier <span class="text-primary-800">programme</span> du <%= @plan.created_at.strftime("%d-%m-%Y") %> </p>
-                    </h1>
-                  <%= render 'users/plans/show'%>                 
-                  <% end %>
+              <li class="col-span-1 flex shadow-sm rounded-md">
+                <div
+                  class="flex-shrink-0 flex items-center justify-center w-16 bg-purple-600 text-white text-sm font-medium rounded-l-md">
+                  <svg class="w-12 h-12 fill-current mt-2" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"
+                    enable-background="new 0 0 100 100" xml:space="preserve">
+                    <g>
+                      <path
+                        d="M90,2.5H10c-4.136,0-7.5,3.364-7.5,7.5v80c0,4.136,3.364,7.5,7.5,7.5h80c4.136,0,7.5-3.364,7.5-7.5V10   C97.5,5.864,94.136,2.5,90,2.5z M92.5,90c0,1.378-1.122,2.5-2.5,2.5H10c-1.378,0-2.5-1.122-2.5-2.5V10c0-1.378,1.122-2.5,2.5-2.5   h80c1.378,0,2.5,1.122,2.5,2.5V90z" />
+                      <path
+                        d="M82.788,23.578C72.53,18.725,61.498,16.264,50,16.264l0,0l0,0c0,0,0,0-0.001,0c-11.498,0-22.529,2.46-32.788,7.313   c-1.15,0.544-1.708,1.866-1.296,3.07l5.888,17.192c0.236,0.688,0.76,1.24,1.435,1.51c0.675,0.271,1.434,0.234,2.081-0.101   c7.664-3.971,15.967-5.985,24.681-5.985s17.018,2.014,24.681,5.985c0.36,0.187,0.754,0.28,1.15,0.28c0.315,0,0.631-0.06,0.931-0.18   c0.675-0.271,1.199-0.822,1.435-1.51l5.888-17.192C84.496,25.443,83.938,24.122,82.788,23.578z M74.382,39.545   c-6.844-3.119-14.314-4.891-21.882-5.214V31.25c0-1.381-1.119-2.5-2.5-2.5s-2.5,1.119-2.5,2.5v3.082   c-7.567,0.323-15.039,2.095-21.882,5.213l-4.236-12.371c0.781-0.34,1.573-0.647,2.363-0.958l0.52,1.428   c0.369,1.015,1.328,1.646,2.349,1.646c0.284,0,0.573-0.048,0.855-0.151c1.297-0.472,1.966-1.906,1.494-3.204l-0.509-1.398   c2.289-0.719,4.61-1.323,6.963-1.806l0.249,1.409c0.214,1.213,1.269,2.066,2.459,2.066c0.144,0,0.291-0.013,0.437-0.039   c1.36-0.24,2.268-1.537,2.028-2.896l-0.238-1.352c2.358-0.313,4.742-0.512,7.15-0.592v1.34c0,1.381,1.119,2.5,2.5,2.5   s2.5-1.119,2.5-2.5v-1.34c2.408,0.081,4.792,0.279,7.15,0.592l-0.239,1.353c-0.24,1.359,0.668,2.656,2.028,2.896   c0.146,0.026,0.293,0.039,0.437,0.039c1.19,0,2.245-0.854,2.459-2.066l0.249-1.41c2.353,0.482,4.674,1.086,6.963,1.806l-0.509,1.4   c-0.472,1.298,0.197,2.732,1.494,3.204c0.282,0.103,0.571,0.151,0.855,0.151c1.021,0,1.98-0.63,2.349-1.646l0.52-1.43   c0.79,0.311,1.581,0.617,2.362,0.958L74.382,39.545z" />
+                    </g>
+                  </svg>
                 </div>
+                <div
+                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                  <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600">IMC <%= current_user.bmi %></a>
+                    <p class="text-gray-500"><%=current_user.bmi_text%></p>
+                  </div>
 
+                </div>
+              </li>
 
+              <li class="col-span-1 flex shadow-sm rounded-md">
+                <div
+                  class="flex-shrink-0 flex items-center justify-center w-16 bg-yellow-500 text-white text-sm font-medium rounded-l-md">
+                  <svg class="w-14 h-14 fill-current mt-2" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 91 113.75"
+                    enable-background="new 0 0 91 91" xml:space="preserve">
+                    <g>
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M21.657,82.683c0.936,1.426,2.918,1.848,4.342,0.935   c1.449-0.979,1.872-2.917,0.916-4.365c-0.024-0.044-7.105-10.268-2.25-24.499c7.593,3.742,13.406,10.602,19.109,16.771v9.286   c0,1.027,0.824,1.872,1.872,1.872c1.022,0,1.915-0.845,1.915-1.872V71.59c5.678-6.144,11.447-13.051,19.107-16.837   c4.856,14.254-2.295,24.455-2.295,24.499c-0.934,1.448-0.533,3.386,0.958,4.365c1.426,0.913,3.365,0.491,4.299-0.935   c0.022-0.045,11.068-15.991,0.134-36.392c-9.177-17.148-0.111-30.758-0.09-30.803c0.914-1.491,0.469-3.405-1.047-4.297   c-1.469-0.89-3.384-0.425-4.3,1.047c-0.044,0.022-9.82,14.854-1.645,33.717c-2.473,1.225-5.059,2.34-7.73,3.143   c-3.117,0.935-6.234,1.468-9.241,1.38h-0.09c-2.961,0.088-6.081-0.445-9.198-1.38c-2.672-0.803-5.298-1.918-7.817-3.165   c8.218-18.84-1.603-33.672-1.647-33.694c-0.87-1.472-2.829-1.938-4.299-1.047c-1.471,0.892-1.916,2.806-1.046,4.297   c0.021,0.045,9.085,13.654-0.089,30.803C10.59,66.691,21.634,82.638,21.657,82.683z M27.003,49.319   c2.628,1.335,5.5,2.516,8.351,3.385c3.386,1.024,6.905,1.648,10.313,1.559c3.45,0.09,6.948-0.534,10.356-1.559   c2.849-0.869,5.655-2.028,8.284-3.385c0.357,0.667,0.646,1.291,0.979,1.938c-7.817,3.764-13.831,10.601-19.62,16.813   c-5.793-6.213-11.807-13.094-19.623-16.836C26.333,50.61,26.668,49.986,27.003,49.319z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M47.516,38.717c0-1.023-0.848-1.824-1.848-1.824   c-0.982,0-1.804,0.801-1.804,1.824c0,0.981,0.822,1.806,1.804,1.806C46.668,40.523,47.516,39.698,47.516,38.717z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.71,26.591c-0.88-0.88-2.306-0.88-3.186,0c-0.88,0.88-0.88,2.305,0,3.185   l4.779,4.781l-4.779,4.781c-0.88,0.879-0.88,2.304,0,3.184c0.44,0.44,1.017,0.661,1.593,0.661s1.152-0.221,1.592-0.661l6.372-6.373   c0.88-0.88,0.88-2.305,0-3.185L13.71,26.591z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.059,42.521c0.44,0.44,1.018,0.661,1.593,0.661   c0.579,0,1.155-0.221,1.593-0.661l6.373-6.373c0.88-0.88,0.88-2.305,0-3.185l-6.373-6.373c-0.88-0.88-2.306-0.88-3.186,0   c-0.879,0.88-0.879,2.305,0,3.185l4.78,4.781l-4.78,4.781C0.179,40.216,0.179,41.641,1.059,42.521z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M75.982,34.556l4.779-4.781c0.88-0.88,0.88-2.305,0-3.185   c-0.88-0.88-2.306-0.88-3.186,0l-6.373,6.373c-0.879,0.88-0.879,2.305,0,3.185l6.373,6.373c0.44,0.44,1.018,0.661,1.593,0.661   c0.577,0,1.152-0.221,1.593-0.661c0.88-0.88,0.88-2.305,0-3.184L75.982,34.556z" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M80.671,36.148l6.371,6.373c0.439,0.44,1.017,0.661,1.594,0.661   c0.575,0,1.152-0.221,1.592-0.661c0.88-0.88,0.88-2.305,0-3.184l-4.779-4.781l4.779-4.781c0.88-0.88,0.88-2.305,0-3.185   c-0.88-0.88-2.308-0.88-3.186,0l-6.371,6.373C79.79,33.844,79.79,35.268,80.671,36.148z" />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                  <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#"
+                      class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.objective_title %></a>
+                    <p class="text-gray-500">L'objectif que tu t'es fixé</p>
+                  </div>
 
-              </div>
-            </div>
-            <!-- End Content -->
+                </div>
+              </li>
+
+              <li class="col-span-1 flex shadow-sm rounded-md">
+                <div
+                  class="flex-shrink-0 flex items-center justify-center w-16 bg-green-500 text-white text-sm font-medium rounded-l-md">
+                  <svg class="w-14 h-14 fill-current mt-3" fill="none" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
+                    xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;"
+                    xml:space="preserve">
+                    <switch>
+                      <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0"
+                        width="1" height="1" />
+                      <g i:extraneous="self">
+                        <g>
+                          <path
+                            d="M85.1,22.6c-0.8-1.8-2.8-2.7-4.6-1.9c-1.7,0.7-6.7,2.6-9.3,3c-2,0.3-6.1,0.4-11-1.7c-2.2-0.9-5-2.3-5.3-2.5     c-5.7-2.6-14.3-0.6-20.6,1.6c-0.8,0.3-2.6,0.9-8.8,8.7c-1.2,1.5-1,3.8,0.6,5c0.7,0.5,1.4,0.8,2.2,0.8c1,0,2.1-0.5,2.8-1.3     c2.3-2.9,4.9-5.8,5.9-6.5c1.9-0.7,3.8-1.2,5.5-1.6c-3.1,4.6-6.3,11.9-6.3,14.6c-0.1,2.6-2.4,8.9-3.8,11.7     c-2.6-1.2-7.3-3.8-11.1-6.1c-2-1.2-4.5-0.6-5.7,1.4c-1.2,2-0.6,4.5,1.4,5.7c11.3,6.9,15,8,16.7,8c0.4,0,0.7-0.1,1-0.1     c3.3-0.7,5.9-5.8,7.6-10.7l35.2,0.7c0,0,0.1,0,0.1,0c2.3,0,4.1-1.8,4.1-4.1c0-2.3-1.8-4.2-4.1-4.2l-25.1-0.5c2-4.3,5-10,7.9-12.8     c3.3,1,6.3,1.4,8.6,1.4c1.3,0,2.4-0.1,3.3-0.2c3.9-0.5,10.4-3.2,11.1-3.5C85,26.5,85.8,24.4,85.1,22.6z" />
+                          <ellipse transform="matrix(0.4182 -0.9084 0.9084 0.4182 25.951 62.1227)" cx="61.5" cy="10.8"
+                            rx="8.3" ry="8.3" />
+                          <path
+                            d="M76.8,56l-32.3,6.1c-1.5,0.3-2.6,1.6-2.6,3.1v28.3h-3.3c-1.1,0-2,0.9-2,2s0.9,2,2,2h4.1c1.8,0,3.2-1.4,3.2-3.2V80.7     l30.8-5.8v10.6h-3.3c-1.1,0-2,0.9-2,2s0.9,2,2,2h4.1c1.8,0,3.2-1.4,3.2-3.2v-27c0-1-0.4-1.8-1.2-2.5C78.7,56.1,77.7,55.8,76.8,56     z" />
+                        </g>
+                      </g>
+                    </switch>
+                  </svg>
+                </div>
+                <div
+                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
+                  <div class="flex-1 px-4 py-2 text-sm truncate">
+                    <a href="#" class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.activity_level_card %></a>
+                    <p class="text-gray-500">Activité physique</p>
+                  </div>
+
+                </div>
+              </li>
+            </ul>
           </div>
+
+
+
+          <div class="py-4 mt-6 ">
+            <div class="rounded-lg h-96">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                <% unless current_user.plans.nil? %>
+                <h1 class="text-2xl -ml-8 font-semibold text-gray-800 mb-5">Ton dernier <span
+                    class="text-primary-800">programme</span> du <%= @plan.created_at.strftime("%d-%m-%Y") %> : </p>
+                </h1>
+                <%= render 'users/plans/show'%>
+                <% end %>
+              </div>
+
+
+
+            </div>
+          </div>
+          <!-- End Content -->
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   </div>
+</div>
