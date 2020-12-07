@@ -4,6 +4,14 @@
 body {
     background-image: url(asset_path('bg-webbis.svg'));
     background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.faq {
+  background-image: url(asset_path('BG.svg'));
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .chief {
