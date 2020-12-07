@@ -19,8 +19,9 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<%= render "layouts/navbar" %>
-  <body>
+  <div class="flex flex-col h-screen justify-between">
+    <%= render "layouts/navbar" %>
+  <body class="mb-auto">
     <!--<div class="flex flex-col max-w-full h-full justify-between">-->
   
     
@@ -38,4 +39,5 @@
     <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js"></script>
   </body>
   <%= render "layouts/footer" %>
+</div>
 </html>
