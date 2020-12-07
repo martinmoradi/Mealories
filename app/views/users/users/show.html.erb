@@ -102,7 +102,7 @@
             <div class="py-4">
               <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                  <% unless @plans.nil? %>
+                  <% unless current_user.plans.nil? %>
                     <h1 class="text-2xl font-semibold text-gray-900">Ton dernier <span class="text-primary-800">programme
                     </h1>
                   <%= render 'users/plans/show'%>                 
