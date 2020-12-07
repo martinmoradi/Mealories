@@ -3,15 +3,18 @@
 @import "tailwindcss/utilities";
 // Tailwind components
 @layer components {
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+  html,body
+  {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      
+  }
     footer {
-        @apply flex text-sm px-5 items-center justify-evenly h-24 w-full bg-primary-500
-    }
+        @apply absolute bottom-0 flex text-sm px-5 items-center justify-evenly h-24 w-full bg-primary-500
+    };
+    
     .nav-links {
         position: relative;
         z-index: 1;

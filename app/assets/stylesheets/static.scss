@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-    min-height: 100%;
     background-image: url(asset_path('bg-webbis.svg'));
-    // background-position-x: 10%;
-    // background-position-y: 5%;
     background-size: cover;
 }
 
@@ -19,11 +16,11 @@ body {
     -ms-user-select: none;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-    overflow-x: hidden;
-}
+// html {
+//     position: relative;
+//     min-height: 100%;
+//     overflow-x: hidden;
+// }
 
 .clock {
     height: 25px;
