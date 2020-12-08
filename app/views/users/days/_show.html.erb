@@ -1,166 +1,103 @@
-<% if @day != nil %>
-  
-  <div class="card mb-4 md:mb-0">
-    <div class=" bg-gray-50 w-80 mr-5 hover:shadow-lg shadow-2-xl rounded">
-          <%= image_tag @day.lunch.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
-      <div class=" py-4 px-3">
-      <div class="flex flex-row items-center ">
-        <%= image_tag 'clock.svg', class: "clock"%>
-        <div class="text-sm ml-2 ">
-          <p><%= @day.lunch.cook_time%> mins </p>
-        </div>
-        <i class="fas fa-utensils ml-3"></i>
-        <div class="text-sm  ml-2">
-        <p> <%= @day.lunch.cal_per_serving%> calories</p>
-        </div>
-      </div>
-        <div>
-          <h1 class="text-xl font-bold  text-gray-900 mb-4 mt-2"><%= @day.lunch.title%></h1>   
-          <div data-controller="modal" data-modal-allow-background-close="false">
-        <a href="#" data-action="click->modal#open"
-          class="text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm mt-6 px-4 py-2 rounded outline-none focus:outline-none ">
-          <span>Voir la recette</span> </a>
- <!-- Modal Container -->
-          <div data-target="modal.container"
-          data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-          class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center "
-          style="z-index: 9999;">
-          <!-- Modal Inner Container -->
-            <div class="w-8/12 relative static">
-            <!-- Modal Card -->
-              <div class="m-1 bg-gray-50  rounded-lg shadow">
-                <div class="m-auto max-w-6xl p-12">
-                  <div class="absolute top-5 right-5">
-                  <button data-action="click->modal#close">
-                    <i class="fas fa-times fa-lg"></i>
-                    </button>
-                  </div>
-                  <div class="text-5xl text-gray-900 font-bold mb-14 text-center ">
-                   <%= @day.lunch.title %>
-                  </div>
-            <div class="flex flex-col md:flex-row justify-center ">
-             <div class="md:w-1/2 max-w-md flex flex-col justify-center lg:border-r-8 lg:border-primary-600 pr-20">
-            <div
-              class="text-2xl md:text-2xl font-light leading-normal">
-              <p>Préparation : 
-              <span class="text-xl">
-              <%= @day.lunch.cook_time%> mins
-              </span>
-              </p> 
-            </div>
-            
-            <div class="text-2xl md:text-2xl font-light  leading-normal ">
-              <div class="mt-20 ">
-                <h2>Informations nutritionnelles </h2>
-              </div>
-            </div>
-            <ul class=" pt-4">
-              <li><%= @day.lunch.cal_per_serving%> calories</li>
-              <li><%= @day.lunch.prot_per_serving%> protéines</li>
-              <li><%= @day.lunch.carbs_per_serving%> glucides</li>
-              <li><%= @day.lunch.fat_per_serving%> lipides</li>
-        
-            <div class="text-2xl md:text-2xl font-light leading-normal mt-10 ">
-              <p>Ingrédients </p>
-              <span class="text-base ">
-                <%= @day.lunch.ingredients_list %>
-              </span>
-            </div>
-            </div>
-            <div class=" max-w-lg   lg:pl-24 ">
-                <%= image_tag @day.lunch.image_url, style:"box-shadow: 0 4px 4px rgba(0,0,0,0.20), 0 4px 4px rgba(0,0,0,0.22); border-radius:2px;"%>
-               </div>
-              </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% unless @day.nil? %>
 
-  <div class="card ">
-    <div class=" bg-gray-50 w-80 mr-5 shadow-2-xl rounded hover:shadow-lg">
-          <%= image_tag @day.dinner.image_url, style: 'height:100%;width:100%;margin-bottom:20px; border-radius:5px;' %>
-      <div class=" py-4 px-3">
-      <div class="flex flex-row items-center ">
-        <%= image_tag 'clock.svg', class: "clock"%>
-        <div class="text-sm ml-2 ">
-          <p><%= @day.dinner.cook_time%> mins </p>
-        </div>
-          <i class="fas fa-utensils ml-3"></i>
-        <div class="text-sm  ml-2">
-        <p> <%= @day.dinner.cal_per_serving%> calories</p>
-        </div>
+<div class="flex justify-items-center flex-wrap gap-x-5	">
+
+  <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
+    <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+    <div class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom ">
+      <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton déjeuner</p>
+    </div>
+      <%= image_tag @day.lunch.image_url %>
+    </div>
+    <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
+      <p class="flex items-center text-gray-600 text-sm -ml-2"><span class="text-gray-600 mr-2"><i
+            class="fas fa-utensils ml-3"></i></span><span
+          class="text-lg text-primary-600 font-semibold mr-1"><%= @day.lunch.cal_per_serving.round(0)%></span><span
+          class="text-sm text-gray-500">calories par portion</span></p>
+
+      <%= link_to recipe_path(@day.lunch) do %>
+      <button
+        class="p-4 bg-primary-500 rounded-full hover:bg-primary-700 nice-btns focus:bg-primary-800 transition ease-in duration-200 focus:outline-none">
+        <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6">
+          <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                C15.952,9,16,9.447,16,10z" />
+        </svg>
+      </button>
+      <% end %>
+
+    </div>
+    <div class="pt-6 pb-8 text-gray-600 text-center text-2xl text-semibold">
+      <p> <%=@day.lunch.title %></p>
+    </div>
+    <div class="pb-10 uppercase text-center tracking-wide flex justify-around">
+      <div class="prots">
+        <p class="text-gray-500 text-sm">Protéines</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.prot_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
       </div>
-        <div class="">
-          <h1 class="text-xl font-bold  text-gray-900 mb-4 mt-2"><%= @day.dinner.title%></h1>   
-        <!-- new plan modal -->   
-        <div data-controller="modal" data-modal-allow-background-close="false">
-        <a href="#" data-action="click->modal#open"
-          class="text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm  px-4 py-2 rounded outline-none focus:outline-none ">
-          <span>Voir la recette</span> </a>
-          
-          <!-- Modal Container -->
-          <div data-target="modal.container"
-          data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
-          class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center "
-          style="z-index: 9999;">
-          <!-- Modal Inner Container -->
-            <div class="w-8/12 relative static">
-            <!-- Modal Card -->
-              <div class="m-1 bg-gray-100  rounded-lg shadow">
-                <div class="m-auto max-w-6xl p-12">
-                  <div class="absolute top-5 right-5">
-                  <button data-action="click->modal#close">
-                    <i class="fas fa-times fa-lg"></i>
-                    </button>
-                  </div>
-                  <div class="text-5xl text-gray-900 font-bold mb-14 text-center ">
-                   <%= @day.dinner.title %>
-                  </div>
-            <div class="flex flex-col md:flex-row justify-center ">
-             <div class="md:w-1/2 max-w-md flex flex-col justify-center lg:border-r-8 lg:border-primary-600 pr-20">
-            <div
-              class="text-2xl md:text-2xl font-light leading-normal">
-              <p>Préparation : 
-              <span class="text-xl">
-              <%= @day.dinner.cook_time%> mins
-              </span>
-              </p> 
-            </div>
-            
-            <div class="text-2xl md:text-2xl font-light  leading-normal ">
-              <div class="mt-20 ">
-                <h2>Informations nutritionnelles </h2>
-              </div>
-            </div>
-            <ul class=" pt-4">
-              <li><%= @day.dinner.cal_per_serving%> calories</li>
-              <li><%= @day.dinner.prot_per_serving%> protéines</li>
-              <li><%= @day.dinner.carbs_per_serving%> glucides</li>
-              <li><%= @day.dinner.fat_per_serving%> lipides</li>
-        
-            <div class="text-2xl md:text-2xl font-light leading-normal mt-10 ">
-              <p>Ingrédients </p>
-              <span class="text-base ">
-                <%= @day.dinner.ingredients_list %>
-              </span>
-            </div>
-            </div>
-            <div class=" max-w-lg   lg:pl-24 ">
-                <%= image_tag @day.dinner.image_url, style:"box-shadow: 0 4px 4px rgba(0,0,0,0.20), 0 4px 4px rgba(0,0,0,0.22); border-radius:2px;"%>
-               </div>
-              </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="carbs">
+        <p class="text-gray-500 text-sm">Glucides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.carbs_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="fat">
+        <p class="text-gray-500 text-sm">Lipides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.lunch.fat_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
       </div>
     </div>
   </div>
+
+
+
+  <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
+    <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+     <div class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom">
+      <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton dîner</p>
+    </div>
+      <%= image_tag @day.dinner.image_url %>
+    </div>
+    <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
+      <p class="flex items-center text-gray-600 text-sm -ml-2"><span class="text-gray-600 mr-2"><i
+            class="fas fa-utensils ml-3"></i></span><span
+          class="text-lg text-primary-600 font-semibold mr-1"><%= @day.dinner.cal_per_serving.round(0)%></span><span
+          class="text-sm text-gray-500">calories par portion</span></p>
+
+      <%= link_to recipe_path(@day.dinner) do %>
+      <button
+        class="p-4 bg-primary-500 rounded-full hover:bg-primary-700 nice-btns focus:bg-primary-800 transition ease-in duration-200 focus:outline-none">
+        <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6">
+          <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                C15.952,9,16,9.447,16,10z" />
+        </svg>
+      </button>
+      <% end %>
+
+    </div>
+    <div class="pt-6 pb-8 text-gray-600 text-center text-2xl text-semibold">
+      <p> <%=@day.dinner.title %></p>
+    </div>
+    <div class="pb-10 uppercase text-center tracking-wide flex justify-around">
+      <div class="prots">
+        <p class="text-gray-500 text-sm">Protéines</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.prot_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="carbs">
+        <p class="text-gray-500 text-sm">Glucides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.carbs_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+      <div class="fat">
+        <p class="text-gray-500 text-sm">Lipides</p>
+        <p class="text-lg font-semibold text-primary-600"><%= @day.dinner.fat_per_serving%><span
+            class="text-gray-500 text-sm ml-0.5 font-light">g</span></p>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
 </div>
-<% end %>

@@ -1,0 +1,80 @@
+<div data-controller="modal" data-modal-allow-background-close="true">
+
+  <a href="#" data-action="click->modal#open">
+    <button
+      class="p-4 bg-primary-500 rounded-full hover:bg-primary-700 nice-btns focus:bg-primary-800 transition ease-in duration-200 focus:outline-none">
+      <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6">
+        <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                C15.952,9,16,9.447,16,10z" />
+      </svg>
+    </button>
+  </a>
+
+  <!-- Modal Container -->
+  <div data-target="modal.container"
+            data-action="click->modal#closeBackground keyup@window->modal#closeWithKeyboard"
+            class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center "
+            style="z-index: 9999;">   
+             <!-- Modal Inner Container -->
+
+            <div class="w-8/12 relative static">
+
+      <!-- Modal Card -->
+      <div class="m-1 bg-gray-100  rounded-lg shadow">
+
+        <div class="m-auto max-w-6xl p-12">
+          <div class="absolute top-5 right-5">
+            <button data-action="click->modal#close">
+              <i class="fas fa-times fa-lg"></i>
+            </button>
+          </div>
+
+          <div class="text-5xl text-gray-900 font-bold mb-14 text-center ">
+            <%= recipe.title %>
+          </div>
+
+          <div class="flex flex-col md:flex-row justify-center ">
+
+            <div class="md:w-1/2 max-w-md flex flex-col justify-center lg:border-r-8 lg:border-primary-600 pr-20">
+
+              <div class="text-2xl md:text-2xl font-light leading-normal">
+                <p>Préparation :
+                  <span class="text-xl">
+                    <%= recipe.cook_time%> mins
+                  </span>
+                </p>
+              </div>
+
+              <div class="text-2xl md:text-2xl font-light  leading-normal ">
+                <div class="mt-20 ">
+                  <h2>Informations nutritionnelles </h2>
+                </div>
+              </div>
+
+              <ul class=" pt-4">
+                <li><%= recipe.cal_per_serving%> calories</li>
+                <li><%= recipe.prot_per_serving%> protéines</li>
+                <li><%= recipe.carbs_per_serving%> glucides</li>
+                <li><%= recipe.fat_per_serving%> lipides</li>
+              </ul>
+
+                <div class="text-2xl md:text-2xl font-light leading-normal mt-10 ">
+                  <p>Ingrédients </p>
+                  <span class="text-base ">
+                    <%= recipe.ingredients_list %>
+                  </span>
+                </div>
+
+            </div>
+
+            <div class=" max-w-lg lg:pl-24 ">
+              <%= image_tag recipe.image_url, style:"box-shadow: 0 4px 4px rgba(0,0,0,0.20), 0 4px 4px rgba(0,0,0,0.22); border-radius:2px;"%>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
