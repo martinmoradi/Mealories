@@ -50,8 +50,8 @@ class Users::PlansController < Users::ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_path, alert: "Plan supprimé" }
-      format.js { flash[:notice] = "Plan supprimé"}
+      format.html { redirect_to plans_path}
+      format.js {}
     end
     
   end
