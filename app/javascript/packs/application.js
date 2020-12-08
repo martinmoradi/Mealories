@@ -6,9 +6,9 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-// Import TailwindCSS
+    // Import TailwindCSS
 require("stylesheets/application.scss")
-// Import Stimulus.js
+    // Import Stimulus.js
 require("controllers")
 
 
