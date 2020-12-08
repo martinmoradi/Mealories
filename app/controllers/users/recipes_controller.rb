@@ -28,9 +28,9 @@ class Users::RecipesController < Users::ApplicationController
     @recipe = Recipe.new(fetched_params)
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to root_path, notice: 'La recette a été crée.' }
+        format.html { redirect_to root_path, notice: 'La recette a été crée'}
       else
-        format.html { redirect_to root_path, notice: "La recette n'a pas pu être ajoutée." }
+        format.html { redirect_to root_path, notice: "La recette n'a pas pu être ajoutée."}
       end
     end
   end
