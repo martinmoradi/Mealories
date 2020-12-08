@@ -18,8 +18,7 @@ class Users::PlansController < Users::ApplicationController
         params[:plan][:nb_of_days].to_i.times do
           @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
         end
-        format.html {redirect_to plan_path(@plan)}
-        format.js   {}
+        format.html {redirect_to plan_path(@plan.id)}
       end
     end
   end
