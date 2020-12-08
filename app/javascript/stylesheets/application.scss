@@ -9,9 +9,7 @@
       height: 100%;
       margin: 0px;
       padding: 0px;
-  }
-
-    
+  }    
     .nav-links {
         position: relative;
         z-index: 1;
@@ -36,6 +34,12 @@
 }
 // Tailwind components end
 
+
+// Recipe page
+
+// Recipe page end
+
+
 // Media queries 
 @media (min-width: 640px) {
     .nav-links:after {
@@ -49,6 +53,7 @@
         border-bottom: 8px solid #6dd5be;
     }
 }
+
 // Media queries end 
 
 

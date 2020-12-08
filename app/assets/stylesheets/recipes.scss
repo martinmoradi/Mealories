@@ -1,3 +1,25 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.img-recipe {
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+.recipe-list {
+    clear: left;
+  
+    &:before {
+      content:"";
+      height:1.5em;
+      width:1.5em;
+      display:block;
+      float:left;
+      margin-left:-1.5em;
+      background-position:center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('recipe-servings');
+    }
+}
