@@ -53,5 +53,15 @@ class Recipe < ApplicationRecord
   def total_time
     prep_time + cook_time
   end
+
+  def ingredients_list_formatted
+    ingd = ingredients_list.split(",").map do |ingredient|
+      ingredient.delete!("[")
+      ingredient.delete!("]")
+      ingredient.gsub!(/\\\//, "")
+      ingredient.delete!('"')
+      ingredient.strip!
+    end    
+  end
   
 end

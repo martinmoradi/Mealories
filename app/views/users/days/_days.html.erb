@@ -1,5 +1,5 @@
 <%= link_to plan_day_path(@plan.id, day.id), remote: true do %>
-  <button id=<%=day.id%> class="flex shadow-md flex-col rounded-lg mx-1 items-center justify-center w-12 h-12 md:w-24 md:h-20 text-sm font-medium hover:bg-primary-800 hover:text-white hover:font-bold hover:shadow-lg focus:outline-none focus:bg-primary-800 focus:text-white bg-gray-50 focus:font-bold"  ><span class="mb-1">Jour <%= idx + 1 %></span>
+  <button id=<%=day.id%> class="flex days-list shadow-md flex-col rounded-lg mx-1 items-center justify-center w-12 h-12 md:w-24 md:h-20 text-sm font-medium hover:bg-primary-800 hover:text-white hover:font-bold hover:shadow-lg focus:outline-none focus:bg-primary-800 focus:text-white bg-gray-50 focus:font-bold"  ><span class="mb-1">Jour <%= idx + 1 %></span>
   <i class="far fa-calendar-alt fa-2x hidden md:contents"></i>
   <i class="far fa-calendar-alt contents md:hidden"></i></button>
 <% end %>
