@@ -208,6 +208,20 @@ input[type='number']::-webkit-inner-spin-button,
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
+.nice-btns:active {
+  background-color: #31ab90;
+}
+
+.nice-btns:hover {
+  background-color: #6dd5be;
+  box-shadow: inset 0px 0px 0px 2px #ffffff;
+}
+
+.nice-btns:focus {
+  background-color: #31ab90;
+  box-shadow: inset 0px 0px 0px 2px #ffffff;
+}
+
 
 ::-webkit-input-placeholder { /* Edge */
   color: lightgray;
