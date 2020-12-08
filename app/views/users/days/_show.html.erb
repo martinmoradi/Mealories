@@ -10,10 +10,10 @@
       <%= image_tag @day.lunch.image_url %>
     </div>
     <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
-      <p class="flex items-center text-gray-600 text-sm -ml-2"><span class="text-gray-600 mr-2"><i
+      <p class="flex items-center text-gray-600 text-sm -ml-2 mt-12 sm:mt-0"><span class="text-gray-600 mr-2"><i
             class="fas fa-utensils ml-3"></i></span><span
           class="text-lg text-primary-600 font-semibold mr-1"><%= @day.lunch.cal_per_serving.round(0)%></span><span
-          class="text-sm text-gray-500">calories par portion</span></p>
+          class="text-sm text-gray-500 ">calories par portion</span></p>
 
       <%= link_to recipe_path(@day.lunch) do %>
       <button
