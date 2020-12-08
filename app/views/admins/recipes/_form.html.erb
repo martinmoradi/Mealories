@@ -1,0 +1,46 @@
+<div class="min-h-80 my-auto flex flex-col justify-center py-12 sm:px-6 lg:px-8 max-h-90">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+
+    <%= image_tag 'logogo', class:"mx-auto h-12 w-auto" %>
+    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+      Ajout d'une recette
+    </h2>
+    <p class="mt-2 text-center text-sm text-gray-600 max-w">
+      Renseigne les informations de la nouvelle recette
+      </a>
+    </p>
+  </div> 
+  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
+      <%= form_for(:recipe, url: new_admins_recipe_path, class:"form-wizard js-form-wizard form-y-6") do |f| %>
+
+      <div class="input-container ic2">
+        <%= f.text_field :title, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Titre" class="placeholder">Titre</label>
+      </div>
+        <div class="input-container ic2">
+        <%= f.number_field :prep_time, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Parts" class="placeholder">Parts</label>
+      </div>
+        <div class="input-container ic2">
+        <%= f.url_field :marmiton_url, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Url" class="placeholder">Url</label>
+      </div>
+        <div>
+          <%= f.submit "Valider", class:"submit" %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
