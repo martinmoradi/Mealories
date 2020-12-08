@@ -1,0 +1,24 @@
+<tr id="plan<%=plan.id%>", class="bg-white">
+  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+    <%= idx + 1 %>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    <%= plan.created_at.strftime("%d-%m-%Y") %>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    <%= plan.days.length %> jours
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    Normal
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+    <%= link_to plan_path(plan.id), class:"text-primary-600 hover:text-primary-900" do %>
+    <p> Voir </p>
+    <% end %>
+  </td>
+    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+      <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer le plan?" }, class:"text-warning hover:text-yellow-500" do %>
+      <p> Supprimer </p>
+      <% end %>
+    </td>
+</tr>

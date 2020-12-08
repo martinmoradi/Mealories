@@ -2,7 +2,7 @@ class Users::PlansController < Users::ApplicationController
   before_action :set_plan, only: %i[update destroy show]
   before_action :user_profile_incomplete, only: %i[create show edit update destroy]
   before_action :authorize_plan, only: %i[update destroy show]
-
+  
   def new
     @plan = Plan.new
   end
@@ -19,7 +19,7 @@ class Users::PlansController < Users::ApplicationController
           @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
         end
         format.html {redirect_to plan_path(@plan)}
-        format.js   {redirect_to plan_path(@plan)}
+        format.js   {}
       end
     end
   end
@@ -50,9 +50,10 @@ class Users::PlansController < Users::ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_path }
+      format.html { redirect_to plans_path}
       format.js {}
     end
+    
   end
 
   private
