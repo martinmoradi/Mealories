@@ -4,6 +4,7 @@ class Users::ApplicationController < ApplicationController
 
   def user_profile_incomplete
     redirect_to edit_user_path(current_user.id) if current_user.incomplete_profile?
+    flash[:notice]="Ton profil n'est pas complet"
   end
 
 
