@@ -1,5 +1,11 @@
 class Admins::RecipesController < Admins::ApplicationController
-  def index
+  def new
     
+  end
+
+  def create
+  end
+
+  def index
   end
 end
