@@ -12,7 +12,7 @@
   </div> 
   <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
-      <%= form_(resource, as: resource_name, url: new_admins_recipe_path, class:"form-wizard js-form-wizard form-y-6") do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-wizard js-form-wizard form-y-6") do |f| %>
 
       <div class="input-container ic2">
         <%= f.email_field :email, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>

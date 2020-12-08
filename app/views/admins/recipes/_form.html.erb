@@ -19,9 +19,22 @@
         <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
         </div>
         <div class="cut cut-short bg-gray-100"></div>
-        <label for="Titre" class="placeholder">Titre</>
+        <label for="Titre" class="placeholder">Titre</label>
       </div>
-
+        <div class="input-container ic2">
+        <%= f.number_field :prep_time, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Parts" class="placeholder">Parts</label>
+      </div>
+        <div class="input-container ic2">
+        <%= f.url_field :marmiton_url, autofocus: true, placeholder: '', autocomplete: "", required: true, class:"input form-control js-form-control" %>
+        <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
+        </div>
+        <div class="cut cut-short bg-gray-100"></div>
+        <label for="Url" class="placeholder">Url</label>
+      </div>
         <div>
           <%= f.submit "Valider", class:"submit" %>
         </div>
