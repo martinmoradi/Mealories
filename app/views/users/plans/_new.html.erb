@@ -36,7 +36,7 @@
 
             <h2 class="text-xl mb-4 text-center">Combien de jours veux-tu générer ?</h2>
             <div class="form-modal">
-              <%= form_with(model: Plan.new, url: plans_path, method: "post") do |f| %>
+              <%= form_with model: Plan.new, url: plans_path, method: "post" do |f| %>
               <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 -mr-25">
                 <button data-action="decrement" id="decrement"
                   class=" bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
@@ -49,11 +49,11 @@
                 </button>
               </div>
               <div class="flex justify-end items-center flex-wrap mt-6">
-                <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1" %>
+                <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"%>
                 <% end %>
                 <button
                   class="text-white bg-warning border border-solid hover:border-warning hover:text-warning hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
-                  data-action="click->modal#close">Retour</button>
+                  data-action="click->modal#close" >Retour</button>
               </div>
 
             </div>
@@ -63,3 +63,4 @@
     </div>
   </div>
   <%= javascript_pack_tag 'new_plan' %>
+

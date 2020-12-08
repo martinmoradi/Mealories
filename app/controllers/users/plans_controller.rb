@@ -12,12 +12,15 @@ class Users::PlansController < Users::ApplicationController
   end
 
   def create
-    @plan = Plan.new(user_id: current_user.id)
-    if @plan.save
-      params[:plan][:nb_of_days].to_i.times do
-        @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
+    respond_to do |format|
+      @plan = Plan.new(user_id: current_user.id)
+      if @plan.save
+        params[:plan][:nb_of_days].to_i.times do
+          @day = Day.create(plan_id: @plan.id, lunch_id: current_user.generate_lunch.id, dinner_id: current_user.generate_dinner.id)
+        end
+        format.html {redirect_to plan_path(@plan)}
+        format.js   {redirect_to plan_path(@plan)}
       end
-      redirect_to user_path(current_user)
     end
   end
 

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
     resources :users, path: "/"
     resources :recipes
-        
   end
+
+  namespace :admins do
+    resources :admins
+  end
+        
   
 end
