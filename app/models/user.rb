@@ -29,13 +29,12 @@ class User < ApplicationRecord
   validates :age,             presence: true, numericality: true, on: :update
   validates :activity_level,  presence: true, numericality: true, on: :update
   validates :gender,          presence: true, on: :update
-  
 
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
   has_many :days, through: :plans
   after_create :welcome_mail
-  
+
   # Using Mifflin-St-Jeor equation
   def bmr
     if gender == 'Homme'
@@ -56,12 +55,12 @@ class User < ApplicationRecord
     when 4
       bmr * 1.725
     when 5
-       bmr * 1.9
+      bmr * 1.9
     else
       daily_cal
     end
   end
-    
+
   def daily_cal
     # loose weight
     if objective == 1
@@ -72,7 +71,7 @@ class User < ApplicationRecord
     # gain weight
     else
       bmr_activity + ((3500 / 2) / 7)
-    end    
+    end
   end
 
   def daily_prot
@@ -102,10 +101,10 @@ class User < ApplicationRecord
     end
   end
 
-    def activity_level_card
+  def activity_level_card
     case activity_level
     when 1
-      "Sédentaire"
+      'Sédentaire'
     when 2
       'Sportif occasionnel'
     when 3
@@ -116,9 +115,6 @@ class User < ApplicationRecord
       'Fou de sport'
     end
   end
-
-
-
 
   def objective_title
     case objective
@@ -163,38 +159,35 @@ class User < ApplicationRecord
     [weight_in_kgs, height_in_cms, age].any?(&:zero?)
   end
 
-  #body mass index
+  # body mass index
   def bmi
-    begin
-       weight_in_kgs / ((height_in_cms / 100) * (height_in_cms / 100)) 
-    rescue ZeroDivisionError
-      0
-    end
+    bmi = weight_in_kgs / ((height_in_cms.to_f / 100)**2)
+    bmi.round(0)
+  rescue ZeroDivisionError
+    0
   end
 
   def bmi_text
-   if bmi.between?(1, 16.5)
-    "Famine"
-   elsif bmi.between?(16.6, 18.5)
-    "Maigreur" 
-   elsif bmi.between?(18.6, 25)
-    "Corpulence normale" 
-   elsif bmi.between?(25.1, 30)
-    "Surpoids"
-   elsif bmi.between?(30.1, 35)
-    "Obésité modérée" 
-   elsif bmi.between?(35.1, 40)
-    "Obésité sévère" 
-   else 
-    "Obésité morbide"
-   end
+    if bmi.between?(1, 16.5)
+      'Famine'
+    elsif bmi.between?(16.6, 18.5)
+      'Maigreur'
+    elsif bmi.between?(18.6, 25)
+      'Corpulence normale'
+    elsif bmi.between?(25.1, 30)
+      'Surpoids'
+    elsif bmi.between?(30.1, 35)
+      'Obésité modérée'
+    elsif bmi.between?(35.1, 40)
+      'Obésité sévère'
+    else
+      'Obésité morbide'
+    end
   end
 
-  private 
+  private
 
   def welcome_mail
     UserMailer.welcome_email(self).deliver_now
   end
-
-  
 end
