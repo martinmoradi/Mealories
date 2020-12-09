@@ -23,6 +23,7 @@ class Users::RecipesController < Users::ApplicationController
   # POST /recipes.json
   def create
     # services / get_nutrients.rb
+    begin
     fetched_params = GetNutrients.new(params[:recipe][:marmiton_url]).perform
     @recipe = Recipe.new(fetched_params)
     respond_to do |format|
@@ -32,6 +33,9 @@ class Users::RecipesController < Users::ApplicationController
         format.html { redirect_to new_admins_recipe_path, error: "La recette n'a pas pu être ajoutée."}
       end
     end
+  rescue NoMethodError
+     redirect_to new_admins_recipe_path, error: '!!'
+  end
   end
 
   # PATCH/PUT /recipes/1

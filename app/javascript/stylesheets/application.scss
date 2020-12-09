@@ -2,9 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-$color1: #6dd5be;
-$color2: #31ab90;
-
+$primary-1: #6dd5be;
+$primary-2: #31ab90;
+$primary-3: #39c5a6;
 
 // Tailwind components
 html,
@@ -31,13 +31,13 @@ body {
 }
 
 .hamburger {
-  fill: $color1;
+  fill: $primary-1;
 }
 
 .hamburger:hover,
 .hamburger:active {
-  fill: $color2;
-  outline-color: $color2;
+  fill: $primary-2;
+  outline-color: $primary-2;
 }
 
 #nav-toggle {
@@ -68,7 +68,7 @@ body {
     height: 1px;
     width: 100%;
     /* or 100px */
-    border-bottom: 8px solid $color1;
+    border-bottom: 8px solid $primary-1;
   }
 }
 
@@ -77,7 +77,7 @@ body {
 // Miscellaneous
 .highlight {
   font-size: 30px;
-  background-image: linear-gradient(to right, transparent 50%, $color1 50%);
+  background-image: linear-gradient(to right, transparent 50%, $primary-1 50%);
   background-origin: 0;
   background-size: 201% 23%;
   background-repeat: repeat-x;
@@ -146,7 +146,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input:focus {
-  box-shadow: inset 0px 0px 0px 2px $color1;
+  box-shadow: inset 0px 0px 0px 2px $primary-1;
 }
 
 .cut {
@@ -195,11 +195,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input:focus ~ .placeholder {
-  color: $color2;
+  color: $primary-2;
 }
 
 .submit {
-  background-color: $color1;
+  background-color: $primary-1;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -211,9 +211,11 @@ input[type="number"]::-webkit-outer-spin-button {
   outline: 0;
   text-align: center;
   width: 100%;
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: $primary-2 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: inset 0px 0px 0px 0px transparent;
 }
+
+
 
 .submit-warning {
   border-radius: 12px;
@@ -232,16 +234,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .submit:active {
-  background-color: $color2;
+  background-color: $primary-2;
 }
 
 .submit:hover {
-  background-color: $color1;
-  box-shadow: inset 0px 0px 0px 2px #ffffff;
+  transition: $primary-3 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: $primary-3;
+  box-shadow: inset 0px 0px 0px 2px #ffffff;  
 }
 
 .submit:focus {
-  background-color: $color2;
+  background-color: $primary-2;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
@@ -261,16 +264,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .nice-btns:active {
-  background-color: $color2;
+  background-color: $primary-2;
 }
 
 .nice-btns:hover {
-  background-color: $color1;
+  background-color: $primary-1;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
 .nice-btns:focus {
-  background-color: $color2;
+  background-color: $primary-2;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
