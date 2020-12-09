@@ -10,54 +10,104 @@
         </p>
         <%= image_tag 'personal_data_' %>
       </div>
-
       <div class="mt-5 md:mt-0 md:col-span-2 mx-8 mb-15">
         <%= form_with(model: @user, method: "put", local: true) do |f| %>
-        <div class="input-group js-input-group">
-          <div class="input-container ic1">
-            <div class="grid grid-cols-3 gap-6">
-              <div class="col-span-3 sm:col-span-2">
-                <%= f.select :gender, [["Homme"],["Femme"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" } %>
+
+        <ul class="relative rounded-md -space-y-px">
+          <li>
+            <div
+              class="relative border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              <label class="flex items-center text-sm cursor-pointer">
+                <%= f.radio_button(:gender, "Homme", class:"w-5 h-5")  %>
+                <span class="ml-3 font-medium text-gray-900"><%= label_tag(:gender, "Je suis un homme") %></span>
+              </label>
+            </div>
+          </li>
+          <li>
+
+            <div
+              class="relative border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              <label class="flex items-center text-sm cursor-pointer">
+                <%= f.radio_button(:gender, "Femme", class:"w-5 h-5") %>
+                <span class="ml-3 font-medium text-gray-900"><%= label_tag(:gender, "Je suis une femme") %></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
+      
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <div class="input-group js-input-group">
+              <div class="input-container ic1">
+                <%= f.number_field :age, in: 7..120, placeholder: '', value: current_user.age, required: true, class:"input" %>
+                <div class="cut cut-short bg-gray-100"></div>
+                <label for="age" class="placeholder">Age</>
               </div>
             </div>
+          </div>
 
-          </div>
-        </div>
-        <div class="input-group js-input-group">
-          <div class="input-container ic1">
-            <%= f.number_field :age, in: 7..120, placeholder: '', value: current_user.age, required: true, class:"input form-control js-form-control" %>
-            <div class="cut cut-short bg-gray-100"></div>
-            <label for="age" class="placeholder">Age</>
-          </div>
-        </div>
-
-        <div class="input-group js-input-group">
-          <div class="input-container ic1">
-            <%= f.number_field :weight_in_kgs, in: 30..220, placeholder: '', value: current_user.weight_in_kgs, required: true, class:"input form-control js-form-control" %>
-            <div class="cut cut-large bg-gray-100"></div>
-            <label for="weight_in_kgs" class="placeholder">Poids en kg</>
-          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <div class="input-group js-input-group">
+              <div class="input-container ic1">
+                <%= f.number_field :weight_in_kgs, in: 30..220, placeholder: '', value: current_user.weight_in_kgs, required: true, class:"input" %>
+                <div class="cut cut-large bg-gray-100"></div>
+                <label for="weight_in_kgs" class="placeholder">Poids en kg</>
+              </div>
+            </div>
+          </div> 
         </div>
 
         <div class="input-group js-input-group">
           <div class="input-container ic1">
-            <%= f.number_field :height_in_cms, in: 80..250, placeholder: '', value: current_user.height_in_cms, required: true, class:"input form-control js-form-control" %>
+            <%= f.number_field :height_in_cms, in: 80..250, placeholder: '', value: current_user.height_in_cms, required: true, class:"input" %>
             <div class="cut cut-large bg-gray-100"></div>
             <label for="height_in_cms" class="placeholder">Taille en cm</>
           </div>
         </div>
+
+        <ul class="relative rounded-md -space-y-px mt-8">
+
+          <li>
+            <div
+              class="relative border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              <label class="flex items-center text-sm cursor-pointer">
+                <%= f.radio_button(:objective, "1", class:"w-5 h-5")  %>
+                <span
+                  class="ml-3 font-medium text-gray-900"><%= label_tag(:objective, "Je veux perdre du poids") %></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="relative border  p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              <label class="flex items-center text-sm cursor-pointer">
+                <%= f.radio_button(:objective, "2", class:"w-5 h-5") %>
+                <span
+                  class="ml-3 font-medium text-gray-900"><%= label_tag(:objective, "Je veux garder la ligne") %></span>
+              </label>
+            </div>
+          </li>
+          <li>
+            <div
+              class="relative border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              <label class="flex items-center text-sm cursor-pointer">
+                <%= f.radio_button(:objective, "3", class:"w-5 h-5") %>
+                <span
+                  class="ml-3 font-medium text-gray-900"><%= label_tag(:objective, "Je veux prendre du poids") %></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+
         <div class="my-5">
-          <%= f.select :objective, [["Je veux perdre du poids", "1"],["Je veux garder la ligne", "2"], ["Je veux prendre du poids", "3"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" } %>
+          <%= f.select :activity_level, [["J'ai un métier sédentaire et je ne pratique pas de sport", "1"],['Je pratique du sport de 1 à 3 fois par semaine', "2"], ['Je pratique du sport de 3 à 5 fois par semaine', "3"], ['Je pratique du sport presque quotidiennement', "4"], ["J'ai un métier physique et je pratique du sport presque quotidiennement", "5"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 rounded-md" } %>
         </div>
-        <div class="my-5">
-          <%= f.select :activity_level, [["Travail sédendaire et pas de sport", "1"],['Sport léger 1 à 3 fois par semaine', "2"], ['Sport modéré 3 à 5 fois par semaine', "3"], ['Activité sportive presque quotidienne', "4"], ['Métier exigeant  sport intense', "5"]], { required: true } , { class:"mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md" } %>
-        </div>
+
         <%= f.submit "Valider", class:"submit" %>
 
         <% end %>
 
       </div>
     </div>
-
   </div>
 </div>
