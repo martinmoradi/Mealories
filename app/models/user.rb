@@ -63,15 +63,15 @@ class User < ApplicationRecord
 
   def daily_cal
     # loose weight
-    if objective == 1
-      daily_cal = bmr_activity - ((3500 / 2) / 7)
-    # stay in shape
-    elsif objective == 2
-     daily_cal = bmr_activity
-    # gain weight
-    else
-     daily_cal = bmr_activity + ((3500 / 2) / 7)
-    end
+    daily_cal = if objective == 1
+                  bmr_activity - ((3500 / 2) / 7)
+                # stay in shape
+                elsif objective == 2
+                  bmr_activity
+                # gain weight
+                else
+                  bmr_activity + ((3500 / 2) / 7)
+                end
     daily_cal.round(2)
   end
 
@@ -162,10 +162,11 @@ class User < ApplicationRecord
 
   # body mass index
   def bmi
-    bmi = weight_in_kgs / ((height_in_cms.to_f / 100)**2)
-    bmi.round(0)
-  rescue ZeroDivisionError
-    0
+    begin 
+      bmi = weight_in_kgs / ((height_in_cms.to_f / 100)**2)
+      bmi.round(0)
+    rescue ZeroDivisionError
+      0
   end
 
   def bmi_text
