@@ -31,7 +31,7 @@ class User < ApplicationRecord
   validates :gender,          presence: true, on: :update
 
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
-  has_many :plans
+  has_many :plans, dependent: :destroy
   has_many :days, through: :plans
   after_create :welcome_mail
 
