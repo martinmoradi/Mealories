@@ -24,7 +24,6 @@ class Users::RecipesController < Users::ApplicationController
   def create
     # services / get_nutrients.rb
     fetched_params = GetNutrients.new(params[:recipe][:marmiton_url]).perform
-    puts fetched_params
     @recipe = Recipe.new(fetched_params)
     respond_to do |format|
       if @recipe.save
