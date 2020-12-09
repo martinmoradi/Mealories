@@ -167,20 +167,22 @@ class User < ApplicationRecord
       bmi.round(0)
     rescue ZeroDivisionError
       0
+    end
   end
 
   def bmi_text
-    if bmi.between?(1, 16.5)
+    case bmi 
+    when(1..16.5)
       'Famine'
-    elsif bmi.between?(16.6, 18.5)
+    when(16.6..18.5)
       'Maigreur'
-    elsif bmi.between?(18.6, 25)
+    when(18.6..25)
       'Corpulence normale'
-    elsif bmi.between?(25.1, 30)
+    when(25.1..30)
       'Surpoids'
-    elsif bmi.between?(30.1, 35)
+    when(30.1..35)
       'Obésité modérée'
-    elsif bmi.between?(35.1, 40)
+    when(35.1..40)
       'Obésité sévère'
     else
       'Obésité morbide'
