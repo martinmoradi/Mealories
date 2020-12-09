@@ -24,7 +24,7 @@
 </head>
 
 
-<body class="mb-auto">
+<body class="mb-auto z-10">
 <%= render "layouts/navbar" %>
   <!--<div class="flex flex-col max-w-full h-full justify-between">-->
 
@@ -66,18 +66,17 @@
 
 
 
-  <!-- End Devise Message -->
+
 
   <%= yield %>
 
-  <!--</div>-->
-
+<div class="push h-80 z-0"></div>
+<%= render "layouts/footer" %>
   <!-- Stimulus.js -->
   <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
   <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
   </script>
 </body>
-<%= render "layouts/footer" %>
 </div>
 
 </html>
