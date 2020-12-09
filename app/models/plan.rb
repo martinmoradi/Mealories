@@ -4,6 +4,7 @@
 
 class Plan < ApplicationRecord
   belongs_to :user
+  has_one :current_plan, class_name: 'User', foreign_key: 'current_plan_id'
   has_many   :days, dependent: :destroy
   has_many   :recipes, through: :days
 

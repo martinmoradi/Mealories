@@ -30,6 +30,7 @@ class User < ApplicationRecord
   validates :activity_level,  presence: true, numericality: true, on: :update
   validates :gender,          presence: true, on: :update
 
+  has_one :plan, foreign_key: :current_plan
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans
   has_many :days, through: :plans
