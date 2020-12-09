@@ -1,45 +1,52 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+$color1: #6dd5be;
+$color2: #31ab90;
+
+
 // Tailwind components
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+*:focus {
+  outline: none;
+}
+
+.nav-links {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.hamburger {
+  fill: $color1;
+}
+
+.hamburger:hover,
+.hamburger:active {
+  fill: $color2;
+  outline-color: $color2;
+}
+
+#nav-toggle {
+  outline-color: #afe8db;
+}
+
+#nav-toggle:focus,
+#nav-toggle:active {
+  outline-color: #afe8db;
+}
+
+
 @layer components {
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-  }
-
-  *:focus {
-    outline: none;
-  }
-
-  .nav-links {
-    position: relative;
-    z-index: 1;
-    top: 0;
-    padding-bottom: 1.5rem;
-  }
-
-  .hamburger {
-    fill: #6dd5be;
-  }
-
-  .hamburger:hover,
-  .hamburger:active {
-    fill: #31ab90;
-    outline-color: #31ab90;
-  }
-
-  #nav-toggle {
-    outline-color: #afe8db;
-  }
-
-  #nav-toggle:focus,
-  #nav-toggle:active {
-    outline-color: #afe8db;
-  }
 }
 // Tailwind components end
 
@@ -57,7 +64,7 @@
     height: 1px;
     width: 100%;
     /* or 100px */
-    border-bottom: 8px solid #6dd5be;
+    border-bottom: 8px solid $color1;
   }
 }
 
@@ -66,7 +73,7 @@
 // Miscellaneous
 .highlight {
   font-size: 30px;
-  background-image: linear-gradient(to right, transparent 50%, #6dd5be 50%);
+  background-image: linear-gradient(to right, transparent 50%, $color1 50%);
   background-origin: 0;
   background-size: 201% 28%;
   background-repeat: repeat-x;
@@ -135,7 +142,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input:focus {
-  box-shadow: inset 0px 0px 0px 2px #6dd5be;
+  box-shadow: inset 0px 0px 0px 2px $color1;
 }
 
 .cut {
@@ -184,11 +191,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input:focus ~ .placeholder {
-  color: #31ab90;
+  color: $color2;
 }
 
 .submit {
-  background-color: #6dd5be;
+  background-color: $color1;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -221,16 +228,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .submit:active {
-  background-color: #31ab90;
+  background-color: $color2;
 }
 
 .submit:hover {
-  background-color: #6dd5be;
+  background-color: $color1;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
 .submit:focus {
-  background-color: #31ab90;
+  background-color: $color2;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
@@ -250,16 +257,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .nice-btns:active {
-  background-color: #31ab90;
+  background-color: $color2;
 }
 
 .nice-btns:hover {
-  background-color: #6dd5be;
+  background-color: $color1;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
 .nice-btns:focus {
-  background-color: #31ab90;
+  background-color: $color2;
   box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
@@ -312,3 +319,6 @@ input:focus:-ms-input-placeholder {
 input:focus::placeholder {
   opacity: 1;
 }
+
+
+// radio buttons
