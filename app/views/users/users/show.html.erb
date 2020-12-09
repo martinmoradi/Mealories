@@ -149,7 +149,7 @@
           <div class="py-4 mt-6">
             <div class="rounded-lg h-96 ">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
-                <% if current_user.plans.exists? %>
+                <% if @user.current_plan_id? %>
                 <h1 class="text-xl -ml-8 font-semibold text-gray-700 mb-5">Ton dernier <span
                     class="text-primary-800 text-2xl mx-2">programme</span> du <%= @plan.created_at.strftime("%d-%m-%Y") %> : </p>
                 </h1>

@@ -37,13 +37,9 @@ class Users::PlansController < Users::ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @plan.update(plan_params)
-        format.html
-      else
-        format.html
-      end
-    end
+    current_user.update(current_plan_id: params[:id])
+    redirect_to user_path(current_user.id)
+    flash[:notice]='Profite de ton programme'
   end
 
   def destroy
