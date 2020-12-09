@@ -49,8 +49,8 @@ class Users::PlansController < Users::ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_path}
-      format.js {}
+      format.html { redirect_to plans_path, notice: "Le programme a été supprimé "}
+      format.js { notice: "Le programme a été supprimé "}
     end
     
   end
