@@ -13,10 +13,10 @@
       <div class="mt-5 md:mt-0 md:col-span-2 mx-8 mb-15">
         <%= form_with(model: @user, method: "put", local: true) do |f| %>
 
-        <ul class="relative rounded-md -space-y-px">
+        <ul class=" rounded-md -space-y-px">
           <li>
             <div
-              class="relative border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              class=" border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:gender, "Homme", class:"w-5 h-5")  %>
                 <span class="ml-3 font-medium text-gray-900"><%= label_tag(:gender, "Je suis un homme") %></span>
@@ -26,7 +26,7 @@
           <li>
 
             <div
-              class="relative border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              class=" border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:gender, "Femme", class:"w-5 h-5") %>
                 <span class="ml-3 font-medium text-gray-900"><%= label_tag(:gender, "Je suis une femme") %></span>
@@ -66,11 +66,11 @@
           </div>
         </div>
 
-        <ul class="relative rounded-md -space-y-px mt-8">
+        <ul class=" rounded-md -space-y-px mt-8">
 
           <li>
             <div
-              class="relative border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              class=" border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "1", class:"w-5 h-5")  %>
                 <span
@@ -79,7 +79,7 @@
             </div>
           </li>
           <li>
-            <div class="relative border  p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+            <div class=" border  p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "2", class:"w-5 h-5") %>
                 <span
@@ -89,7 +89,7 @@
           </li>
           <li>
             <div
-              class="relative border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
+              class=" border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6 md:grid md:grid-cols-3 bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "3", class:"w-5 h-5") %>
                 <span
