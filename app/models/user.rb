@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   has_one :plan, foreign_key: :current_plan, dependent: :destroy
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
-  has_many :plans
+  has_many :plans, dependent: :destroy
   has_many :days, through: :plans
   after_create :welcome_mail
 

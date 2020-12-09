@@ -2,21 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-  background-image: url(asset_path('bgmobile.svg'));
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
 }
-
-@media (min-width: 970px) {
-  .body {
-    
-    background-image: url(asset_path('bgweb.svg'));
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;;
+@media (max-width: 1190px) {
+  body {
+    background-image: url(asset_path('bg-web.svg'));
   }
 }
+@media (min-width: 1191px) {
+  body {
+    background-image: url(asset_path('bgmobile.svg'));
+ }
+}
+  
+  
 .presentation {
   background-image: url(asset_path('bg_faq.svg'));
   background-size: cover;

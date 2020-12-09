@@ -13,9 +13,16 @@
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 
+
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
+  <!--links for animations-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <%= stylesheet_link_tag 'application', media: 'all'%>
   <%= favicon_link_tag asset_path('favicon.ico') %>
   <!-- This refers to app/javascript/stylesheets/application.scss-->
@@ -38,7 +45,8 @@
             <div class="flex items-start">
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <div class="text-lg leading-5 font-medium">
-                  <p> <%= notice%> </p>
+                  <p> <%= notice %> </p>
+                  <p> <%= error %> </p>
                 </div>
                 <div class="text-lg leading-5 font-medium">
                   <p> <%= info %> </p>
@@ -77,6 +85,10 @@
   <!-- Stimulus.js -->
   <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
   <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 
 </body>
