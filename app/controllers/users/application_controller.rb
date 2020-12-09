@@ -1,11 +1,10 @@
 class Users::ApplicationController < ApplicationController
   before_action :authenticate_user!
-  
 
   def user_profile_incomplete
-    redirect_to edit_user_path(current_user.id) if current_user.incomplete_profile?
-    flash[:notice]="Ton profil n'est pas complet"
+    if current_user.incomplete_profile?
+      redirect_to edit_user_path(current_user.id)
+      flash[:notice] = "Ton profil n'est pas complet"
+    end
   end
-
-
 end

@@ -23,9 +23,9 @@
   <%= javascript_pack_tag 'application'%>
 </head>
 
-<%= render "layouts/navbar" %>
 
 <body class="mb-auto">
+<%= render "layouts/navbar" %>
   <!--<div class="flex flex-col max-w-full h-full justify-between">-->
 
 
@@ -35,15 +35,21 @@
   <div>
     <div class="fixed inset-x-0 top-0 flex items-end justify-right mt-20  sm:p-6 justify-end z-50 ">
       <div data-controller="alert"
-        class="max-w-sm w-full shadow-lg rounded px-2 py-2 rounded relative bg-primary-600  text-white">
+        class="max-w-sm w-full shadow-lg rounded px-2 py-2 rounded relative <%=tailwind_classes_for(type)%>">
         <div class="p-2">
           <div class="flex items-start">
             <div class="ml-3 w-0 flex-1 pt-0.5">
               <div class="text-lg leading-5 font-medium">
-                <p> <%= notice %> </p>
+                <p> <%=notice%> </p>
+              </div>
+              <div class="text-lg leading-5 font-medium">
+                <p> <%=info%> </p>
+              </div>
+              <div class="text-lg leading-5 font-medium">
+                <p> <%=warning%> </p>
               </div>
               <p class="text-sm leading-5 font-medium">
-                <%= alert %>
+                <p><%=error%></p>
               </p>
             </div>
             <div class="ml-4 flex-shrink-0 flex">
@@ -67,9 +73,9 @@
 
 
   <!-- End Devise Message -->
-
+  <%= render "layouts/navbar" %>
   <%= yield %>
-
+  <%= render "layouts/footer" %>
   <!--</div>-->
 
   <!-- Stimulus.js -->
@@ -77,7 +83,7 @@
   <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
   </script>
 </body>
-<%= render "layouts/footer" %>
+
 </div>
 
 </html>

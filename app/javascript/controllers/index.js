@@ -16,4 +16,3 @@ application.register('popover', Popover)
 application.register('toggle', Toggle)
 application.register('slideover', Slideover)
 application.register('alert', Alert)
-
