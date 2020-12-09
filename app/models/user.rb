@@ -64,14 +64,15 @@ class User < ApplicationRecord
   def daily_cal
     # loose weight
     if objective == 1
-      bmr_activity - ((3500 / 2) / 7)
+      daily_cal = bmr_activity - ((3500 / 2) / 7)
     # stay in shape
     elsif objective == 2
-      bmr_activity
+     daily_cal = bmr_activity
     # gain weight
     else
-      bmr_activity + ((3500 / 2) / 7)
+     daily_cal = bmr_activity + ((3500 / 2) / 7)
     end
+    daily_cal.round(2)
   end
 
   def daily_prot
