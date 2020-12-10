@@ -8,13 +8,12 @@ Rails.application.routes.draw do
       resources :days
     end
     resources :users, path: "/"
-    resources :recipes
+    resources :recipes, only: [:show]
   end
 
   namespace :admins do
     resources :admins
-    resources :recipes
+    resources :recipes, only: [:show, :create, :new]
   end
-        
-  
+
 end

@@ -8,9 +8,9 @@
       </p>
       <p class="text-lg md:text-xl lg:text-2xl text-gray-700 font-semibold mb-5">Parle-nous de toi et on s’occupe de
         tout !</p>
-      <% if current_user%>      
+      <% if current_user %>      
       <%= button_to "C'est parti !", current_user, method: :get, class: "submit submit-sm"%>
-      <% else%>      
+      <% else %>      
        <%= button_to "C'est parti !", new_user_registration_path, method: :get, class: "submit submit-sm -mt-4"%>
       <% end %>
     </div>
