@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     resources :users, path: "/"
     resources :recipes
+    resources :shopping_lists, only: [:show]
   end
 
   namespace :admins do
