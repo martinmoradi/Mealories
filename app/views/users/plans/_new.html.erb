@@ -1,5 +1,5 @@
   <div data-controller="modal" data-modal-allow-background-close="false">
-        <a href="#" data-action="click->modal#open"
+    <a href="#" data-action="click->modal#open"
       class="text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
       <!-- Heroicon name: chart-bar -->
       <svg fill="none" class="text-gray-400 fill-current group-hover:text-white mr-3 h-6 w-6"
@@ -20,7 +20,7 @@
           </g>
         </switch>
       </svg>
-      Nouveau plan
+      Nouveau programme
     </a>
 
     <!-- Modal Container -->
@@ -28,16 +28,42 @@
       class="hidden animated fadeIn fixed inset-0 overflow-y-auto flex items-center justify-center"
       style="z-index: 9999;">
       <!-- Modal Inner Container -->
-      <div class="max-h-screen w-full max-w-lg relative">
+      <div class="max-h-screen w-8/12 relative">
         <!-- Modal Card -->
-        <div class="m-1 bg-white rounded shadow">
+        <div class="m-1 bg-white rounded-xl shadow ">
 
-          <div class="p-8">
+          <div class="m-auto max-w-6xl p-12">
 
-            <h2 class="text-xl mb-4 text-center">Combien de jours veux-tu générer ?</h2>
             <div class="form-modal">
               <%= form_with(model: Plan.new, url: plans_path, method: "post", local: true) do |f| %>
-              <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1 -mr-25">
+               <button
+                  class="border-b border-warning hover:text-warning"
+                  data-action="click->modal#close">Retour</button>
+              <h2 class="text-xl mb-4 text-center">Nouveau programme</h2>
+
+              <ul class=" rounded-md -space-y-px">
+                <li>
+                  <div class=" border rounded-tl-xl rounded-tr-xl p-4  md:pl-4 md:pr-6  bg-white">
+                    <label class="items-center text-sm cursor-pointer">
+                      <%= f.radio_button(:diet_type, 1, class:"w-5 h-5")  %>
+                      <span class="ml-3 font-medium text-gray-900">Régime normal</span>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class=" border rounded-bl-xl mb-8 rounded-br-xl p-4 md:pl-4 md:pr-6  bg-white">
+                    <label class="items-center text-sm cursor-pointer">
+                      <%= f.radio_button(:diet_type, 2, class:"w-5 h-5") %>
+                      <span class="ml-3 font-medium text-gray-900">Régime low-carbs<span
+                          class="italic text-sm text-gray-400 ml-3">moins de 50g de sucres par repas.</span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+
+              <h4 class="text-base mb-4 ml-32 text-center text-gray-600">Durée en jours<span
+                          class="italic text-sm text-gray-400 ml-3">(entre 1 et 7 jours)</span></h4>
+              <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent justify-items-center">
                 <button data-action="decrement" id="decrement"
                   class=" bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
                   <span class="m-auto text-2xl font-thin">−</span>
@@ -48,15 +74,14 @@
                   <span class="m-auto text-2xl font-thin">+</span>
                 </button>
               </div>
-              <div class="flex justify-end items-center flex-wrap mt-6">
-                <%= f.submit "Générer", class: "text-white bg-primary-600 border border-solid border-primary-500 hover:text-primary-500 hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"%>
-                <% end %>
-                <button
-                  class="text-white bg-warning border border-solid hover:border-warning hover:text-warning hover:bg-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1"
-                  data-action="click->modal#close" >Retour</button>
+
+              <div class="flex flex-row justify-center flex-wrap">
+                <%= f.submit "Générer", class: "submit"%>
+                <% end %>               
               </div>
 
             </div>
+
           </div>
         </div>
       </div>

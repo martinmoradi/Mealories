@@ -55,7 +55,7 @@ class Recipe < ApplicationRecord
   end
 
   def ingredients_list_formatted
-    ingd = ingredients_list.split(",").map do |ingredient|
+    ingredients_list.split(",").map do |ingredient|
       ingredient.delete!("[")
       ingredient.delete!("]")
       ingredient.gsub!(/\\\//, "")
@@ -63,5 +63,9 @@ class Recipe < ApplicationRecord
       ingredient.strip!
     end    
   end
-  
+
+  def self.low_carbs
+    Recipe.all.select { |recipe| recipe.carbs_per_serving < 50 }
+  end
+
 end

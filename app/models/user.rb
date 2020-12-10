@@ -156,6 +156,15 @@ class User < ApplicationRecord
     all_recipes = Recipe.all
     all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
   end
+  
+  def generate_lowcarbs_dinner
+    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
+  end
+
+  def generate_lowcarbs_lunch
+    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((lunch_needs[:cal] * 90 / 100), (lunch_needs[:cal] * 110 / 100)) }.sample
+  end
+
 
   def incomplete_profile?
     [weight_in_kgs, height_in_cms, age].any?(&:zero?)
