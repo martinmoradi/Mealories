@@ -6,7 +6,10 @@ class Users::UsersController < Users::ApplicationController
   def show
     begin 
     @user = User.find(params[:id])    
-    @plan = Plan.find(current_user.current_plan_id)
+    unless @user.current_plan_id.exist?
+      @plan = Plan.find(current_user.current_plan_id)
+    end
+      
     rescue NoMethodError 
       @plan = nil     
     end
