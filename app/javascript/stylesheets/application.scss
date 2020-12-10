@@ -20,7 +20,11 @@ body {
 
 
 *:focus {
-  outline: none;
+  outline: none !important;
+}
+
+*:active {
+  outline: none !important;
 }
 
 .nav-links {
