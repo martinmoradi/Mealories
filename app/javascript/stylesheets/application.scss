@@ -2,23 +2,23 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+// SCSS variables
 $primary-1: #6dd5be;
 $primary-2: #31ab90;
 $primary-3: #39c5a6;
 
-// Tailwind components
+// Generic css
 html,
 body {
   width: 100%;
   margin: 0px;
-  padding: 0px;  
+  padding: 0px;
   overflow-x: none;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
 }
-
 
 *:focus {
   outline: none !important;
@@ -27,11 +27,14 @@ body {
 *:active {
   outline: none !important;
 }
+// Generic end
 
+// Navbar
 .nav-links {
   position: relative;
   z-index: 1;
   top: 0;
+  right: 0;
   padding-bottom: 1.5rem;
 }
 
@@ -46,22 +49,37 @@ body {
 }
 
 #nav-toggle {
-  outline-color: #afe8db;
+  outline-color: #afe8db !important;
 }
 
 #nav-toggle:focus,
 #nav-toggle:active {
-  outline-color: #afe8db;
+  outline-color: #afe8db !important;
 }
 
+.highlight-sm {
+  font-size: 30px;
+  background-image: linear-gradient(to right, transparent 50%, white 50%);
+  background-origin: 0;
+  background-size: 201% 23%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.1s;
+}
+
+.highlight:hover {
+  background-position: -100% 100%;
+}
+
+.highlight-sm:hover {
+  background-position: -100% 100%;
+}
+
+// Navbar end
 
 @layer components {
 }
 // Tailwind components end
-
-// Recipe page
-
-// Recipe page end
 
 // Media queries
 @media (min-width: 640px) {
@@ -75,51 +93,42 @@ body {
     /* or 100px */
     border-bottom: 8px solid $primary-1;
   }
+  .highlight {
+    font-size: 30px;
+    background-image: linear-gradient(
+      to right,
+      transparent 50%,
+      $primary-1 50%
+    );
+    background-origin: 0;
+    background-size: 201% 23%;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    transition: background-position 0.1s;
+  }
 }
 
 // Media queries end
 
 // Miscellaneous
-.highlight {
-  font-size: 30px;
-  background-image: linear-gradient(to right, transparent 50%, $primary-1 50%);
-  background-origin: 0;
-  background-size: 201% 23%;
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  transition: background-position 0.1s;
-}
-
-.highlight:hover {
-  background-position: -100% 100%;
-}
 
 .bg-warning {
   background-color: #de734e;
 }
 // // Miscellaneous end
 
-// Modal days generation
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none !important;
-  margin: 0 !important;
-}
-
-.custom-number-input input:focus {
-  outline: none !important;
-}
-
-.custom-number-input button:focus {
-  outline: none !important;
-}
-
-#btn-modal {
-  outline: none !important;
-}
-// Modal days generation end
-
 // Forms
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 .input-container {
   height: 50px;
@@ -220,8 +229,6 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: inset 0px 0px 0px 0px transparent;
 }
 
-
-
 .submit-warning {
   border-radius: 12px;
   border: 0;
@@ -238,6 +245,10 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: inset 0px 0px 0px 0px transparent;
 }
 
+.submit-sm {
+  width: 50%;
+}
+
 .submit:active {
   background-color: $primary-2;
 }
@@ -245,7 +256,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .submit:hover {
   transition: $primary-3 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   background-color: $primary-3;
-  box-shadow: inset 0px 0px 0px 2px #ffffff;  
+  box-shadow: inset 0px 0px 0px 2px #ffffff;
 }
 
 .submit:focus {
@@ -331,7 +342,6 @@ input:focus:-ms-input-placeholder {
 input:focus::placeholder {
   opacity: 1;
 }
-
 
 // landing page
 
