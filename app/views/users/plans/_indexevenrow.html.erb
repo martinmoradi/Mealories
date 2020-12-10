@@ -1,4 +1,8 @@
+<% if current_user.current_plan_id != plan.id%>
 <tr id="plan<%=plan.id%>", class="bg-gray-50">
+<% else %>
+<tr id="plan<%=plan.id%>", class="bg-primary-200">
+<% end %>
   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
     <%= idx + 1 %>
   </td>
@@ -10,17 +14,27 @@
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
     Keto
-  </td>
+  
+  <% if current_user.current_plan_id != plan.id%>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     <%= link_to plan_path(plan.id), method: :patch, class:"text-primary-600 hover:text-primary-900" do %>
     <p> Choisir </p>
     <% end %>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-    <% if plan.id != current_user.current_plan_id %>
+  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">  
       <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer le plan?" }, class:"text-warning hover:text-yellow-500" do %>
-      <p> Supprimer </p>
+      <p> Supprimer </p>   
       <% end %>
+  </td>
+  
+  <% else %>
+  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+    <p class="text-yellow-500"> En cours </p>
+    </td>
+  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">  
+    <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer ton plan en cours?" }, class:"text-warning hover:text-yellow-500" do %>
+    <p> Supprimer </p>   
     <% end %>
   </td>
+  <% end %>
 </tr>
