@@ -90,6 +90,8 @@ body {
 
   .land-pres {@apply h-20 w-20
     inline-flex items-center justify-center rounded-full text-blue-500 flex-shrink-0};
+
+    .admin-card {@apply col-span-2 flex shadow-sm rounded-md};
 }
 
 // Tailwind components end
