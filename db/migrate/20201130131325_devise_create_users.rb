@@ -35,13 +35,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.datetime :locked_at
 
       #  User details
-      t.integer :objective, default: 1
-      t.integer :weight_in_kgs, default: 0
-      t.string  :gender, default: "Homme"
-      t.integer :height_in_cms, default: 0
-      t.integer :age, default: 0
-      t.integer :activity_level, default: 1
-      t.boolean :admin, default: false
+      t.integer     :objective, default: 1
+      t.integer     :weight_in_kgs, default: 0
+      t.string      :gender, default: "Homme"
+      t.integer     :height_in_cms, default: 0
+      t.integer     :age, default: 0
+      t.integer     :activity_level, default: 1
+      t.references  :current_plan
+      t.boolean     :admin, default: false
 
       t.timestamps      null: false
     end

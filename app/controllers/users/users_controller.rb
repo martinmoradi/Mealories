@@ -3,7 +3,7 @@ class Users::UsersController < Users::ApplicationController
   before_action :authorize_user
   def show
     @user = User.find(params[:id])
-    @plan = Plan.last
+    @plan = Plan.find(@user.current_plan_id)
   end
   
   def edit
