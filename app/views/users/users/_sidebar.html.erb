@@ -7,7 +7,7 @@
       <div class="mt-5 flex-grow flex flex-col">
         <nav class="flex-1 px-2 space-y-1">
 
-
+          <% unless current_user.incomplete_profile? %>
           <%= link_to user_path(current_user), class:"bg-gray-100 hover:bg-primary-800 hover:text-white text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
           <svg class="text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true">
@@ -16,7 +16,6 @@
           </svg>
           Tableau de bord
           <% end %>
-
           <%= render 'users/plans/new' %>
 
           <%= link_to plans_path, class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
@@ -27,7 +26,7 @@
           </svg>
           Mes programmes
           <% end %>
-
+          <% end %>
           <%= link_to edit_user_path(current_user), class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
           <svg class="text-gray-500 fill-current group-hover:text-white mr-3 h-6 w-6" fill="none"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
