@@ -1,1 +1,46 @@
-<%= render 'users/plans/show' %>
+<%= render 'users/users/welcome'%>
+
+<div class="flex overflow-hidden">
+
+  <%= render 'users/users/sidebar' %>
+
+  <div class="flex flex-col w-0 flex-1 overflow-hidden h-screen">
+
+    <main class="flex-1 relative overflow-y-auto focus:outline-none">
+      <div class="py-2">
+
+       
+
+      <div class="py-4 mt-6">
+            <div class="rounded-lg h-96 ">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
+               <h1 class="text-xl -ml-8 font-semibold text-gray-700 mb-5">Liste de course de ton <span
+                    class="text-primary-800 text-2xl mx-2">programme</span> du <%= @plan.created_at.strftime("%d-%m-%Y") %> : </p>
+                </h1>
+                <%= link_to "Recevoir ma liste", shopping_list_path, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
+          <div class="container flex ">
+          <% @plan.days.each do |day| %>
+           <p class= "mr-8">Jour</p>
+           <div class="mb-5 flex">
+           <div class = "mb-3 mr-8">
+           <p>Déjeuner</p>
+           <p><%= day.lunch.title %></p>
+            <p><% day.lunch.ingredients_list_formatted.each do |i| %></p>
+            <p><%= i %></p>
+          <% end %>
+          </div>
+          <div>
+           <p>Dîner</p>
+           <p><%= day.dinner.title %></p>
+            <p><% day.dinner.ingredients_list_formatted.each do |i| %></p>
+            <p><%= i %></p>
+          <% end %>
+          </div>
+          </div>
+          <% end %>
+       </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
