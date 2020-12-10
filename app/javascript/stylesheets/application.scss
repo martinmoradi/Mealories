@@ -78,7 +78,20 @@ body {
 // Navbar end
 
 @layer components {
+  .footer-org {
+  @apply text-gray-700 bg-primary-500};
+  .footer-content {
+  @apply container px-4 py-2 mx-auto flex items-center flex-col
+  };
+  .logo-footer {@apply flex font-semibold items-center
+    justify-center text-gray-700};
+  .icon-org {@apply inline-flex mt-4 justify-center};
+  .github-icon {@apply flex flex-col w-12 h-12 rounded-lg text-white text-xs self-center m-2 py-1};
+
+  .land-pres {@apply h-20 w-20
+    inline-flex items-center justify-center rounded-full text-blue-500 flex-shrink-0};
 }
+
 // Tailwind components end
 
 // Media queries
@@ -107,6 +120,8 @@ body {
     transition: background-position 0.1s;
   }
 }
+
+
 
 // Media queries end
 
