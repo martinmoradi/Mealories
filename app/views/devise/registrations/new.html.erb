@@ -31,33 +31,7 @@
         <label for="email" class="placeholder">Email</>
       </div>
 
-      <div class="input-container mt-6">
-        <%= f.text_field :first_name, autofocus: true, placeholder: '',  required: true, class:"input form-control js-form-control"%>
-        <div class="cut bg-gray-100"></div>
-        <div class="absolute inset-y-4 right-0 -mr-1 pt-5 flex items-center pointer-events-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
-            class="h-11 w-11 text-gray-300">
-            <g data-name="Layer 16">
-              <path d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z"/>
-            </g>
-          </svg>
-        </div>
-        <label for="Prénom" class="placeholder">Prénom</label>
-      </div>
 
-      <div class="input-container ic2">
-        <%= f.text_field :last_name, autofocus: true, placeholder: '',  required: true, class:"input form-control js-form-control"%>
-        <div class="absolute inset-y-4 right-0 -mr-1 pt-5 flex items-center pointer-events-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
-            class="h-11 w-11 text-gray-300">
-            <g data-name="Layer 16">
-              <path d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z"/>
-            </g>
-          </svg>
-        </div>
-        <div class="cut cut-short bg-gray-100"></div>
-        <label for="Nom" class="placeholder">Nom </label>
-      </div>
       <div class="input-group js-input-group">
         <div class="input-container ic2">
           <%= f.password_field :password, placeholder: '', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>

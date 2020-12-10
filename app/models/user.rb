@@ -18,7 +18,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # :confirmable (disabled devise confirmation)
 
-  validates_presence_of :first_name, :last_name
+  validates :first_name, presence: true, on: :update
   validates :email,
             presence: true,
             uniqueness: true,
