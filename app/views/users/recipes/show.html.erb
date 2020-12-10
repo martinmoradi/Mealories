@@ -8,11 +8,15 @@
 
     <div class="mx-auto text-base max-w-prose lg:max-w-none">
 
+      <%= button_to :back, method: :get do %>
+      <p class="border-b border-warning hover:text-warning">Retour</p>
+      <% end %>
       <h3 class="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @recipe.title %></h3>
+      <p class="text-gray-500 text-sm mt-5">Recette mise en ligne par <span
+          class="text-primary-600 font-semibold"><%= @recipe.author.first_name %></span></p>
     </div>
 
-    <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
-
+    <div class="mt-2 lg:grid lg:grid-cols-2 lg:gap-8">
       <div class="relative lg:row-start-1 lg:col-start-2 overflow-x-hidden">
 
         <svg class="hidden lg:block absolute top-0 right-0 -mt-20 -mr-20" width="404" height="384" fill="none"
@@ -31,15 +35,12 @@
             <%= image_tag @recipe.image_url, class:"rounded-lg shadow-lg object-cover object-center" %>
           </div>
         </div>
+
       </div>
+
       <div class="mt-8 lg:mt-0">
-
         <div class="text-base lg:max-w-none  ">
-
-
           <div class="mt-5 flex-grow flex flex-col rounded border border-gray-300 ">
-
-
             <div class="bg-white text-gray-900 group flex items-center px-2 py-2 text-sm font-medium ">
               <svg class="w-9 h-8 mr-2 fill-current" fill="none" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
@@ -55,8 +56,6 @@
               <span class="text-base font-semibold ml-2"><%= @recipe.servings %> portion</span>
               <% end %>
             </div>
-
-
 
             <div class="bg-gray-50 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium ">
               <svg class="w-8 h-8 ml-2 mr-1 fill-current" fill="none" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
@@ -108,8 +107,8 @@
                 <path
                   d="M474.125,37.875c-39.553-39.545-103.676-39.554-143.231,0l-8.205,8.207c42.997,33.414,52.253,103.522,52.253,103.522  c1.654,8.992-4.281,17.629-13.282,19.292c-7.882,1.452-15.487-2.936-18.358-10.095c0,0-16.034-53.278-59.226-74.105l-65.546,65.551  c45.324,37.278,52.247,103.53,52.247,103.53c1.654,8.992-4.298,17.62-13.282,19.282c-7.881,1.451-15.487-2.935-18.357-10.095  c0,0-18.453-56.229-59.222-74.103l-65.546,65.551c46.826,42.795,52.244,103.522,52.244,103.522  c1.654,8.992-4.282,17.627-13.283,19.29c-7.881,1.452-15.487-2.936-18.357-10.095c0,0-11.164-45.961-59.217-74.102l-37.877,37.879  c-39.553,39.547-39.553,103.669,0,143.215c39.539,39.555,103.662,39.555,143.215,0l293.031-293.022  C513.68,141.553,513.664,77.414,474.125,37.875z" />
               </svg>
-              <span class="font-semibold text-purple-500 mx-2 text-base"><%= @recipe.carbs_per_serving %>g</span> de <span
-                class="font-semibold text-purple-500 mx-2 text-base">glucides</span> <span
+              <span class="font-semibold text-purple-500 mx-2 text-base"><%= @recipe.carbs_per_serving %>g</span> de
+              <span class="font-semibold text-purple-500 mx-2 text-base">glucides</span> <span
                 class="text-gray-500 italic text-sm"> par portion</span>
             </div>
 
@@ -119,29 +118,37 @@
                 <path
                   d="M58,49.94H51V35a3.99891,3.99891,0,0,0-4-4H38.90991L43.72,26.21a2.01609,2.01609,0,0,0,2.83008,0L47.98,24.79a3.01167,3.01167,0,0,0,0-4.25l-.71-.71L58.43994,8.67A5.14685,5.14685,0,0,0,58.9,1.82a5.02027,5.02027,0,0,0-7.41-.35L37.37,15.6a2.98473,2.98473,0,0,0-.88,2.29L23.29,31H13a3.99891,3.99891,0,0,0-4,4V49.94H2a2.00587,2.00587,0,0,0-2,2V53a3.00883,3.00883,0,0,0,3,3H4.32007l2.59985,3.24A1.986,1.986,0,0,0,8.48,60H51.52a2.00719,2.00719,0,0,0,1.56006-.75L55.67993,56H57a3.00883,3.00883,0,0,0,3-3V51.94A2.00587,2.00587,0,0,0,58,49.94ZM52.3,6.32A1.21114,1.21114,0,0,1,52.62,6.1a1.14428,1.14428,0,0,1,.77,0,.95349.95349,0,0,1,.17.1.56622.56622,0,0,1,.1499.12.999.999,0,0,1,.3.71.95936.95936,0,0,1-.3.7.87512.87512,0,0,1-.31995.22.99559.99559,0,0,1-.38.08,1.00669,1.00669,0,0,1-.39-.08A.87512.87512,0,0,1,52.3,7.73a.95042.95042,0,0,1-.29-.7A.98953.98953,0,0,1,52.3,6.32ZM18,35h2a1,1,0,0,1,0,2H18a1,1,0,0,1,0-2ZM11,56H10a1,1,0,0,1,0-2h1a1,1,0,0,1,0,2Zm2.29-19.29a.98941.98941,0,0,1-.21-1.09,1.15178,1.15178,0,0,1,.21-.33A1.00953,1.00953,0,0,1,14.2,35.02a.636.636,0,0,1,.18005.06.55839.55839,0,0,1,.17.09.98708.98708,0,0,1,.1499.12A1.03847,1.03847,0,0,1,15,36a.95964.95964,0,0,1-.3.71.97371.97371,0,0,1-1.08.21A1.15349,1.15349,0,0,1,13.29,36.71ZM23,56H15a1,1,0,0,1,0-2h8a1,1,0,0,1,0,2ZM37,35a3.00883,3.00883,0,0,1-3,3,2.77234,2.77234,0,0,1-1-.18V43a3,3,0,0,1-6,0V41.82A2.77234,2.77234,0,0,1,26,42a3.00883,3.00883,0,0,1-3-3V33h2v6a1,1,0,0,0,2,0V33h2V43a1,1,0,0,0,2,0V33h2v2a1,1,0,0,0,2,0V33h2Z" />
               </svg>
-              <span class="font-semibold text-yellow-400 mx-2 text-base"><%= @recipe.fat_per_serving %>g </span> de <span
-                class="font-semibold text-yellow-400 mx-2 text-base">lipides</span> <span
+              <span class="font-semibold text-yellow-400 mx-2 text-base"><%= @recipe.fat_per_serving %>g </span> de
+              <span class="font-semibold text-yellow-400 mx-2 text-base">lipides</span> <span
                 class="text-gray-500 italic text-sm"> par portion</span>
             </div>
-
-
-
           </div>
-
-
         </div>
-        <div class="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-          <p class="text-gray-600 text-lg font-semibold mb-2">Ingrédients :</p>
+
+        <p class="mt-5 ml-5 text-sm text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none"><span class="text-base"><i
+              class="far fa-clock"></i></span> <%= @recipe.total_time %> minutes </p>
+        <details class="my-5">
+          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+            Ingrédients :
+          </summary>
           <% @recipe.ingredients_list_formatted.each do |ingredient| %>
-          <p><%= ingredient %><p>
-           <% end %>
-        </div>
-        <%= link_to @recipe.marmiton_url, class:"outline-none" do %>
+          <p class="text-gray-500"><%= ingredient %></p>
+          <% end %>
+          </p>
+        </details>
+
+        <details class="mb-4 rounded-md">
+          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+            Etapes :
+          </summary>
+          <p class="text-gray-500">
+            <%= @recipe.steps %> </p>
+        </details>
+
+        <%= link_to @recipe.marmiton_url, class:"outline-none", target: :_blank do %>
         <button class="submit-warning bg-warning outline-none">Voir la recette sur Marmiton</button>
         <% end %>
       </div>
     </div>
   </div>
-
-
 </div>

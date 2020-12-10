@@ -1,7 +1,7 @@
 <% if current_user.current_plan_id != plan.id%>
 <tr id="plan<%=plan.id%>", class="bg-white">
 <% else %>
-<tr id="plan<%=plan.id%>", class="bg-primary-100">
+<tr id="plan<%=plan.id%>", class="bg-primary-300">
 <% end %>
   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
     <%= idx + 1 %>
@@ -13,7 +13,7 @@
     <%= plan.days.length %> jours
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-    Normal
+    Programme <%= plan.diet_type_title.downcase %>
   </td>
   
   <% if current_user.current_plan_id != plan.id%>
@@ -23,7 +23,7 @@
     <% end %>
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">  
-      <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer le plan?" }, class:"text-warning hover:text-yellow-500" do %>
+      <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer le programme?" }, class:"text-warning hover:text-yellow-500" do %>
       <p> Supprimer </p>   
       <% end %>
   </td>
@@ -33,10 +33,9 @@
     <p class="text-yellow-500"> En cours </p>
     </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">  
-    <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Supprimer ton plan en cours?" }, class:"text-warning hover:text-yellow-500" do %>
+    <%= link_to plan_path(plan.id),  method: :delete, data: {remote: true, confirm: "Ceci est ton programme actuel, le supprimer ?" }, class:"text-warning hover:text-yellow-500" do %>
     <p> Supprimer </p>   
     <% end %>
   </td>
   <% end %>
 </tr>
-

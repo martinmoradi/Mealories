@@ -1,21 +1,19 @@
-<nav
-  class="flex absolute top-0 items-center text-right justify-between bg-grey-darkest w-full z-10 mt-2 ">
-  <div class="md:mb-2 mb-0">
-    <div class="flex items-center ml-3 mt-2">
+<nav class="flex absolute top-0 w-full z-10 mt-2 text-right ">
+  <div class="md:mb-2 mb-0 relative mt-1 z-50 pointer-events-auto">   
+    <div class="flex ml-3 mt-2 z-50">
       <%=link_to root_path do%>
       <%= image_tag("logogo.svg", size: "48x48") %>
       <% end %>
       <%=link_to root_path do%>
-      <h1 class="font-semibold select-none text-xl mt-3 ml-2 text-gray-700"><span
+      <h1 href="/" class="font-semibold text-xl mt-3 ml-2 text-gray-700"><span
           class="text-primary-500 ml-2 text-3xl">Meal</span><span class="mb-5">ories</span></h1>
-      <%end%>
+      <% end %>
     </div>
   </div>
 
-
-  <div class="hamburger_block block sm:hidden mr-8 sm:mr-0">
+  <div class="hamburger_block block sm:hidden">
     <button id="nav-toggle"
-      class="flex items-center px-6 py-3 border rounded text-grey border-grey-dark hover:text-white hover:border-white">
+      class="absolute top-0 right-0 items-center px-6 py-3 border rounded text-grey border-primary-500 hover:text-white hover:border-primary-800">
       <svg class="hamburger fill-primary-500 h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <title>Menu</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -25,18 +23,15 @@
 
   <!-- When user is connected -->
   <% if current_user %>
-  <div
-    class="w-full hidden sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"
+  <div class="sm:w-full w-64 hidden absolute top-14 right-0 sm:top-0 sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:pt-0  pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent pointer-events-none"
     id="nav-content">
-    <div class="nav-links sm:flex">
+    <div class="nav-links z-50 pointer-events-auto">
       <ul class="list-reset sm:flex justify-end flex-1 items-center">    
-       
-        <li class="sm:mr-8 mt-4 font-semibold highlight text-gray-700 ">
+        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Tableau de bord", user_path(current_user.id), class:"text-lg"%>
-
         </li>
         <li class="sm:mr-8 mt-4 -mr-3">
-          <%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"submit font-semibold py-2 px-4 ml-2 mt-2 -mb-1" %>
+          <%= link_to "Déconnexion", destroy_user_session_path, method: "delete", class:"submit py-2 px-4 ml-2 mt-2 -mb-1" %>
         </li>
       </ul>
     </div>
@@ -46,23 +41,22 @@
   <!-- When user is not connected -->
   <% else %>
   <div
-    class="w-full block sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:w-auto sm:pt-0 relative pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"
+    class="sm:w-full w-64 hidden absolute top-14 right-0 sm:top-0 sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:pt-0  pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"
     id="nav-content">
     <div class="nav-links sm:flex">
       <ul class="list-reset sm:flex justify-end flex-1 items-center">
-
-        <li class="mr-5 mt-4 font-semibold highlight">
+        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Se connecter", new_user_session_path, class:"text-lg text-gray-700"%>
         </li>
-
         <li class="sm:mr-8 mt-4 -mr-3">
-          <%= link_to "Inscription", new_user_registration_path, class:"submit font-semibold py-2 px-4 ml-2 mt-2 -mb-1" %>
+          <%= link_to "Inscription", new_user_registration_path, class:"submit f py-2 px-4 ml-2 mt-2 -mb-1" %>
         </li>
       </ul>
     </div>
   </div>
+
   <% end %>
-  
+
 </nav>
 <!-- hamburger menu toggle-->
 	<%= javascript_pack_tag 'navbar' %> 

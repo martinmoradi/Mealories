@@ -1,32 +1,35 @@
-<div class="min-h-80 my-auto flex flex-col justify-center py-12 sm:px-6 lg:px-8 max-h-90">
-  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+<div class="min-h-80 flex flex-col justify-center py-12 sm:px-6 lg:px-8 max-h-90">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md -mt-32">
 
     <%= image_tag 'logogo', class:"mx-auto h-12 w-auto" %>
-    <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+    <h2 class="mt-6 text-center text-3xl font-bold text-gray-700">
       Ajout d'une recette
     </h2>
     <p class="mt-2 text-center text-sm text-gray-600 max-w">
-      Renseigne l'url de la nouvelle recette
-      </a>
+      Renseigne l'url de la nouvelle recette.
     </p>
-  </div> 
+    <p class="mt-2 text-center text-sm text-gray-400 max-w">
+      Disclaimer: le succès de l'ajout n'est pas garanti, si tu rencontres un échec, merci d'essayer avec une autre recette.
+    </p>
+
+  </div>
   <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
       <%= form_with(model: Recipe.new, method: "post", local: true)  do |f| %>
 
-        <div class="input-container ic2">
+      <div class="input-container ic2">
         <%= f.url_field :marmiton_url, autofocus: true, placeholder: 'https://www.marmiton.org/', autocomplete: "", required: true, class:"input form-control js-form-control" %>
         <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none">
         </div>
         <div class="cut cut-short bg-gray-100"></div>
         <label for="Url" class="placeholder">Url</label>
       </div>
-        <div>
-          <%= f.submit "Ajouter", class:"submit" %>
-        </div>
-
-        <% end %>
+      <div>
+        <%= f.submit "Ajouter", class:"submit" %>
       </div>
+
+      <% end %>
     </div>
   </div>
+</div>
 </div>

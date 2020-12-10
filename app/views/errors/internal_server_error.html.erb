@@ -1,0 +1,30 @@
+<section class="container px-4 py-24 mx-auto flex h-screen items-center">
+  <div
+    class="grid items-center w-full grid-cols-1 gap-10 mx-auto md:w-4/5 lg:grid-cols-2 xl:gap-32"
+  >
+    <div>
+      <p
+        class="mb-2 text-xs font-semibold tracking-wide text-gray-500 uppercase"
+      >
+        Erreur 500
+      </p>
+      <h1
+        class="mb-4 text-2xl font-extrabold leading-tight tracking-tight text-left text-gray-900 md:text-4xl"
+      >
+        Oops ! On dirait qu'un problème technique est survenu ! &#128038;
+      </h1>
+      <p class="mb-5 text-base text-left text-gray-800 md:text-xl">
+        Nos équipes font tout leur possible pour remettre les choses en ordre.
+      </p>
+      <%= link_to root_path,  class:"bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" do %>
+      Retour à l'accueil
+      <%end%>
+      <%= link_to root_path,  class:"bg-warning text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" do %>
+        Contacte-nous
+      <%end%>
+    </div>
+    <div>
+      <%= image_tag 'construction_site.svg', class: "w-full h-full"%>
+    </div>
+  </div>
+</section>

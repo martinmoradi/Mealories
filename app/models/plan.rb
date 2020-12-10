@@ -10,12 +10,12 @@ class Plan < ApplicationRecord
 
   validates :user_id, presence: true
 
-  def plan_type
-    case type
+  def diet_type_title
+    case diet_type
     when 1
-      "Programme normal"
+      "Traditionnel"
     when 2
-      "Programme moins de sucres"
+      "Moins de sucres"
     end
   end
 end

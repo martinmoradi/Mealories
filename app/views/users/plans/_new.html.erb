@@ -30,7 +30,7 @@
       <!-- Modal Inner Container -->
       <div class="max-h-screen w-8/12 relative">
         <!-- Modal Card -->
-        <div class="m-1 bg-white rounded-xl shadow ">
+        <div class="m-1 bg-gray-100 rounded-xl shadow ">
 
           <div class="m-auto max-w-6xl p-12">
 
@@ -46,7 +46,7 @@
                   <div class=" border rounded-tl-xl rounded-tr-xl p-4  md:pl-4 md:pr-6  bg-white">
                     <label class="items-center text-sm cursor-pointer">
                       <%= f.radio_button(:diet_type, 1, class:"w-5 h-5")  %>
-                      <span class="ml-3 font-medium text-gray-900">Régime normal</span>
+                      <span class="ml-3 font-medium text-gray-900">Programme traditionnel</span>
                     </label>
                   </div>
                 </li>
@@ -54,8 +54,8 @@
                   <div class=" border rounded-bl-xl mb-8 rounded-br-xl p-4 md:pl-4 md:pr-6  bg-white">
                     <label class="items-center text-sm cursor-pointer">
                       <%= f.radio_button(:diet_type, 2, class:"w-5 h-5") %>
-                      <span class="ml-3 font-medium text-gray-900">Régime low-carbs<span
-                          class="italic text-sm text-gray-400 ml-3">moins de 50g de sucres par repas.</span>
+                      <span class="ml-3 font-medium text-gray-900">Programme moins de sucres<span
+                          class="italic text-sm text-gray-400 ml-3">max. 50g de sucres par repas.</span>
                     </label>
                   </div>
                 </li>
@@ -79,7 +79,6 @@
                 <%= f.submit "Générer", class: "submit"%>
                 <% end %>               
               </div>
-
             </div>
 
           </div>
@@ -87,4 +86,4 @@
       </div>
     </div>
   </div>
-  <%= javascript_pack_tag 'new_plan' %>
+       <%= javascript_pack_tag 'new_plan' %>

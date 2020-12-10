@@ -47,7 +47,7 @@
              </thead>
              <tbody id="plans">
                <!-- Odd row -->
-               <% current_user.plans.each.with_index do |plan, idx| %>
+               <% current_user.plans.order("id desc").each.with_index do |plan, idx| %>
                <% if idx.odd? %>
                <%=render "users/plans/indexoddrow", plan: plan, idx: idx%>
                <!-- Even row -->
