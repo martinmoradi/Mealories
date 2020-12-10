@@ -49,12 +49,12 @@ body {
 }
 
 #nav-toggle {
-  outline-color: #afe8db;
+  outline-color: #afe8db !important;
 }
 
 #nav-toggle:focus,
 #nav-toggle:active {
-  outline-color: #afe8db;
+  outline-color: #afe8db !important;
 }
 
 .highlight-sm {
