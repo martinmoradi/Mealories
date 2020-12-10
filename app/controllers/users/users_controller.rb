@@ -7,10 +7,7 @@ class Users::UsersController < Users::ApplicationController
     @user = User.find(params[:id])    
     unless @user.current_plan_id.exist?
       @plan = Plan.find(id: current_user.current_plan_id)
-    end
-      
-      @plan = nil     
-    end
+    end     
   end
   
   def edit
