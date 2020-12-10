@@ -1,10 +1,14 @@
 class Users::UsersController < Users::ApplicationController
   before_action :user_profile_incomplete, only: [:show]
   before_action :authorize_user
+
+
   def show
-    @user = User.find(params[:id])
-    unless current_user.current_plan_id.nil?
-     @plan = Plan.find(current_user.current_plan_id)
+    begin 
+    @user = User.find(params[:id])    
+    @plan = Plan.find(current_user.current_plan_id)
+    rescue NoMethodError
+      redirect_to edit_user_path
     end
   end
   
