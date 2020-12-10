@@ -44,13 +44,16 @@ class Users::PlansController < Users::ApplicationController
   end
 
   def destroy
+    if @plan.id = current_user.current_plan_id
+      current_user.update(current_plan_id: nil)
+    end
     @plan.destroy
     respond_to do |format|
       format.html { redirect_to plans_path, notice: "Le programme a été supprimé "}
       format.js {}
     end
-    
   end
+    
 
   private
 
