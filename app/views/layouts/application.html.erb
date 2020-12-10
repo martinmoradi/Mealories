@@ -33,10 +33,15 @@
     <!-- Notices / Alerts  -->
 
     <% flash.each do |type, msg| %>
-    <div>
-      <div class="fixed inset-x-0 top-0 flex items-end justify-right mt-20  sm:p-6 justify-end z-50 ">
-        <div data-controller="alert"
-          class="max-w-sm w-full shadow-lg px-2 py-2 rounded relative <%= tailwind_classes_for(type) %>">
+    <% puts type %>
+    <div class="fixed inset-x-0 top-0 flex items-end justify-right mt-20  sm:p-6 justify-end z-50 ">
+      <% case type %>
+      <% when "notice" %>
+      <div data-controller="alert"
+        class="max-w-sm w-full shadow-lg px-2 py-2 rounded relative bg-primary-600 border-l-4 border-primary-900 text-white">
+      <% else %>
+        <div data-controller="alert" class="max-w-sm w-full shadow-lg px-2 py-2 rounded relative">
+      <% end %>
           <div class="p-2">
             <div class="flex items-start">
               <div class="ml-3 w-0 flex-1 pt-0.5">
@@ -61,24 +66,24 @@
           </div>
         </div>
       </div>
+
+      <% end %>
+
+      <%= yield %>
+      <%= render "layouts/footer" %>
+
     </div>
-    <% end %>
-
-    <%= yield %>
-    <%= render "layouts/footer" %>
-
-  </div>
 
 
 
-  <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
-  <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
-    < script src = "https://unpkg.com/aos@next/dist/aos.js" >
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+    <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
+      < script src = "https://unpkg.com/aos@next/dist/aos.js" >
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
 </body>
 
