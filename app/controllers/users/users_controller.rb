@@ -7,7 +7,8 @@ class Users::UsersController < Users::ApplicationController
     begin 
     @user = User.find(params[:id])    
     @plan = Plan.find(current_user.current_plan_id)
-    rescue NoMethodError      
+    rescue NoMethodError 
+      @plan = nil     
     end
   end
   
