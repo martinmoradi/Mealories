@@ -5,15 +5,15 @@
       <%= image_tag("logogo.svg", size: "48x48") %>
       <% end %>
       <%=link_to root_path do%>
-      <a href="/" class="font-semibold text-xl mt-3 ml-2 text-gray-700"><span
-          class="text-primary-500 ml-2 text-3xl">Meal</span><span class="mb-5">ories</span></a>
+      <h1 href="/" class="font-semibold text-xl mt-3 ml-2 text-gray-700"><span
+          class="text-primary-500 ml-2 text-3xl">Meal</span><span class="mb-5">ories</span></h1>
       <% end %>
     </div>
   </div>
 
   <div class="hamburger_block block sm:hidden">
     <button id="nav-toggle"
-      class="absolute top-0 right-0 items-center px-6 py-3 border rounded text-grey border-grey-dark border-primary-500 hover:text-white hover:border-white">
+      class="absolute top-0 right-0 items-center px-6 py-3 border rounded text-grey border-primary-500 hover:text-white hover:border-primary-800">
       <svg class="hamburger fill-primary-500 h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <title>Menu</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -27,7 +27,7 @@
     id="nav-content">
     <div class="nav-links z-50 pointer-events-auto">
       <ul class="list-reset sm:flex justify-end flex-1 items-center">    
-        <li class="-mr-2  sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900 ">
+        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Tableau de bord", user_path(current_user.id), class:"text-lg"%>
         </li>
         <li class="sm:mr-8 mt-4 -mr-3">
@@ -45,7 +45,7 @@
     id="nav-content">
     <div class="nav-links sm:flex">
       <ul class="list-reset sm:flex justify-end flex-1 items-center">
-        <li class="mr-5 mt-4 font-semibold highlight text-gray-700 hover:text-gray-900 ">
+        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Se connecter", new_user_session_path, class:"text-lg text-gray-700"%>
         </li>
         <li class="sm:mr-8 mt-4 -mr-3">
