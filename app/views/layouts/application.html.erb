@@ -28,6 +28,7 @@
   <!-- This refers to app/javascript/stylesheets/application.scss-->
   <%= stylesheet_pack_tag 'application', media: 'all'%>
   <%= javascript_pack_tag 'application'%>
+
 </head>
 
 <body class="mb-auto">
@@ -83,6 +84,8 @@
 
   </div>
   <!-- Stimulus.js -->
+    <%= javascript_pack_tag 'new_plan' %>
+
   <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
   <script src="https://unpkg.com/tailwindcss-stimulus-components/dist/tailwindcss-stimulus-components.umd.js">
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

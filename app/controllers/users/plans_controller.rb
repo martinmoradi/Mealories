@@ -13,7 +13,7 @@ class Users::PlansController < Users::ApplicationController
 
   def create
     respond_to do |format|
-      @plan = Plan.new(user_id: current_user.id)
+      @plan = Plan.new(user_id: current_user.id, diet_type: params[:plan][:diet_type])
       if @plan.save
         if params[:plan][:diet_type] == 1
           params[:plan][:nb_of_days].to_i.times do
@@ -51,7 +51,7 @@ class Users::PlansController < Users::ApplicationController
   end
 
   def destroy
-    if @plan.id = current_user.current_plan_id
+    if @plan.id == current_user.current_plan_id
       current_user.update(current_plan_id: nil)
     end
     @plan.destroy
