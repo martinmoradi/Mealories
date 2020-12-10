@@ -4,14 +4,14 @@
   <div class="top-page flex flex-row items-center justify-around md:mt-28">
 
     <div class="animate__animated animate__fadeInLeft left-top w-96 flex-wrap text-center md:text-left">
-      <p class="text-xl md:text-3xl lg:text-5xl tracking-wide	 text-warning font-bold mb-5">Ton menu en un clic...
+      <p class="text-2xl md:text-3xl lg:text-5xl tracking-wide	 text-warning font-bold mb-5">Ton menu en un clic...
       </p>
       <p class="text-lg md:text-xl lg:text-2xl text-gray-700 font-semibold mb-5">Parle-nous de toi et on s’occupe de
         tout !</p>
-      <% if current_user%>
-      <%= link_to "Mon espace", current_user, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
-      <% else%>
-      <%= link_to "Inscription / Connexion", new_user_registration_path, class: "bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1", type: "button", style: "transition: all .15s ease" %>
+      <% if current_user%>      
+      <%= button_to "C'est parti !", current_user, method: :get, class: "submit submit-sm"%>
+      <% else%>      
+       <%= button_to "C'est parti !", new_user_registration_path, method: :get, class: "submit submit-sm -mt-4"%>
       <% end %>
     </div>
 
@@ -21,10 +21,8 @@
 
   </div>
 
-
-
   <h1 data-aos="fade-up"
-    class="text-lg md:text-xl lg:text-2xl text-gray-700 font-semibold mb-5 text-center my-12 md:my-20">Bien manger n'a
+    class="text-xl lg:text-2xl text-gray-700 font-semibold mb-5 text-center my-12 md:my-20">Bien manger n'a
     jamais été aussi facile !</h1>
 
   <!--Timeline-->
@@ -43,7 +41,7 @@
       </div>
       <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Prends-soin de ta santé</h2>
-        <p class="leading-relaxed text-base">Manges mieux en laissant nos algorithmes choisir tes repas en fonction de
+        <p class="leading-relaxed text-base">Mange mieux en laissant nos algorithmes choisir tes repas en fonction de
           tes informations.
         </p>
       </div>
@@ -51,7 +49,7 @@
     <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
       <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Plus simple</h2>
-        <p class="leading-relaxed text-base">Gagnes du temps en plannifiant tes menus sur une durée que tu choisis.</p>
+        <p class="leading-relaxed text-base">Gagne du temps en plannifiant tes menus sur une durée que tu choisis.</p>
       </div>
       <div
         class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-teal-500 flex-shrink-0">
@@ -65,7 +63,7 @@
       </div>
       <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Différents régimes</h2>
-        <p class="leading-relaxed text-base">Différents régimes alimentaires sont disponibles en fonction de tes
+        <p class="leading-relaxed text-base text-gray-500">Différents régimes alimentaires sont disponibles en fonction de tes
           objectifs.</p>
       </div>
     </div>
@@ -93,7 +91,7 @@
               </dt>
               <dd class="mt-2 text-base text-gray-500">
                 Nos supers algorithmes de la mort qui tue &copy; sont capables d'extraire les informations nutritionnelles de recettes et de te concocter
-                un programme de repas adaptée à tes besoins.
+                un programme de repas adapté à tes besoins.
               </dd>
             </div>
 
@@ -121,7 +119,7 @@
                 Est-ce que je peux ajouter ma recette ?
               </dt>
               <dd class="mt-2 text-base text-gray-500">
-                Nous travaillons très dûr pour incorporer cette possibilité dans un futur très proche ! </dd>
+                Nous travaillons très dur pour incorporer cette possibilité dans un futur proche ! </dd>
             </div>
           </dl>
         </div>
