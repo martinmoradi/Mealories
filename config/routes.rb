@@ -8,12 +8,12 @@ Rails.application.routes.draw do
       resources :days
     end
     resources :users, path: "/"
-    resources :recipes, only: 
+    resources :recipes
   end
 
   namespace :admins do
     resources :admins
-    resources :recipes, only: 
+    resources :recipes
   end
         
   match "/404", to: "errors#not_found", via: :all
