@@ -7,10 +7,16 @@
   <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 lg:mt-8">
 
     <div class="mx-auto text-base max-w-prose lg:max-w-none">
+
+      <%= button_to :back, method: :get do %>
+      <p class="border-b border-warning hover:text-warning">Retour</p>
+      <% end %>
       <h3 class="mt-2 text-3xl leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @recipe.title %></h3>
+      <p class="text-gray-500 text-sm mt-5">Recette mise en ligne par <span
+          class="text-primary-600 font-semibold"><%= @recipe.author.first_name %></span></p>
     </div>
 
-    <div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
+    <div class="mt-2 lg:grid lg:grid-cols-2 lg:gap-8">
       <div class="relative lg:row-start-1 lg:col-start-2 overflow-x-hidden">
 
         <svg class="hidden lg:block absolute top-0 right-0 -mt-20 -mr-20" width="404" height="384" fill="none"
@@ -116,16 +122,29 @@
               <span class="font-semibold text-yellow-400 mx-2 text-base">lipides</span> <span
                 class="text-gray-500 italic text-sm"> par portion</span>
             </div>
-
           </div>
+        </div>
 
-        </div>
-        <div class="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-          <p class="text-gray-600 text-lg font-semibold mb-2">Ingrédients :</p>
+        <p class="mt-5 ml-5 text-sm text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none"><span class="text-base"><i
+              class="far fa-clock"></i></span> <%= @recipe.total_time %> minutes </p>
+        <details class="my-5">
+          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+            Ingrédients :
+          </summary>
           <% @recipe.ingredients_list_formatted.each do |ingredient| %>
-          <p><%= ingredient %><p>
-              <% end %>
-        </div>
+          <p class="text-gray-500"><%= ingredient %></p>
+          <% end %>
+          </p>
+        </details>
+
+        <details class="mb-4 rounded-md">
+          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+            Etapes :
+          </summary>
+          <p class="text-gray-500">
+            <%= @recipe.steps %> </p>
+        </details>
+
         <%= link_to @recipe.marmiton_url, class:"outline-none", target: :_blank do %>
         <button class="submit-warning bg-warning outline-none">Voir la recette sur Marmiton</button>
         <% end %>
