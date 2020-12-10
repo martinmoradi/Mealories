@@ -5,7 +5,7 @@ class Users::UsersController < Users::ApplicationController
 
   def show
     @user = User.find(params[:id])    
-    if @user.current_plan_id.exists?
+    unless current_user.current_plan_id.nil? 
       @plan = Plan.find(id: current_user.current_plan_id)
     end     
   end
