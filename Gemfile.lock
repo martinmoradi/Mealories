@@ -650,7 +650,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-reset-pk-sequence
+  activerecord-reset-pk-sequence (~> 0.2.1)
   better_errors (~> 2.9, >= 2.9.1)
   binding_of_caller (~> 0.8.0)
   bootsnap (>= 1.4.2)
