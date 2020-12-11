@@ -82,12 +82,6 @@ gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "mast
 # Mailjet
 gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
 
-# Table print
-gem 'table_print', '~> 1.5', '>= 1.5.7'
-
-# Admin panel
-gem "rails_admin", "~> 2.0"
-
 # Google Trad
 gem "google-cloud"
 gem "google-cloud-translate"
@@ -97,8 +91,9 @@ gem "rest-client", "~> 2.1"
 
 # Web Scrapper for Recipes 
 gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
-#################################################################################
 
+
+#################################################################################
 # List of added gems :
 # gem "devise"
 # gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
@@ -110,13 +105,9 @@ gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
 # gem "dotenv-rails"
 # gem "letter_opener"
 # gem "rails erd"
-# gem "rails_admin"
 # gem "activerecord-reset-pk-sequence"
-# gem "table_print"
 # gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 # gem "google-cloud"
 # gem "google-cloud-translate"
-# gem "rest-client", "~> 2.1"
 # gem "recipe_scraper"
-# gem "table_print"
 #################################################################################
