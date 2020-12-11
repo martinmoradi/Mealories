@@ -1,5 +1,5 @@
 <nav class="flex absolute top-0 w-full z-10 mt-2 text-right ">
-  <div class="md:mb-2 mb-0 relative mt-1 z-50 pointer-events-auto">   
+  <div class="md:mb-2 mb-0 relative mt-1 z-50 pointer-events-auto">
     <div class="flex ml-3 mt-2 z-50">
       <%=link_to root_path do%>
       <%= image_tag("logogo.svg", size: "48x48") %>
@@ -10,8 +10,8 @@
       <% end %>
     </div>
   </div>
-  
-    <!-- Hamburger-menu  -->
+
+  <!-- Hamburger-menu  -->
   <div class="hamburger_block block sm:hidden">
     <button id="nav-toggle"
       class="absolute top-0 right-0 items-center px-6 py-3 border rounded text-grey border-primary-500 hover:text-white hover:border-primary-800">
@@ -24,11 +24,13 @@
 
   <!-- When user is connected -->
   <% if current_user %>
-  <div class="sm:w-full w-64 hidden absolute top-14 right-0 sm:top-0 sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:pt-0  pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent pointer-events-none"
+  <div
+    class="sm:w-full w-64 hidden absolute top-14 right-0 sm:top-0 sm:flex-grow sm:flex-row-reverse sm:flex sm:items-center sm:pt-0  pr-8 sm:pr-0 bg-gradient-to-r from-primary-400 to-primary-100 sm:bg-transparent rounded-3xl sm:rounded-none sm:bg-gradient-to-r sm:from-transparent sm:to-transparent pointer-events-none"
     id="nav-content">
     <div class="nav-links z-50 pointer-events-auto">
-      <ul class="list-reset sm:flex justify-end flex-1 items-center">    
-        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
+      <ul class="list-reset sm:flex justify-end flex-1 items-center">
+        <li
+          class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Tableau de bord", user_path(current_user.id), class:"text-lg"%>
         </li>
         <li class="sm:mr-8 mt-4 -mr-3">
@@ -46,7 +48,8 @@
     id="nav-content">
     <div class="nav-links sm:flex">
       <ul class="list-reset sm:flex justify-end flex-1 items-center">
-        <li class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
+        <li
+          class="-mr-2 sm:mr-8 mt-4 highlight highlight-sm sm:text-gray-700 sm:hover:text-gray-900 text-gray-700 hover:text-gray-900">
           <%= link_to "Se connecter", new_user_session_path, class:"text-lg text-gray-700"%>
         </li>
         <li class="sm:mr-8 mt-4 -mr-3">
@@ -60,4 +63,4 @@
 
 </nav>
 <!-- hamburger menu toggle-->
-	<%= javascript_pack_tag 'navbar' %> 
+<%= javascript_pack_tag 'navbar' %>
