@@ -11,7 +11,7 @@
       L'équipe Mealories est heureuse de t'accueillir !
       </a>
     </p>
-  </div> 
+  </div>
   <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"form-wizard js-form-wizard form-y-6") do |f| %>
@@ -38,13 +38,14 @@
         <div class="input-container ic2">
           <%= f.password_field :password, placeholder: '', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>
           <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
-            class="h-11 w-11 text-gray-300">
-            <g data-name="Layer 16">
-              <path d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z"/>
-            </g>
-          </svg>
-        </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+              class="h-11 w-11 text-gray-300">
+              <g data-name="Layer 16">
+                <path
+                  d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z" />
+              </g>
+            </svg>
+          </div>
           <% if @minimum_password_length %>
           <span class="text-xs italic text-gray-500 mt-1 ml-2">(<%= @minimum_password_length %> caractères
             minimum)</span>
@@ -55,21 +56,22 @@
         <div class="input-group js-input-group">
           <div class="input-container ic1">
             <%= f.password_field :password_confirmation, placeholder: '', autocomplete: "new-password", required: true, class:"input form-control js-form-control" %>
-             <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
-            class="h-11 w-11 text-gray-300">
-            <g data-name="Layer 16">
-              <path d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z"/>
-            </g>
-          </svg>
-        </div>
+            <div class="absolute inset-y-0 right-0 pr-4 pb-2 flex items-center pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
+                class="h-11 w-11 text-gray-300">
+                <g data-name="Layer 16">
+                  <path
+                    d="M62,47h-2v-3c0-5.514-4.486-10-10-10c-5.514,0-10,4.486-10,10v3h-2c-0.553,0-1,0.448-1,1v17c0,0.552,0.447,1,1,1h24  c0.553,0,1-0.448,1-1V48C63,47.448,62.553,47,62,47z M42,44c0-4.411,3.589-8,8-8s8,3.589,8,8v3H42V44z M61,64H39V49h22V64z M52,56  c0,0.738-0.404,1.376-1,1.723V59c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.277c-0.595-0.346-1-0.983-1-1.723  c0-1.105,0.895-2,2-2C51.105,54,52,54.895,52,56z" />
+                </g>
+              </svg>
+            </div>
             <div class="cut cut-large bg-gray-100"></div>
             <label for="password_confirmation" class="placeholder">Confirmation</>
           </div>
         </div>
 
         <div class="text-center text-gray-500 hover:text-gray-800 mt-4">
-         <%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
         </div>
 
         <div>
