@@ -8,11 +8,11 @@ Rails.application.routes.draw do
       resources :days, only: [:show]
     end
     resources :users, path: "/"
-    resources :recipes
+    resources :recipes, only: [:show]
     resources :shopping_lists, only: [:show]
   end
 
-  namespace :admins do
+  scope 'admins', module: 'admins' do
     resources :admins, only: [:show]
     resources :recipes, only: [:new, :create, :destroy]
   end
