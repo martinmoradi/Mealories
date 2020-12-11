@@ -124,6 +124,10 @@ body {
       @apply text-2xl md:text-2xl font-light leading-normal
     }
     ;
+    .plan-line {
+      @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider
+    }
+    ;
 }
 @variants hover {
   .el-sidebar:hover {
