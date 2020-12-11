@@ -68,6 +68,10 @@ ActiveRecord::Schema.define(version: 2020_41_20_162636) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.integer "objective", default: 1
     t.integer "weight_in_kgs", default: 0
     t.string "gender", default: "Homme"
