@@ -5,16 +5,16 @@ Rails.application.routes.draw do
 
   scope 'users', module: 'users' do 
     resources :plans do
-      resources :days
+      resources :days, only: [:show]
     end
     resources :users, path: "/"
-    resources :recipes
+    resources :recipes, only: [:show]
     resources :shopping_lists, only: [:show]
   end
 
-  namespace :admins do
-    resources :admins
-    resources :recipes
+  scope 'admins', module: 'admins' do
+    resources :admins, only: [:show]
+    resources :recipes, only: [:new, :create, :destroy]
   end
   
   resources :contacts, only: [:create, :new]
