@@ -13,10 +13,16 @@
             <div class="flex items-start">
               <div class="ml-3 w-0 flex-1 pt-0.5">
                 <div class="text-lg leading-5 font-medium">
+                <% if msg.class == Array %>
+                <% msg.each do |message| %>
+                <%= message %>
+                  <% end %>
+                <% else %>
                   <p> <%= notice %> </p>
                   <p> <%= error %> </p>
                   <p> <%= info %> </p>
                   <p> <%= alert %> </p>
+                  <% end %>
                 </div>
               </div>
               <div class="ml-4 flex-shrink-0 flex">
