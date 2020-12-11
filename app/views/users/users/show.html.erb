@@ -14,9 +14,9 @@
 
             <h2 class="text-base text-gray-500 "> Ton récap santé : </h2>
             <ul class="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <li class="col-span-1 flex shadow-sm rounded-md">
+              <li class="uc-org">
                 <div
-                  class="flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md">
+                  class="user-card bg-pink-600 ">
                   <svg class="w-12 h-12 fill-current mt-3 ml-2" fill="none"
                     xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
                     xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
@@ -39,7 +39,7 @@
                   </svg>
                 </div>
                 <div
-                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md flex-no-wrap">
+                  class="uc-form">
                   <div class="flex-1 px-4 py-2 text-sm flex-no-wrap">
                     <p class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.daily_cal %> kcal</p>
                     <p class="text-gray-500">Tes besoins par jour</p>
@@ -47,9 +47,9 @@
                 </div>
               </li>
 
-              <li class="col-span-1 flex shadow-sm rounded-md">
+              <li class="uc-org">
                 <div
-                  class="flex-shrink-0 flex items-center justify-center w-16 bg-purple-600 text-white text-sm font-medium rounded-l-md">
+                  class="user-card bg-purple-600">
                   <svg class="w-12 h-12 fill-current mt-2" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"
                     enable-background="new 0 0 100 100" xml:space="preserve">
@@ -62,7 +62,7 @@
                   </svg>
                 </div>
                 <div
-                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md flex-no-wrap">
+                  class="uc-form">
                   <div class="flex-1 px-4 py-2 text-sm flex-no-wrap">
                     <p class="text-gray-900 font-medium hover:text-gray-600">IMC <%= current_user.bmi %></p>
                     <p class="text-gray-500"><%=current_user.bmi_text%></p>
@@ -71,9 +71,9 @@
                 </div>
               </li>
 
-              <li class="col-span-1 flex shadow-sm rounded-md">
+              <li class="uc-org">
                 <div
-                  class="flex-shrink-0 flex items-center justify-center w-16 bg-yellow-500 text-white text-sm font-medium rounded-l-md">
+                  class="user-card bg-yellow-500">
                   <svg class="w-14 h-14 fill-current mt-2" fill="none" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 91 113.75"
                     enable-background="new 0 0 91 91" xml:space="preserve">
@@ -94,7 +94,7 @@
                   </svg>
                 </div>
                 <div
-                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md flex-no-wrap">
+                  class="uc-form">
                   <div class="flex-1 px-4 py-2 text-sm flex-no-wrap">
                     <p class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.objective_title %></p>
                     <p class="text-gray-500">L'objectif que tu t'es fixé</p>
@@ -103,9 +103,9 @@
                 </div>
               </li>
 
-              <li class="col-span-1 flex shadow-sm rounded-md">
+              <li class="uc-org">
                 <div
-                  class="flex-shrink-0 flex items-center justify-center w-16 bg-green-500 text-white text-sm font-medium rounded-l-md">
+                  class="user-card bg-green-500">
                   <svg class="w-14 h-14 fill-current mt-3" fill="none" xmlns:x="http://ns.adobe.com/Extensibility/1.0/"
                     xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
@@ -127,7 +127,7 @@
                   </svg>
                 </div>
                 <div
-                  class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md flex-no-wrap">
+                  class="uc-form">
                   <div class="flex-1 px-4 py-2 text-sm flex-no-wrap">
                     <p class="text-gray-900 font-medium hover:text-gray-600"><%= current_user.activity_level_card %></p>
                     <p class="text-gray-500">Ton activité physique</p>
