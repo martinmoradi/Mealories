@@ -39,7 +39,7 @@
                <button
                   class="border-b border-warning hover:text-warning"
                   data-action="click->modal#close">Retour</button>
-              <h2 class="text-xl mb-4 text-center">Nouveau programme</h2>
+                <h2 class="text-xl mb-4 text-center">Nouveau programme</h2>
 
               <ul class=" rounded-md -space-y-px">
                 <li>
@@ -55,14 +55,15 @@
                     <label class="items-center text-sm cursor-pointer">
                       <%= f.radio_button(:diet_type, 2, class:"w-5 h-5") %>
                       <span class="ml-3 font-medium text-gray-900">Programme moins de sucres<span
-                          class="italic text-sm text-gray-400 ml-3">max. 50g de sucres par repas.</span>
+                      class="italic text-sm text-gray-400 ml-3">max. 50g de sucres par repas.
+                      </span>
                     </label>
                   </div>
                 </li>
               </ul>
 
               <h4 class="text-base mb-4 ml-32 text-center text-gray-600">Durée en jours<span
-                          class="italic text-sm text-gray-400 ml-3">(entre 1 et 7 jours)</span></h4>
+                class="italic text-sm text-gray-400 ml-3">(entre 1 et 7 jours)</span></h4>
               <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent justify-items-center">
                 <button 
                   class="decrement bg-primary-300 text-gray-600 hover:bg-primary-800 hover:text-white  w-20 rounded-l cursor-pointer outline-none ">
