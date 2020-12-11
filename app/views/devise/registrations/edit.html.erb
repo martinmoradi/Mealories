@@ -1,3 +1,5 @@
+  <%= devise_error_messages! %>
+
   <div class="my-auto min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
 
@@ -104,7 +106,7 @@
             <%= link_to :back do %>
             <p class="text-primary-600 hover:text-primary-800">Retour</p>
             <% end %>
-            <%= button_to "Supprimer le compte", registration_path(resource_name), data: { confirm: "Confirmer?" }, class:"text-gray-500 bg-transparent justify-end focus:outline-none hover:bg-red-500 rounded-xl px-4 hover:text-white ml-32 -mr-8 text-xs md:text-sm  outline-none focus:outline-none " %>
+            <%= button_to "Supprimer le compte", user_registration_path(resource_name), method: :delete, data: { confirm: "Confirmer?" }, class:"text-gray-500 bg-transparent justify-end focus:outline-none hover:bg-red-500 rounded-xl px-4 hover:text-white ml-32 -mr-8 text-xs md:text-sm  outline-none focus:outline-none " %>
             </p>
           </div>
 

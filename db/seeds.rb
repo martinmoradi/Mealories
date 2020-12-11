@@ -16,7 +16,6 @@ end
 
 User.create!(
   first_name:    "La Team",
-  last_name:     "Mealories",
   email:        "mealories@gmail.com",
   password:     "123456",
   admin:        true
@@ -45,7 +44,6 @@ puts '2500 recipes created !'
 
 User.create!(
   first_name:     "Toto",
-  last_name:      "Tootoo",
   email:         "toto@toto.fr",
   password:      "123456",
   admin:         false,
