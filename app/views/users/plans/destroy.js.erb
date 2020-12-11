@@ -1,1 +1,3 @@
 document.getElementById("plan<%=@plan.id%>").remove();
+document.querySelector("#sidebar").innerHTML = "";
+document.querySelector("#sidebar").innerHTML = "<%= j render 'users/users/sidebar' %>";
