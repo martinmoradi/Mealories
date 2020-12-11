@@ -74,18 +74,6 @@ class User < ApplicationRecord
     daily_cal.round(2)
   end
 
-  def daily_prot
-    (daily_cal * 0.4) / 4
-  end
-
-  def daily_carbs
-    (daily_cal * 0.4) / 4
-  end
-
-  def daily_fat
-    (daily_cal * 0.2) / 9
-  end
-
   def activity_level_title
     case activity_level
     when 1
@@ -127,32 +115,22 @@ class User < ApplicationRecord
     end
   end
 
-  def lunch_needs
-    {
-      cal: ((daily_cal * 40) / 100),
-      fat: ((daily_fat * 40) / 100),
-      carbs: ((daily_carbs * 40) / 100),
-      prot: ((daily_prot * 40) / 100)
-    }
+  def lunch_needs   
+    (daily_cal.to_f * 40.0) / 100.0
   end
 
   def dinner_needs
-    {
-      cal: ((daily_cal * 35) / 100),
-      fat: ((daily_fat * 35) / 100),
-      carbs: ((daily_carbs * 35) / 100),
-      prot: ((daily_prot * 35) / 100)
-    }
+    (daily_cal.to_f * 35.O) / 100.0
   end
 
   def generate_lunch
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.cal_per_serving.between?((lunch_needs[:cal] * 90 / 100), (lunch_needs[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((lunch_needs * 90 / 100), (lunch_needs * 110 / 100)) }.sample
   end
 
   def generate_dinner
     all_recipes = Recipe.all
-    all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
+    all_recipes.select { |recipe| recipe.cal_per_serving.between?((dinner_needs * 90 / 100), (dinner_needs * 110 / 100)) }.sample
   end
   
   def generate_lowcarbs_dinner
