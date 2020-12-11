@@ -13,11 +13,11 @@ class Admins::RecipesController < Admins::ApplicationController
       if @recipe.save
         format.html { redirect_to recipe_path(@recipe.id) , notice: 'La recette a été crée'}
       else
-        format.html { redirect_to new_admins_recipe_path, error: "La recette n'a pas pu être ajoutée."}
+        format.html { redirect_to new_recipe_path, error: "La recette n'a pas pu être ajoutée."}
       end
     end
   rescue NoMethodError
-     redirect_to new_admins_recipe_path, error: 'Recette erronée !!'
+     redirect_to new_recipe_path, error: 'Recette erronée !'
   end
   end
 
