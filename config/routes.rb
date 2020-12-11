@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   scope 'users', module: 'users' do 
     resources :plans do
-      resources :days
+      resources :days, only: [:show]
     end
     resources :users, path: "/"
     resources :recipes

@@ -35,15 +35,10 @@ class Users::PlansController < Users::ApplicationController
     @days = @plan.days
     respond_to do |format|
       format.html 
-        
-     
-
       format.js {}
-        
-      
     end
   end
-
+        
   def update
     current_user.update(current_plan_id: params[:id])
     redirect_to user_path(current_user.id)
@@ -61,18 +56,21 @@ class Users::PlansController < Users::ApplicationController
     end
   end
     
-
   private
 
   def set_plan
     @plan = Plan.find(params[:id])
   end
 
-  def plan_params
-    params.fetch(:plan, {})
-  end
+
 
   def authorize_plan
     redirect_to root_path, alert: 'Accès refusé!' if current_user != @plan.user
   end
 end
+
+      
+        
+     
+
+
