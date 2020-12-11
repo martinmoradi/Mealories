@@ -120,7 +120,7 @@ class User < ApplicationRecord
   end
 
   def dinner_needs
-    (daily_cal.to_f * 35.O) / 100.0
+    (daily_cal.to_f * 35.0) / 100.0
   end
 
   def generate_lunch
@@ -134,11 +134,11 @@ class User < ApplicationRecord
   end
   
   def generate_lowcarbs_dinner
-    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((dinner_needs[:cal] * 90 / 100), (dinner_needs[:cal] * 110 / 100)) }.sample
+    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((dinner_needs * 90 / 100), (dinner_needs * 110 / 100)) }.sample
   end
 
   def generate_lowcarbs_lunch
-    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((lunch_needs[:cal] * 90 / 100), (lunch_needs[:cal] * 110 / 100)) }.sample
+    Recipe.low_carbs.select { |recipe| recipe.cal_per_serving.between?((lunch_needs * 90 / 100), (lunch_needs * 110 / 100)) }.sample
   end
 
 
