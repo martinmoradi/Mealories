@@ -116,6 +116,20 @@ body {
       @apply flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md
     }
     ;
+    .el-sidebar {
+      @apply text-gray-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md
+    }
+    ;
+    .recipe-input {
+      @apply text-2xl md:text-2xl font-light leading-normal
+    }
+    ;
+}
+@variants hover {
+  .el-sidebar:hover {
+    @apply text-white bg-primary-800
+  }
+  ;
 }
 
 // Tailwind components end
