@@ -16,7 +16,7 @@
   </div>
   <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div class="bg-gray-100 py-8 px-4 shadow sm:rounded-3xl sm:px-10">
-      <%= form_with(model: Recipe.new, method: "post", local: true)  do |f| %>
+      <%= form_with(url: recipes_path, method: "post", local: true)  do |f| %>
 
       <div class="input-container ic2">
         <%= f.url_field :marmiton_url, autofocus: true, placeholder: 'https://www.marmiton.org/', autocomplete: "", required: true, class:"input form-control js-form-control" %>
