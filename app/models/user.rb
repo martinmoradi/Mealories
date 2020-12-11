@@ -32,8 +32,7 @@ class User < ApplicationRecord
   has_many :recipes, class_name: 'Recipe', foreign_key: :author_id, dependent: :nullify
   has_many :plans, dependent: :destroy
   has_many :days, through: :plans
-  after_create :welcome_mail
-
+  
   # Using Mifflin-St-Jeor equation
   def bmr
     if gender == 'Homme'
@@ -175,7 +174,8 @@ class User < ApplicationRecord
 
   private
 
-  def welcome_mail
-    UserMailer.welcome_email(self).deliver_now
+  def after_confirmation
+    UserMailer.welcome_email(self).deliver
   end
+
 end

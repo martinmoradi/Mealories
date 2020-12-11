@@ -86,9 +86,6 @@ gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
 gem "google-cloud"
 gem "google-cloud-translate"
 
-# Rest Client for REST Api calls
-gem "rest-client", "~> 2.1"
-
 # Web Scrapper for Recipes 
 gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
 

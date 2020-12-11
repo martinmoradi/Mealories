@@ -52,7 +52,7 @@ class Users::PlansController < Users::ApplicationController
     @plan.destroy
     respond_to do |format|
       format.html { redirect_to plans_path, notice: 'Le programme a été supprimé' }
-      format.js {}
+      format.js { }
     end
   end
     
@@ -66,11 +66,3 @@ class Users::PlansController < Users::ApplicationController
     redirect_to root_path, alert: 'Accès refusé!' if current_user != @plan.user
   end
 end
-
-
-
-      
-        
-     
-
-

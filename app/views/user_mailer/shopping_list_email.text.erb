@@ -1,0 +1,15 @@
+
+Voici votre liste de course !
+==========================================================
+
+<% @plan.days.each.with_index do |day, idx| %>
+
+Jour <%= idx +1 %>
+
+<% day.lunch.ingredients_list_formatted.each do |ing|%>
+  <%= ing %>
+<%end%>
+
+<% day.dinner.ingredients_list_formatted.each do |ing|%>
+  <%= ing %>
+<%end%>
