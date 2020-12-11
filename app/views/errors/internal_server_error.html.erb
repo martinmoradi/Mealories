@@ -16,10 +16,10 @@
       <p class="mb-5 text-base text-left text-gray-800 md:text-xl">
         Nos équipes font tout leur possible pour remettre les choses en ordre.
       </p>
-      <%= link_to root_path,  class:"bg-primary-500 text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" do %>
+       <%= link_to root_path,  class:"submit px-8 py-3 mr-3" do %>
       Retour
       <%end%>
-      <%= link_to root_path,  class:"bg-warning no-wrap text-white active:bg-primary-600 font-bold uppercase text-xs md:text-sm lg:text-base px-6 py-3 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" do %>
+      <%= link_to new_contact_path,  class:"bg-warning submit-warning px-8 py-3" do %>
         Contact
       <%end%>
     </div>
