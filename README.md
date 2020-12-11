@@ -1,4 +1,4 @@
-# `📆 ` Nutriti :apple:
+# `📆 ` Mealories :apple:
 
 ## Présentation
 

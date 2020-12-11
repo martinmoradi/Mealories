@@ -74,28 +74,66 @@ body {
 }
 
 // Navbar end
+
 @layer components {
-  .footer-org {
-    @apply text-gray-700 bg-primary-500;
+    .footer-org {
+        @apply text-gray-700 bg-primary-500
+    }
+    ;
+    .footer-content {
+        @apply container px-4 py-2 mx-auto flex items-center flex-col
+    }
+    ;
+    .logo-footer {
+        @apply flex font-semibold items-center justify-center text-gray-700
+    }
+    ;
+    .icon-org {
+        @apply inline-flex mt-4 justify-center
+    }
+    ;
+    .github-icon {
+        @apply flex flex-col w-12 h-12 rounded-lg text-white text-xs self-center m-2 py-1
+    }
+    ;
+    .land-pres {
+        @apply h-20 w-20 inline-flex items-center justify-center rounded-full text-blue-500 flex-shrink-0
+    }
+    ;
+    .admin-card {
+        @apply col-span-2 flex shadow-sm rounded-md
+    }
+    ;
+    .user-card {
+      @apply flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md
+    }
+    ;
+    .uc-org {
+      @apply col-span-1 flex shadow-sm rounded-md
+    }
+    ;
+    .uc-form {
+      @apply flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md
+    }
+    ;
+    .el-sidebar {
+      @apply text-gray-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md
+    }
+    ;
+    .recipe-input {
+      @apply text-2xl md:text-2xl font-light leading-normal
+    }
+    ;
+    .plan-line {
+      @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider
+    }
+    ;
+}
+@variants hover {
+  .el-sidebar:hover {
+    @apply text-white bg-primary-800
   }
-  .footer-content {
-    @apply container px-4 py-2 mx-auto flex items-center flex-col;
-  }
-  .logo-footer {
-    @apply flex font-semibold items-center justify-center text-gray-700;
-  }
-  .icon-org {
-    @apply inline-flex mt-4 justify-center;
-  }
-  .github-icon {
-    @apply flex flex-col w-12 h-12 rounded-lg text-white text-xs self-center m-2 py-1;
-  }
-  .land-pres {
-    @apply h-20 w-20 inline-flex items-center justify-center rounded-full text-blue-500 flex-shrink-0;
-  }
-  .admin-card {
-    @apply col-span-2 flex shadow-sm rounded-md;
-  }
+  ;
 }
 
 // Tailwind components end
