@@ -1,28 +1,28 @@
 <div class="container mx-auto mb-auto">
   <%= render "users/users/welcome"%>
   <p class="mt-5 ml-5 md:ml-0">Généré le : <%= @plan.created_at.strftime("%d-%m-%Y") %> </p>
-        <!--card organization-->
+  <!--card organization-->
   <div class="days flex items-center justify-center">
     <div class="mt-10 mr-1 md:mt-12">
       <i class="fas fa-angle-left fa-3x contents lg:hidden "></i>
     </div>
-      	<!-- day cards start -->
-	  <div class="flex mt-10 md:mt-14 lg:mt-16">
-     <% @plan.days.each.with_index do |day, idx| %>
-      <%= render "users/days/days", idx: idx %> 
-    <% end %>
+    <!-- day cards start -->
+    <div class="flex mt-10 md:mt-14 lg:mt-16">
+      <% @plan.days.each.with_index do |day, idx| %>
+      <%= render "users/days/days", idx: idx %>
+      <% end %>
     </div>
-    
-	        <!-- day cards end  -->
+
+    <!-- day cards end  -->
     <div class="mt-10 ml-1 md:mt-12">
       <i class="fas fa-angle-right fa-3x contents lg:hidden "></i>
     </div>
   </div>
-        <!--menu cards start--->
+  <!--menu cards start--->
   <div class="flex flex-row items-center justify-center ml-5 mt-16 mb-5">
     <% @plan.days.each do |day|%>
-      <%= render 'users/days/card_recipe', day: @day %>
+    <%= render 'users/days/card_recipe', day: @day %>
 
     <% end %>
-  </div>  
+  </div>
 </div>

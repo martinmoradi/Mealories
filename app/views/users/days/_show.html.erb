@@ -4,9 +4,10 @@
 
   <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
     <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
-    <div class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom ">
-      <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton déjeuner</p>
-    </div>
+      <div
+        class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom ">
+        <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton déjeuner</p>
+      </div>
       <%= image_tag @day.lunch.image_url %>
     </div>
     <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">
@@ -53,9 +54,10 @@
 
   <div class="container mx-auto max-w-sm rounded-xl overflow-hidden shadow-xl my-2 bg-gray-100">
     <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
-     <div class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom">
-      <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton dîner</p>
-    </div>
+      <div
+        class="absolute top-0 z-99 left-0 rounded-xl h-8 bg-primary-500 w-32 text-white text-center box-shadow-custom">
+        <p class="text-xs font-semibold inline-block px-2 mt-2 uppercase last:mr-0">Ton dîner</p>
+      </div>
       <%= image_tag @day.dinner.image_url %>
     </div>
     <div class="relative flex justify-between items-center flex-row px-6 z-50 -mt-10">

@@ -32,7 +32,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Debugger
-  gem "pry"
+  gem 'pry', '~> 0.13.1'
 end
 
 group :development do
@@ -40,53 +40,47 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 2.1', '>= 2.1.1'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Intellisense & much more
-  gem "solargraph"
+  gem 'solargraph', '~> 0.39.17'
   # Better errors replace standard Rails error page
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'binding_of_caller', '~> 0.8.0'
   # Ruby static analyzer and code formatter
   gem "rubocop", require: false
   # Preview email in browser
-  gem "letter_opener"
+  gem 'letter_opener', '~> 1.7'
   # Generate Diagram
-  gem "rails-erd"
-  # Table print
+  gem 'rails-erd', '~> 1.6'
+  
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Login managment
-gem "devise"
+gem 'devise', '~> 4.7', '>= 4.7.3'
 
 # Allow resetting the ID of tables to 0
-gem "activerecord-reset-pk-sequence"
+gem 'activerecord-reset-pk-sequence', '~> 0.2.1'
 
 # Hide API keys from bad guys
-gem "dotenv-rails"
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 
 # Random data generator
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 
 # Mailjet
 gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
-
-# Table print
-gem "table_print"
-
-# Admin panel
-gem "rails_admin", "~> 2.0"
 
 # Google Trad
 gem "google-cloud"
@@ -96,9 +90,10 @@ gem "google-cloud-translate"
 gem "rest-client", "~> 2.1"
 
 # Web Scrapper for Recipes 
-gem "recipe_scraper"
-#################################################################################
+gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
 
+
+#################################################################################
 # List of added gems :
 # gem "devise"
 # gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
@@ -110,12 +105,9 @@ gem "recipe_scraper"
 # gem "dotenv-rails"
 # gem "letter_opener"
 # gem "rails erd"
-# gem "rails_admin"
 # gem "activerecord-reset-pk-sequence"
-# gem "table_print"
 # gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 # gem "google-cloud"
 # gem "google-cloud-translate"
-# gem "rest-client", "~> 2.1"
 # gem "recipe_scraper"
 #################################################################################

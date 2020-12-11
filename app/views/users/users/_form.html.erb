@@ -1,5 +1,5 @@
-<div class="container mx-auto min-h-screen my-24">
- 
+<div class="container mx-auto min-h-screen">
+
   <div class="middle-page flex items-center justify-evenly">
 
     <div class="md:grid md:grid-cols-3 md:gap-6 mx-3 my-3 py-8 bg-gray-100 rounded-2xl shadow-xl">
@@ -10,7 +10,7 @@
         </p>
         <%= image_tag 'personal_data_' %>
       </div>
-      
+
       <div class="mt-5 md:mt-0 md:col-span-2 mx-8 mb-15">
         <%= form_with(model: @user, method: "put", local: true) do |f| %>
 
@@ -21,12 +21,13 @@
                 <%= f.text_field :first_name, placeholder: '', value: current_user.first_name, required: true, class:"input" %>
                 <div class="absolute inset-y-4 right-0 -mr-1 pt-5 flex items-center pointer-events-none">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 64 80" x="0px" y="0px"
-                  class="h-11 w-11 text-gray-300">
-                  <g data-name="Layer 16">
-                  <path d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z"/>
-                  </g>
-                </svg>
-              </div>
+                    class="h-11 w-11 text-gray-300">
+                    <g data-name="Layer 16">
+                      <path
+                        d="M31,29.8c-0.1-6.6-4.5-12.3-10.6-14.1C22.6,14.2,24,11.8,24,9c0-4.4-3.6-8-8-8S8,4.6,8,9c0,2.8,1.4,5.2,3.6,6.7   C5.5,17.6,1,23.3,1,30c0,0.6,0.4,1,1,1h28c0,0,0,0,0,0c0.6,0,1-0.4,1-1C31,29.9,31,29.9,31,29.8z M10,9c0-3.3,2.7-6,6-6s6,2.7,6,6   s-2.7,6-6,6S10,12.3,10,9z M3,29c0.5-6.7,6.1-12,13-12s12.4,5.3,13,12H3z" />
+                    </g>
+                  </svg>
+                </div>
                 <div class="cut cut-small bg-gray-100"></div>
                 <label for="weight_in_kgs" class="placeholder">Prénom</>
               </div>
@@ -58,9 +59,9 @@
           </div>
         </div>
 
-        <ul class=" rounded-md -space-y-px">
+        <ul class="rounded-md -space-y-px">
           <li>
-            <div class=" border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
+            <div class="border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:gender, "Homme", class:"w-5 h-5")  %>
                 <span class="ml-3 font-medium text-gray-900">Je suis un homme</span>
@@ -69,7 +70,7 @@
           </li>
           <li>
 
-            <div class=" border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
+            <div class="border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:gender, "Femme", class:"w-5 h-5") %>
                 <span class="ml-3 font-medium text-gray-900">Je suis une femme</span>
@@ -79,34 +80,34 @@
         </ul>
 
 
-       
-    <div class="grid grid-cols-6 gap-6 mb-6">
-      <div class="col-span-6 sm:col-span-3">
-        <div class="input-group js-input-group">
-          <div class="input-container ic1">
-            <%= f.number_field :height_in_cms, in: 80..250, placeholder: '', value: current_user.height_in_cms, required: true, class:"input" %>
-            <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none text-gray-400">
-              <svg class="h-7 w-7 fill-current" fill="none" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
-                viewBox="0 0 200 250" x="0px" y="0px">
-                <title>Height</title>
-                <path
-                  d="M54.49,179.64a6.82,6.82,0,0,1-6.83-6.82V36.28a6.83,6.83,0,0,1,13.66,0h0V172.82A6.82,6.82,0,0,1,54.49,179.64Z" />
-                <path
-                  d="M72.69,38.56H36.28a6.83,6.83,0,0,1,0-13.65H72.69a6.83,6.83,0,1,1,0,13.65Zm0,141.08H36.28a6.83,6.83,0,0,1,0-13.65H72.69a6.83,6.83,0,1,1,0,13.65ZM131.86,70.42a29.59,29.59,0,1,1,29.58-29.58A29.58,29.58,0,0,1,131.86,70.42Zm0-45.51a15.93,15.93,0,1,0,15.93,15.93h0a15.93,15.93,0,0,0-15.93-15.93Z" />
-                <path
-                  d="M163.72,129.58H100a6.82,6.82,0,0,1-6.83-6.82V86.35a20.53,20.53,0,0,1,20.48-20.48h36.41a20.52,20.52,0,0,1,20.48,20.48v36.41A6.82,6.82,0,0,1,163.72,129.58Zm-56.89-13.65h50.06V86.35a6.83,6.83,0,0,0-6.83-6.83H113.65a6.82,6.82,0,0,0-6.82,6.83Z" />
-                <path
-                  d="M150.06,188.75H113.65a6.82,6.82,0,0,1-6.82-6.83V122.76a6.82,6.82,0,0,1,6.82-6.83h36.41a6.83,6.83,0,0,1,6.83,6.83v59.16A6.83,6.83,0,0,1,150.06,188.75Zm-29.58-13.66h22.76V129.58H120.48Z" />
-              </svg>
+
+        <div class="grid grid-cols-6 gap-6 mb-6">
+          <div class="col-span-6 sm:col-span-3">
+            <div class="input-group js-input-group">
+              <div class="input-container ic1">
+                <%= f.number_field :height_in_cms, in: 80..250, placeholder: '', value: current_user.height_in_cms, required: true, class:"input" %>
+                <div class="absolute inset-y-0 right-0 pr-3 pt-2 flex items-center pointer-events-none text-gray-400">
+                  <svg class="h-7 w-7 fill-current" fill="none" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
+                    viewBox="0 0 200 250" x="0px" y="0px">
+                    <title>Height</title>
+                    <path
+                      d="M54.49,179.64a6.82,6.82,0,0,1-6.83-6.82V36.28a6.83,6.83,0,0,1,13.66,0h0V172.82A6.82,6.82,0,0,1,54.49,179.64Z" />
+                    <path
+                      d="M72.69,38.56H36.28a6.83,6.83,0,0,1,0-13.65H72.69a6.83,6.83,0,1,1,0,13.65Zm0,141.08H36.28a6.83,6.83,0,0,1,0-13.65H72.69a6.83,6.83,0,1,1,0,13.65ZM131.86,70.42a29.59,29.59,0,1,1,29.58-29.58A29.58,29.58,0,0,1,131.86,70.42Zm0-45.51a15.93,15.93,0,1,0,15.93,15.93h0a15.93,15.93,0,0,0-15.93-15.93Z" />
+                    <path
+                      d="M163.72,129.58H100a6.82,6.82,0,0,1-6.83-6.82V86.35a20.53,20.53,0,0,1,20.48-20.48h36.41a20.52,20.52,0,0,1,20.48,20.48v36.41A6.82,6.82,0,0,1,163.72,129.58Zm-56.89-13.65h50.06V86.35a6.83,6.83,0,0,0-6.83-6.83H113.65a6.82,6.82,0,0,0-6.82,6.83Z" />
+                    <path
+                      d="M150.06,188.75H113.65a6.82,6.82,0,0,1-6.82-6.83V122.76a6.82,6.82,0,0,1,6.82-6.83h36.41a6.83,6.83,0,0,1,6.83,6.83v59.16A6.83,6.83,0,0,1,150.06,188.75Zm-29.58-13.66h22.76V129.58H120.48Z" />
+                  </svg>
+                </div>
+
+                <div class="cut cut-large bg-gray-100"></div>
+                <label for="height_in_cms" class="placeholder">Taille en cm</>
+              </div>
             </div>
-            
-            <div class="cut cut-large bg-gray-100"></div>
-            <label for="height_in_cms" class="placeholder">Taille en cm</>
           </div>
-        </div>
-      </div>
-    
-    <div class="col-span-6 sm:col-span-3 mb-6">
+
+          <div class="col-span-6 sm:col-span-3 mb-6">
             <div class="input-group js-input-group">
               <div class="input-container ic1">
                 <%= f.number_field :weight_in_kgs, in: 30..220, placeholder: '', value: current_user.weight_in_kgs, required: true, class:"input" %>
@@ -153,14 +154,13 @@
             </div>
           </div>
         </div>
-    <ul class=" rounded-md -space-y-px mt-8">
+        <ul class=" rounded-md -space-y-px mt-8">
 
           <li>
             <div class=" border rounded-tl-xl rounded-tr-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "1", class:"w-5 h-5")  %>
-                <span
-                  class="ml-3 font-medium text-gray-900">Je veux perdre du poids</span>
+                <span class="ml-3 font-medium text-gray-900">Je veux perdre du poids</span>
               </label>
             </div>
           </li>
@@ -168,8 +168,7 @@
             <div class=" border  p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "2", class:"w-5 h-5") %>
-                <span
-                  class="ml-3 font-medium text-gray-900">Je veux garder la ligne</span>
+                <span class="ml-3 font-medium text-gray-900">Je veux garder la ligne</span>
               </label>
             </div>
           </li>
@@ -177,8 +176,7 @@
             <div class=" border rounded-bl-xl rounded-br-xl p-4 flex flex-col md:pl-4 md:pr-6  bg-white">
               <label class="flex items-center text-sm cursor-pointer">
                 <%= f.radio_button(:objective, "3", class:"w-5 h-5") %>
-                <span
-                  class="ml-3 font-medium text-gray-900">Je veux prendre du poids</span>
+                <span class="ml-3 font-medium text-gray-900">Je veux prendre du poids</span>
               </label>
             </div>
           </li>

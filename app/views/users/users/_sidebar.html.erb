@@ -18,8 +18,24 @@
           <% end %>
           <%= render 'users/plans/new' %>
 
+          <% if current_user.current_plan_id? %>
+          <%= link_to plan_path(current_user.current_plan_id), class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
+          <svg class="fill-current group-hover:text-white mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 100 125" x="0px" y="0px">
+            <path d="M30.5,80A2.5,2.5,0,0,0,33,77.5v-17a2.5,2.5,0,0,0-5,0v17A2.5,2.5,0,0,0,30.5,80Z" />
+            <path d="M43.5,80A2.5,2.5,0,0,0,46,77.5v-17a2.5,2.5,0,0,0-5,0v17A2.5,2.5,0,0,0,43.5,80Z" />
+            <path d="M56.5,80A2.5,2.5,0,0,0,59,77.5v-17a2.5,2.5,0,0,0-5,0v17A2.5,2.5,0,0,0,56.5,80Z" />
+            <path d="M69.5,80A2.5,2.5,0,0,0,72,77.5v-17a2.5,2.5,0,0,0-5,0v17A2.5,2.5,0,0,0,69.5,80Z" />
+            <path
+              d="M91,51.53v0h0v-13A2.5,2.5,0,0,0,88.5,36h-7L71.89,17c0-.07-.07-.14-.11-.2a8.29,8.29,0,0,0-7-3.82h-.52a6.75,6.75,0,0,0-6.5-5H42.24a6.75,6.75,0,0,0-6.5,5H35.3a8.45,8.45,0,0,0-7.12,3.88,2,2,0,0,1-.11.2L18.47,36h-7A2.5,2.5,0,0,0,9,38.5v13H9v0a2.24,2.24,0,0,0,.06.52v0l7.25,31.38A9.62,9.62,0,0,0,25.76,91H74.24a9.6,9.6,0,0,0,9.44-7.54l7.26-31.4v0A2.22,2.22,0,0,0,91,51.53ZM40.5,14.74A1.74,1.74,0,0,1,42.24,13H57.76a1.74,1.74,0,0,1,1.74,1.74v.52A1.74,1.74,0,0,1,57.76,17H42.24a1.74,1.74,0,0,1-1.74-1.74Zm-8,4.72A3.42,3.42,0,0,1,35.3,18h.79a6.75,6.75,0,0,0,6.15,4H57.76a6.75,6.75,0,0,0,6.15-4h.87a3.25,3.25,0,0,1,2.71,1.4L75.93,36H24.07ZM14,41H86v8H14ZM78.81,82.35A4.65,4.65,0,0,1,74.24,86H25.76a4.65,4.65,0,0,1-4.57-3.67L14.64,54H85.36Z" />
+            </svg>
+          Mes ingrédients
+          <% end %>
+          <% end %>
+
+
           <%= link_to plans_path, class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
-          <svg class="text-gray-400 group-hover:text-white mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+          <svg class="text-gray-500 group-hover:text-white mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -28,9 +44,9 @@
           <% end %>
           <% end %>
           <%= link_to edit_user_path(current_user), class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
-          <svg class="text-gray-500 fill-current group-hover:text-white mr-3 h-6 w-6" fill="none"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
-            viewBox="0 0 32 40" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          <svg class="fill-current group-hover:text-white mr-3 h-6 w-6" fill="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 32 40"
+            style="enable-background:new 0 0 32 32;" xml:space="preserve">
             <g>
               <g>
                 <g>
@@ -62,7 +78,7 @@
           <% end %>
 
           <%= link_to edit_user_registration_path(current_user), class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
-          <svg class="text-gray-400 fill-current group-hover:text-white mr-3 h-6 w-6"
+          <svg class="fill-current group-hover:text-white mr-3 h-6 w-6" fill="none"
             xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
             xmlns:graph="http://ns.adobe.com/Graphs/1.0/" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"
@@ -88,34 +104,7 @@
           Paramètres du compte
           <% end %>
 
-          <% if current_user.current_plan_id? %>
-          <%= link_to plan_path(current_user.current_plan_id), class:"text-gray-600 hover:bg-primary-800 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md" do %>
-          <svg class="text-gray-400 fill-current group-hover:text-white mr-3 h-6 w-6"
-            xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
-            xmlns:graph="http://ns.adobe.com/Graphs/1.0/" fill="none" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125"
-            style="enable-background:new 0 0 100 100;" xml:space="preserve">
-            <switch>
-              <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1"
-                height="1" />
-              <g i:extraneous="self">
-                <g>
-                  <path
-                    d="M34.7,68.9l5.8-5.8c-10.5-0.6-18.9-9.3-18.9-20c0-11.1,9-20,20-20c10.7,0,19.4,8.3,20,18.9l9.5-9.5     c-0.7-1.9-1.6-3.8-2.6-5.5l4.5-5.8c0.5-0.7,0.5-1.6-0.1-2.2l-7.1-7.1c-0.6-0.6-1.5-0.7-2.2-0.1l-5.8,4.5     c-2.7-1.6-5.6-2.8-8.6-3.6l-0.9-7.3C48.2,4.6,47.5,4,46.7,4h-10c-0.8,0-1.5,0.6-1.7,1.5l-0.9,7.3c-3.1,0.8-5.9,2-8.6,3.6     l-5.8-4.5c-0.7-0.5-1.6-0.5-2.2,0.1L10.4,19c-0.6,0.6-0.6,1.5-0.1,2.2l4.5,5.8c-1.6,2.6-2.8,5.5-3.6,8.6L4,36.5     c-0.8,0.1-1.5,0.8-1.5,1.6v10c0,0.8,0.6,1.5,1.5,1.7l7.2,0.9c0.8,3.1,2,5.9,3.6,8.6l-4.5,5.8c-0.5,0.7-0.5,1.6,0.1,2.2l7.1,7     c0.6,0.6,1.5,0.7,2.2,0.2l5.8-4.5c1.8,1.1,3.8,2.1,5.9,2.8C32.4,71.4,33.5,70.2,34.7,68.9z" />
-                  <circle cx="41.6" cy="43.1" r="12.2" />
-                  <path
-                    d="M31.4,88.5l-1.3,5.7c-0.2,1.1,0.7,2,1.8,1.8l5.7-1.3c4.4-1,8.5-2.9,12-5.6L37,76.5C34.3,80,32.3,84.1,31.4,88.5z" />
-                  <rect x="41.7" y="53.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -25.9714 63.0907)" width="43"
-                    height="18.3" />
-                  <path
-                    d="M96.4,37.6l-8-8c-1.4-1.4-3.5-1.5-4.7-0.2l-7.1,7.1l13,13l7.1-7.1C97.9,41.1,97.8,39,96.4,37.6z" />
-                </g>
-              </g>
-            </switch>
-          </svg>
-          Liste de course
-          <% end %>
-          <% end %>
+
 
           <% if current_user.admin %>
           <hr>
