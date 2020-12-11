@@ -39,3 +39,4 @@ config/CREDENTIAL_JSON.json
 .env
 /config/local_env.yml
 /config/google_cloud.json
+.DS_Store
