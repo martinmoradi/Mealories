@@ -627,7 +627,6 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rails-erd (~> 1.6)
   recipe_scraper (~> 2.2, >= 2.2.4)
-  rest-client (~> 2.1)
   rubocop
   sass-rails (>= 6)
   selenium-webdriver (~> 3.142, >= 3.142.7)
