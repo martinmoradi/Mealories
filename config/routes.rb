@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
-    resources :admins
-    resources :recipes
+    resources :admins, only: [:show]
+    resources :recipes, only: [:new, :create, :destroy]
   end
   
   resources :contacts, only: [:create, :new]
