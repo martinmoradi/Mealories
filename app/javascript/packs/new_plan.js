@@ -1,27 +1,29 @@
-const btnDecrement = document.querySelector("#decrement");
-const btnIncrement = document.querySelector("#increment");
-const input = document.querySelector("#nb_of_days");
+const btnDecrement = document.querySelectorAll(".decrement");
+const btnIncrement = document.querySelectorAll(".increment");
+const input = document.querySelectorAll(".nb_of_days");
 
-const decrement = (e) => {
+btnDecrement.forEach((btn, i) =>
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
-    let inputNumber = parseInt(input.value);
+    let inputNumber = parseInt(input[i].value);
     inputNumber -= 1;
     if (inputNumber < 1) {
-        inputNumber = 1
+      inputNumber = 1;
     }
-    input.value = inputNumber;
-    return input.value
-};
-const increment = (e) => {
+    input[i].value = inputNumber;
+    return input[i].value;
+  })
+);
+
+btnIncrement.forEach((btn, i) =>
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
-    let inputNumber = parseInt(input.value);
+    let inputNumber = parseInt(input[i].value);
     inputNumber += 1;
     if (inputNumber > 7) {
-        inputNumber = 7
+      inputNumber = 7;
     }
-    input.value = inputNumber;
-    return input.value;
-};
-
-btnDecrement.addEventListener("click", decrement);
-btnIncrement.addEventListener("click", increment);
+    input[i].value = inputNumber;
+    return input[i].value;
+  })
+);
