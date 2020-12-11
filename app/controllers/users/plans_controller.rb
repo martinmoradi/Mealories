@@ -62,12 +62,12 @@ class Users::PlansController < Users::ApplicationController
     @plan = Plan.find(params[:id])
   end
 
-
-
   def authorize_plan
     redirect_to root_path, alert: 'Accès refusé!' if current_user != @plan.user
   end
 end
+
+
 
       
         
