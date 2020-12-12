@@ -142,7 +142,7 @@
             Etapes :
           </summary>
           <p class="text-gray-500">
-            <%= @recipe.steps.gsub(/"|\[|\]/, '') %> </p>
+            <%= @recipe.steps_formatted %> </p>
         </details>
 
         <%= link_to @recipe.marmiton_url, class:"outline-none", target: :_blank do %>
