@@ -1,8 +1,7 @@
 # ![Mealories logo](./public/logo.png) Mealories 
 
-## Présentation
-
-L'application permet de générer des menus de 1 à 7 jours, en fonction de chaque utilisateur. Elle permet ensuite de recevoir sa liste de course par mail.
+Merci pour ta visite sur ce repo ! 
+Nous te présentons Mealories, notre projet final au sein de la session 14 de The Hacking Project.
 
 ![Mealories screenshot](./public/README-Screenshot.png)
 
@@ -34,5 +33,6 @@ Les recettes sont importées de https://www.marmiton.org/ et leurs informations 
 * Uriel Sautron : https://github.com/Uriel-Sautron
 * Martin Moradi : https://github.com/martinmoradi
 * David Lobry: https://github.com/DLBY
+* Team Perruches, THP 2020.
 
 ##### Un grand merci à notre mentor Luca Montaitgut : https://github.com/luca-montaigut
