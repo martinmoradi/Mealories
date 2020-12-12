@@ -142,7 +142,7 @@
             Etapes :
           </summary>
             <% @recipe.steps_formatted.each do |step| %> 
-          <p class="text-gray-500"> <%= step %> </p>
+          <p class="text-gray-500"> <%= step + "." %> </p>
           <% end %>
         </details>
 
