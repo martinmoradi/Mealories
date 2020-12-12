@@ -141,8 +141,9 @@
           <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
             Etapes :
           </summary>
-          <p class="text-gray-500">
-            <%= @recipe.steps_formatted %> </p>
+            <% @recipe.steps_formatted.each do |step| %> 
+          <p class="text-gray-500"> <%= step %> </p>
+          <% end %>
         </details>
 
         <%= link_to @recipe.marmiton_url, class:"outline-none", target: :_blank do %>
