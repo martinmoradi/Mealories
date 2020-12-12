@@ -64,6 +64,10 @@ class Recipe < ApplicationRecord
     end    
   end
 
+  def steps_formatted
+    steps.gsub(/"|\[|\]/, "").split(".").join(".\n")
+  end
+
   def self.low_carbs
     Recipe.all.select { |recipe| recipe.carbs_per_serving < 50 }
   end
