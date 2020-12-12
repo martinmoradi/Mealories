@@ -10,7 +10,7 @@ L'application permet de générer des menus de 1 à 7 jours, en fonction de chaq
 
 ### Compte administrateur
 
-Pour visiter direction heroku : http://mealories.herokuapp.com/
+Pour visiter direction Heroku : http://mealories.herokuapp.com/
 
 Le compte => Email : **mealories@hotmail.com** || Mot de passe: **123456**
 
@@ -24,9 +24,9 @@ La partie admin sera accessible dans la sidebar du tableau de bord.
 
 ## 🍗 Pourquoi Mealories ? 🍗
 
-Mealories est un projet réalisé pour répondre à un besoin qu'on peut rencontrer en cuisine: le manque d'inspiration.
-
-L'application permet d'allier gain de temps et bien-être car elle permet de mieux contrôller ses repas.
+Parce que notre temps et notre santé sont précieux mais parfois difficilement concilliables, nous vous proposons Mealories.
+Le but ? Mieux manger, en laissant nous laissant choisir vos repas, calculés directement depuis vos données. 
+Les recettes sont importées de https://www.marmiton.org/ et leurs informations nutritionnelles analysées.
 
 ## Les auteurs 🐦
 
