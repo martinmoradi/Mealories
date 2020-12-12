@@ -4,7 +4,7 @@
 
   <%= render 'users/users/sidebar' %>
 
-  <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 lg:mt-8">
+  <div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 -mt-5">
 
     <div class="mx-auto text-base max-w-prose lg:max-w-none">
 
@@ -128,22 +128,25 @@
         <p class="mt-5 ml-5 text-sm text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none"><span
             class="text-base"><i class="far fa-clock"></i></span> <%= @recipe.total_time %> minutes </p>
         <details class="my-5">
-          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+          <summary class="mt-5 text-lg text-gray-700 hover:text-black cursor-pointer focus:outline-none">
             Ingrédients :
           </summary>
+          <ul class="ml-5 mt-2">
           <% @recipe.ingredients_list_formatted.each do |ingredient| %>
-          <p class="text-gray-500"><%= ingredient %></p>
+          <li class="text-gray-500"><%= ingredient %></li>
           <% end %>
-          </p>
+          </ul>
         </details>
 
         <details class="mb-4 rounded-md">
-          <summary class="mt-5 text-lg text-gray-500 hover:text-gray-700  cursor-pointer focus:outline-none">
+          <summary class="mt-5 text-lg text-gray-700 hover:text-black  cursor-pointer focus:outline-none mb-2">
             Etapes :
           </summary>
+         <ul class="ml-6">
             <% @recipe.steps_formatted.each do |step| %> 
-          <p class="text-gray-500"> <%= step + "." %> </p>
+          <li class="text-gray-500 list-decimal	"> <%= step + "." %> </li>
           <% end %>
+          </ul>
         </details>
 
         <%= link_to @recipe.marmiton_url, class:"outline-none", target: :_blank do %>
