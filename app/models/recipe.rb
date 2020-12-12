@@ -65,7 +65,7 @@ class Recipe < ApplicationRecord
   end
 
   def steps_formatted
-    steps.gsub(/"|\[|\]/, "").split(".").join(".\n")
+    steps.gsub(/"|\[|\]/, "").split(".")
   end
 
   def self.low_carbs
