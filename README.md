@@ -1,10 +1,10 @@
-# `📆 ` Mealories :apple:
+# ![Mealories logo](./public/logo.png) Mealories 
 
 ## Présentation
 
 L'application permet de générer des menus de 1 à 7 jours, en fonction de chaque utilisateur. Elle permet ensuite de recevoir sa liste de course par mail.
 
-![Mealories screenshot](./1607682988717.png)
+![Mealories screenshot](./public/README-Screenshot.png)
 
 ## 🍪 Le parcours utilisateur 🍪
 
@@ -35,4 +35,4 @@ L'application permet d'allier gain de temps et bien-être car elle permet de mie
 * Martin Moradi : https://github.com/martinmoradi
 * David Lobry: https://github.com/DLBY
 
-##### Merci à notre mentor Luca Montaitgut : https://github.com/luca-montaigut
+##### Un grand merci à notre mentor Luca Montaitgut : https://github.com/luca-montaigut
