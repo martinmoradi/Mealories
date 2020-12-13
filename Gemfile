@@ -89,7 +89,8 @@ gem "google-cloud-translate"
 # Web Scrapper for Recipes 
 gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
 
-
+# Table print
+gem "table_print"
 #################################################################################
 # List of added gems :
 # gem "devise"
@@ -107,4 +108,5 @@ gem 'recipe_scraper', '~> 2.2', '>= 2.2.4'
 # gem "google-cloud"
 # gem "google-cloud-translate"
 # gem "recipe_scraper"
+# gem "table_print"
 #################################################################################

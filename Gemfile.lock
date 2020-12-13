@@ -568,6 +568,7 @@ GEM
       sprockets (>= 3.0.0)
     stackdriver-core (1.4.0)
       google-cloud-core (~> 1.2)
+    table_print (1.5.7)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -633,6 +634,7 @@ DEPENDENCIES
   solargraph (~> 0.39.17)
   spring (~> 2.1, >= 2.1.1)
   spring-watcher-listen (~> 2.0.0)
+  table_print
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers (~> 4.4, >= 4.4.1)
